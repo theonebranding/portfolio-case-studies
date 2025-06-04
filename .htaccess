@@ -1,0 +1,17 @@
+# RewriteEngine On
+
+# # Redirect specific pages to the homepage
+# RewriteRule ^(thank-you)$ / [R=302,L]
+
+# # Redirect all other non-existing routes to homepage
+# RewriteCond %{REQUEST_URI} !^/$
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^.*$ / [R=302,L]
+
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]

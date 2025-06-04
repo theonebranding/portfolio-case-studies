@@ -1,0 +1,947 @@
+export interface Words {
+  text: string;
+  className?: string;
+}
+export interface Service {
+  id: number;
+  title: string;
+  description: string;
+  icon: string;
+  technologies: string[];
+  features: string[];
+}
+
+export interface Project {
+  id: number;
+  title: string;
+  thumbnail: string;
+  category: 'website' | 'software';
+  desktopImages?: string[];
+  mobileImages?: string[];
+  imagesAlt?: string[];
+  description: string;
+  technologies: string[];
+  features?: string[];
+  client: {
+    intro?: string;
+    name: string;
+    industry: string;
+    country?: string;
+  };
+  problem_statement: string;
+  results: string;
+  journey: string;
+  url?: string;
+  testimonial?:string,
+  testimonial_author?:string,
+
+}
+
+export const words: Words[] = [
+  {
+    text: "YOUR",
+    className: "text-white  text-lg md:text-xl",
+  },
+  {
+    text: "BRAND",
+    className: "text-white  text-lg md:text-xl",
+  },
+  {
+    text: "DESERVES",
+    className: "text-white  text-lg md:text-xl",
+  },
+  {
+    text: "A",
+    className: "text-white  text-lg md:text-xl",
+  },
+  {
+    text: "POWERFUL",
+    className: "text-white  text-lg md:text-xl",
+  },
+  {
+    text: "ONLINE",
+    className: "text-white  text-lg md:text-xl",
+  },
+  {
+    text: "PRESENCE",
+    className: "text-white  text-lg md:text-xl",
+  },
+  {
+    text: "THAT",
+    className: "text-white  text-lg md:text-xl",
+  },
+  {
+    text: "STANDS",
+    className: "text-white  text-lg md:text-xl",
+  },
+  {
+    text: "OUT",
+    className: "text-white  text-lg md:text-xl",
+  },
+  {
+    text: "FROM",
+    className: "text-white  text-lg md:text-xl",
+  },
+  {
+    text: "THE",
+    className: "text-white  text-lg md:text-xl",
+  },
+  {
+    text: "CROWD",
+    className: "text-white  text-lg md:text-xl",
+  },
+];
+
+export interface Service {
+  id: number;
+  title: string;
+  description: string;
+  icon: string;
+  technologies: string[];
+  features: string[];
+}
+
+export const services: Service[] = [
+  {
+    id: 1,
+    title: "Custom Websites (Frontend)",
+    description: "Modern, responsive frontend websites designed to engage users with stunning visuals and seamless interactions.",
+    icon: "code",
+    technologies: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Angular", "Vue", "Tailwind CSS"],
+    features: [
+      "SEO-optimized structure",
+      "Responsive and adaptive design",
+      "Interactive user interfaces",
+      "Fast load times with lazy loading",
+      "Cross-browser compatibility",
+      "Accessibility (WCAG) compliance",
+      "Content management system (CMS) integration",
+      "Server side rendering (SSR) and static site generation (SSG)",
+      "Progressive web app (PWA) capabilities",
+      "Custom animations and transitions"
+    ]
+  },
+  {
+    id: 2,
+    title: "WordPress Websites",
+    description: "Elegant and powerful WordPress solutions with custom themes and advanced functionality for businesses of all sizes.",
+    icon: "file-text",
+    technologies: ["WordPress", "PHP", "MySQL", "JavaScript", "CSS", "HTML", "Gutenberg"],
+    features: [
+      "User-friendly CMS",
+      "Custom themes and plugins",
+      "Plugin development",
+      "E-commerce integration",
+      "SEO-friendly architecture",
+      "Performance optimization",
+      "Security hardening"
+    ]
+  },
+  {
+    id: 3,
+    title: "E-commerce Websites",
+    description: "Full-featured online stores built with WooCommerce and Shopify to sell products and services effortlessly.",
+    icon: "shopping-cart",
+    technologies: ["WordPress", "WooCommerce", "Shopify", "Stripe"],
+    features: [
+      "Secure payment processing",
+      "Inventory management",
+      "Order tracking and analytics",
+      "Customer accounts and loyalty programs",
+      "Responsive design",
+      "SEO optimization",
+      "Third-party integrations (e.g., PayPal, Shopify Apps)"
+    ]
+  },
+  {
+    id: 4,
+    title: "Backend Development",
+    description: "Robust and scalable backend solutions to power your applications with secure and efficient APIs.",
+    icon: "server",
+    technologies: ["Node.js", "PHP", "Express.js", "Laravel", "MongoDB", "SQL", "Redis", "GraphQL", "REST"],
+    features: [
+      "Rest and GraphQL APIs",
+      "Scalable API development",
+      "Secure authentication (OAuth, JWT)",
+      "Database optimization",
+      "Real-time data processing",
+      "Microservices architecture",
+      "Rate limiting and caching",
+      "API documentation"
+    ]
+  },
+  {
+    id: 5,
+    title: "Application Development",
+    description: "Full-stack mobile applications using React Native and Expo with robust backend integration for iOS and Android.",
+    icon: "smartphone",
+    technologies: ["React Native", "Expo", "JavaScript", "TypeScript", "Firebase", "Node.js", "Express.js", "MongoDB", "SQL", "GraphQL"],
+    features: [
+      "Intuitive user experience",
+      "Offline functionality",
+      "Push notifications",
+      "In-app purchases",
+      "App store optimization",
+      "Real-time data synchronization",
+      "API integration",
+      "Backend with secure APIs",
+      "Cross-platform compatibility",
+      "Custom animations and transitions"
+    ]
+  },
+  {
+    id: 6,
+    title: "Software Solutions",
+    description: "Custom software applications built with modern frameworks to streamline processes and solve complex challenges.",
+    icon: "settings",
+    technologies: ["MERN (MongoDB, Express.js, React, Node.js)", "Electron", "SQL", "Tauri", "TypeScript", "PostgreSQL", "Docker"],
+    features: [
+      "Scalable architecture",
+      "Secure authentication",
+      "Database optimization",
+      "API integration",
+      "Real-time data processing",
+      "User-friendly interfaces",
+      "Cross-platform desktop apps",
+      "Containerized deployment"
+    ]
+  },
+  {
+    id: 7,
+    title: "Cloud Deployment",
+    description: "Seamless cloud deployment solutions to ensure your applications are scalable, secure, and highly available.",
+    icon: "cloud",
+    technologies: ["Docker", "AWS", "Google Cloud", "Kubernetes", "Terraform", "CI/CD", "Jenkins"],
+    features: [
+      "Containerized deployments",
+      "Auto-scaling infrastructure",
+      "High availability and redundancy",
+      "Cost optimization",
+      "Security compliance (e.g., GDPR, HIPAA)",
+      "Continuous integration and deployment",
+      "Monitoring and logging"
+    ]
+  }
+];
+
+export const projects: Project[] = [
+  {
+    "id": 1,
+    "title": "Eggvita",
+    "thumbnail": "/assets/projects/eggvita/thumbnail.png",
+    "category": "website",
+    "desktopImages": [
+      "/assets/projects/eggvita/desktop/1.png",
+      "/assets/projects/eggvita/desktop/2.png",
+      "/assets/projects/eggvita/desktop/3.png",
+      "/assets/projects/eggvita/desktop/4.png",
+      "/assets/projects/eggvita/desktop/5.png",
+      "/assets/projects/eggvita/desktop/6.png",
+      "/assets/projects/eggvita/desktop/7.png",
+      "/assets/projects/eggvita/desktop/8.png",
+      "/assets/projects/eggvita/desktop/9.png",
+      "/assets/projects/eggvita/desktop/10.png",
+      "/assets/projects/eggvita/desktop/11.png",
+      "/assets/projects/eggvita/desktop/12.png",
+      "/assets/projects/eggvita/desktop/13.png",
+      "/assets/projects/eggvita/desktop/14.png",
+      "/assets/projects/eggvita/desktop/15.png"
+    ],
+    "mobileImages": [
+      "/assets/projects/eggvita/mobile/1.png",
+      "/assets/projects/eggvita/mobile/2.png",
+      "/assets/projects/eggvita/mobile/3.png",
+      "/assets/projects/eggvita/mobile/4.png",
+      "/assets/projects/eggvita/mobile/5.png",
+      "/assets/projects/eggvita/mobile/6.png",
+      "/assets/projects/eggvita/mobile/7.png",
+      "/assets/projects/eggvita/mobile/8.png",
+      "/assets/projects/eggvita/mobile/9.png",
+      "/assets/projects/eggvita/mobile/10.png",
+      "/assets/projects/eggvita/mobile/11.png",
+      "/assets/projects/eggvita/mobile/12.png",
+      "/assets/projects/eggvita/mobile/13.png",
+      "/assets/projects/eggvita/mobile/14.png",
+      "/assets/projects/eggvita/mobile/15.png"
+    ],
+    "imagesAlt": [
+      "Home/Hero Section",
+      "Why Our Eggs Section",
+      "Farm To Plate Section",
+      "Benefits of Having Eggs Section",
+      "Products Section",
+      "Premium Quality Diet Chart Section",
+      "Contact Us Section",
+      "Interactive & Creative Footer",
+      "Why Choose Eggvita Page",
+      "Why Choose Eggvita Page",
+      "Products Page",
+      "About Us Page",
+      "About Us Page",
+      "Contact Us Page",
+      "Testimonial Page"
+    ],
+    "description": "Eggvita’s responsive website showcases premium egg products from Anand City, emphasizing sustainable farming with dynamic visuals and intuitive navigation.",
+    "technologies": ["HTML", "CSS", "JavaScript", "React.js", "TailwindCSS", "Framer Motion", "Material UI", "Lottie Animation"],
+    "client": {
+      "name": "Eggvita",
+      "intro": "Eggvita is a leading poultry farming brand committed to delivering high-quality egg products with a focus on sustainability.",
+      "industry": "Food & Agriculture",
+      "country": "India"
+    },
+    "problem_statement": "Eggvita lacked a robust digital presence to reflect their legacy, promote premium products, and engage a broader audience, relying on minimal online visibility.",
+    "features": [
+      "Responsive design for cross-device compatibility",
+      "Dynamic visuals with Framer Motion and Lottie animations",
+      "Intuitive navigation for seamless user experience",
+      "Transparent storytelling about sustainable practices",
+      "SEO optimization for enhanced search visibility"
+    ],
+    "results": "The website increased customer inquiries by 40% and boosted online engagement by 25%, strengthening Eggvita’s brand trust and market reach.",
+    "journey": "The journey with Eggvita began with their vision to establish a strong digital presence. We collaborated to design a visually captivating website using React.js, TailwindCSS, and animations with Framer Motion and Lottie. The responsive design ensures flawless performance across devices, while transparent storytelling builds audience trust.",
+    "url": "https://eggvita.in"
+  },
+  {
+    "id": 2,
+    "title": "Reva-Clublife",
+    "thumbnail": "/assets/projects/clublife/thumbnail.png",
+    "category": "website",
+    "desktopImages": [
+      "/assets/projects/clublife/desktop/1.png",
+      "/assets/projects/clublife/desktop/2.png",
+      "/assets/projects/clublife/desktop/3.png",
+      "/assets/projects/clublife/desktop/4.png",
+      "/assets/projects/clublife/desktop/5.png",
+      "/assets/projects/clublife/desktop/6.png",
+      "/assets/projects/clublife/desktop/7.png",
+      "/assets/projects/clublife/desktop/8.png",
+      "/assets/projects/clublife/desktop/9.png",
+      "/assets/projects/clublife/desktop/10.png",
+      "/assets/projects/clublife/desktop/11.png",
+      "/assets/projects/clublife/desktop/12.png",
+
+    ],
+    "mobileImages": [
+      "/assets/projects/clublife/mobile/1.png",
+      "/assets/projects/clublife/mobile/2.png",
+      "/assets/projects/clublife/mobile/3.png",
+      "/assets/projects/clublife/mobile/4.png",
+      "/assets/projects/clublife/mobile/5.png",
+      "/assets/projects/clublife/mobile/6.png",
+      "/assets/projects/clublife/mobile/7.png",
+      "/assets/projects/clublife/mobile/8.png",
+      "/assets/projects/clublife/mobile/9.png",
+      "/assets/projects/clublife/mobile/10.png",
+      "/assets/projects/clublife/mobile/11.png",
+      "/assets/projects/clublife/mobile/12.png"
+    ],
+    "imagesAlt": [
+      "Home/Hero Section",
+      "About Us Section",
+      "Project Plans Section",
+      "Project Plans Image View",
+      "Project Gallery Section",
+      "Project Gallery Image View",
+      "Luxury Amenities Section",
+      "Luxury Specifications Section",
+      "Testimonials Section",
+      "Contact Us Section",
+      "Live Location Section",
+      "Interactive & Creative Footer",
+      
+    ],
+    "description": "Reva-Clublife’s website promotes a premium residential project with elegant design and interactive features to captivate potential buyers.",
+    "technologies": ["HTML", "CSS", "JavaScript", "React.js", "TailwindCSS", "AOS Animation", "Google Maps API"],
+    "client": {
+      "name": "Reva Developers",
+      "intro": "Reva Developers specializes in upscale residential and commercial real estate projects in India.",
+      "industry": "Real Estate & Construction",
+      "country": "India"
+    },
+    "problem_statement": "Reva Developers needed a modern platform to showcase Clublife’s premium amenities and drive conversions, as their existing marketing lacked interactivity.",
+    "features": [
+      "Dynamic interface with AOS animations",
+      "Interactive Google Maps for location exploration",
+      "Responsive design for all devices",
+      "High-quality visuals of project amenities",
+      "Lead capture forms for inquiries"
+    ],
+    "results": "The website drove a 35% increase in inquiries and 20% rise in conversions, positioning Clublife as a top-tier residential project.",
+    "journey": "We worked with Reva Developers to create a digital showcase for Clublife. Using React.js, TailwindCSS, and AOS animations, we built a dynamic and elegant platform. Google Maps API integration added interactivity, and iterative feedback ensured the site met their goals of attracting premium buyers.",
+    "url": "https://clublife.revadevelopers.com/"
+  },
+  {
+    "id": 3,
+    "title": "Reva-Landmark",
+    "thumbnail": "/assets/projects/landmark/thumbnail.png",
+    "category": "website",
+    "desktopImages": [
+      "/assets/projects/landmark/desktop/1.png",
+      "/assets/projects/landmark/desktop/2.png",
+      "/assets/projects/landmark/desktop/3.png",
+      "/assets/projects/landmark/desktop/4.png",
+      "/assets/projects/landmark/desktop/5.png",
+      "/assets/projects/landmark/desktop/6.png",
+      "/assets/projects/landmark/desktop/7.png",
+      "/assets/projects/landmark/desktop/8.png",
+      "/assets/projects/landmark/desktop/9.png"
+    ],
+    "mobileImages": [
+      "/assets/projects/landmark/mobile/1.png",
+      "/assets/projects/landmark/mobile/2.png",
+      "/assets/projects/landmark/mobile/3.png",
+      "/assets/projects/landmark/mobile/4.png",
+      "/assets/projects/landmark/mobile/5.png",
+      "/assets/projects/landmark/mobile/6.png",
+      "/assets/projects/landmark/mobile/7.png",
+      "/assets/projects/landmark/mobile/8.png",
+      "/assets/projects/landmark/mobile/9.png"
+    ],
+    "imagesAlt": [
+      "Home/Hero Section",
+      "About Us Section",
+      "Project Plans Section",
+      "Project Plans Image View",
+      "Project Gallery Section",
+      "Project Gallery Image View",
+      "Luxury Amenities Section",
+      "Luxury Specifications Section",
+      "Testimonials Section",
+      "Contact Us Section",
+      "Live Location Section",
+      "Interactive & Creative Footer",
+    ],
+    "description": "Reva-Landmark’s sleek website promotes a premium commercial project with interactive elements and responsive design.",
+    "technologies": ["HTML", "CSS", "JavaScript", "React.js", "TailwindCSS", "AOS Animation", "Google Maps API"],
+    "client": {
+      "name": "Reva Developers",
+      "intro": "Reva Developers creates landmark real estate projects that redefine commercial and residential spaces.",
+      "industry": "Real Estate & Construction",
+      "country": "India"
+    },
+    "problem_statement": "Reva Developers required a sophisticated platform to position Reva-Landmark as a top-tier business hub, targeting investors with a modern digital presence.",
+    "features": [
+      "Sophisticated AOS animations for smooth transitions",
+      "Interactive Google Maps for location showcasing",
+      "Responsive design for cross-device access",
+      "Detailed project information for investors",
+      "Lead capture forms for business inquiries"
+    ],
+    "results": "The website increased investor interest by 30% and improved inquiries by 15%, establishing Reva-Landmark as a premium commercial hub.",
+    "journey": "We collaborated with Reva Developers to translate their vision for Reva-Landmark into a digital experience. Using React.js, TailwindCSS, and AOS animations, we built a responsive platform. Google Maps API integration highlighted the project’s prime location, attracting investors through iterative refinements.",
+    "url": "https://landmark.revadevelopers.com/"
+  },
+  {
+    "id": 4,
+    "title": "The One Academy",
+    "thumbnail": "/assets/projects/oneacademy/thumbnail.png",
+    "category": "website",
+    "desktopImages": [
+      "/assets/projects/oneacademy/desktop/1.png",
+      "/assets/projects/oneacademy/desktop/2.png",
+      "/assets/projects/oneacademy/desktop/3.png",
+      "/assets/projects/oneacademy/desktop/4.png",
+      "/assets/projects/oneacademy/desktop/5.png",
+      "/assets/projects/oneacademy/desktop/6.png",
+      "/assets/projects/oneacademy/desktop/7.png"   
+    ],
+    "mobileImages": [
+      "/assets/projects/oneacademy/mobile/1.png",
+      "/assets/projects/oneacademy/mobile/2.png",
+      "/assets/projects/oneacademy/mobile/3.png",
+      "/assets/projects/oneacademy/mobile/4.png",
+      "/assets/projects/oneacademy/mobile/5.png",
+      "/assets/projects/oneacademy/mobile/6.png",
+      "/assets/projects/oneacademy/mobile/7.png",    
+    ],
+    "imagesAlt": [
+      "Home/Hero Section",
+      "Courses Section",
+      "Why The One Academy Section",
+      "Instructors Section",
+      "Testimonials Section",
+      "Contact Us Form Section",
+      "Contact Us Section",
+      "Interactive & Creative Footer",
+
+    ],
+    "description": "The One Academy’s vibrant landing page promotes educational programs with Lottie animations and modern design to engage students.",
+    "technologies": ["HTML", "CSS", "JavaScript", "Lottie Animation", "PHP"],
+    "client": {
+      "name": "The One Academy",
+      "intro": "The One Academy offers specialized training programs in branding and creative fields.",
+      "industry": "Education & Training",
+      "country": "India"
+    },
+    "problem_statement": "The One Academy needed a standout landing page to attract enrollments in a competitive education sector, replacing an outdated digital presence.",
+    "features": [
+      "Dynamic Lottie animations for visual appeal",
+      "Clean and intuitive layout",
+      "PHP-powered backend functionality",
+      "Mobile-optimized design",
+      "Call-to-action buttons for enrollments"
+    ],
+    "results": "The landing page boosted enrollment inquiries by 50% and enhanced brand visibility, making The One Academy a preferred choice for students.",
+    "journey": "We designed a visually striking landing page for The One Academy, using Lottie animations and PHP for dynamic effects and functionality. The clean layout and iterative feedback ensured an engaging user experience that drives enrollments.",
+    "url": "https://onebrandingacademy.com/"
+  },
+  {
+    "id": 5,
+    "title": "Vashilla Industries",
+    "thumbnail": "/assets/projects/vashilla/thumbnail.png",
+    "category": "website",
+    "desktopImages": [
+      "/assets/projects/vashilla/desktop/1.png",
+      "/assets/projects/vashilla/desktop/2.png",
+      "/assets/projects/vashilla/desktop/3.png",
+      "/assets/projects/vashilla/desktop/4.png",
+      "/assets/projects/vashilla/desktop/5.png",
+      "/assets/projects/vashilla/desktop/6.png",
+      "/assets/projects/vashilla/desktop/7.png",
+      "/assets/projects/vashilla/desktop/8.png",
+      "/assets/projects/vashilla/desktop/9.png",
+      "/assets/projects/vashilla/desktop/10.png",
+      "/assets/projects/vashilla/desktop/11.png",
+      "/assets/projects/vashilla/desktop/12.png",
+      "/assets/projects/vashilla/desktop/13.png",
+    ],
+    "mobileImages": [
+      "/assets/projects/vashilla/mobile/1.png",
+      "/assets/projects/vashilla/mobile/2.png",
+      "/assets/projects/vashilla/mobile/3.png",
+      "/assets/projects/vashilla/mobile/4.png",
+      "/assets/projects/vashilla/mobile/5.png",
+      "/assets/projects/vashilla/mobile/6.png",
+      "/assets/projects/vashilla/mobile/7.png",
+      "/assets/projects/vashilla/mobile/8.png",
+      "/assets/projects/vashilla/mobile/9.png",
+      "/assets/projects/vashilla/mobile/10.png",
+      "/assets/projects/vashilla/mobile/11.png",
+      "/assets/projects/vashilla/mobile/12.png",
+      "/assets/projects/vashilla/mobile/13.png"
+    ],
+    "imagesAlt": [
+      "Home/Hero Section",
+      "Types of Products Section",
+      "Our Mission and Vision Section",
+      "Testimonials Section",
+      "About Us Page",
+      "Products Page",
+      "What We Trade Page",
+      "Contact Us Page",
+      "Contact Us Page",
+      "Location Section",
+      "Blogs Page",
+      "Interactive & Creative Footer",
+    ],
+    "description": "Vashilla Industries’ modern website showcases agricultural products with intuitive navigation and robust functionality using WordPress.",
+    "technologies": ["WordPress", "Elementor", "JavaScript", "PHP"],
+    "client": {
+      "name": "Vashilla Industries",
+      "intro": "Vashilla Industries is a leading supplier of agricultural products, focusing on quality and retail innovation.",
+      "industry": "Agricultural Products & Retail",
+      "country": "USA"
+    },
+    "problem_statement": "Vashilla Industries needed a digital platform to expand market reach, replacing an outdated website that lacked product showcase flexibility.",
+    "features": [
+      "Customizable WordPress platform with Elementor",
+      "Interactive product showcases",
+      "Responsive design for all devices",
+      "Easy navigation for user convenience",
+      "SEO optimization for search visibility"
+    ],
+    "results": "The website increased online sales by 30% and enhanced brand credibility, supporting Vashilla Industries’ market expansion.",
+    "journey": "We leveraged WordPress and Elementor to create a flexible website for Vashilla Industries. JavaScript and PHP added interactivity, while clear product showcases and navigation supported their expansion into new markets through close collaboration.",
+    "url": "https://vashilaindustries.com/"
+  },
+  {
+    "id": 6,
+    "title": "AvranceCorp Development",
+    "thumbnail": "/assets/projects/avrancecorp/thumbnail.png",
+    "category": "website",
+    "desktopImages": [
+      "/assets/projects/avrancecorp/desktop/1.png",
+      "/assets/projects/avrancecorp/desktop/2.png",
+      "/assets/projects/avrancecorp/desktop/3.png",
+      "/assets/projects/avrancecorp/desktop/4.png",
+      "/assets/projects/avrancecorp/desktop/5.png",
+      "/assets/projects/avrancecorp/desktop/6.png",
+      "/assets/projects/avrancecorp/desktop/7.png",
+      "/assets/projects/avrancecorp/desktop/8.png",
+      "/assets/projects/avrancecorp/desktop/9.png",
+      "/assets/projects/avrancecorp/desktop/10.png",
+    ],
+    "mobileImages": [
+      "/assets/projects/avrancecorp/mobile/1.png",
+      "/assets/projects/avrancecorp/mobile/2.png",
+      "/assets/projects/avrancecorp/mobile/3.png",
+      "/assets/projects/avrancecorp/mobile/4.png",
+      "/assets/projects/avrancecorp/mobile/5.png",
+      "/assets/projects/avrancecorp/mobile/6.png",
+      "/assets/projects/avrancecorp/mobile/7.png",
+      "/assets/projects/avrancecorp/mobile/8.png",
+      "/assets/projects/avrancecorp/mobile/9.png",
+      "/assets/projects/avrancecorp/mobile/10.png",
+    ],
+    "imagesAlt": [
+      "Home/Hero Section",
+      "Projects Section",
+      "Blogs Section",
+      "Footer Section",
+      "Our Team Page",
+      "Our Projects Page",
+      "Project Page",
+      "Enlarge Image View of Project",
+      "Contact Us Form Page",
+      "Location Page",
+    ],
+    "description": "AvranceCorp’s professional website showcases real estate projects with elegant design and robust functionality using WordPress.",
+    "technologies": ["WordPress", "Elementor", "JavaScript", "PHP", "SQL"],
+    "client": {
+      "name": "AvranceCorp Development",
+      "intro": "AvranceCorp Development is a leading real estate firm specializing in innovative architectural designs.",
+      "industry": "Architecture & Design",
+      "country": "Canada"
+    },
+    "problem_statement": "AvranceCorp needed a sophisticated website to showcase their portfolio globally, replacing a site lacking modern design and data efficiency.",
+    "features": [
+      "Flexible WordPress platform with Elementor",
+      "Interactive portfolio showcases",
+      "SQL-powered data management",
+      "Responsive design for cross-device access",
+      "High-quality project visuals"
+    ],
+    "results": "The website increased project inquiries by 25% and strengthened brand credibility, attracting clients across North America.",
+    "journey": "We created a sophisticated WordPress platform for AvranceCorp using Elementor, JavaScript, PHP, and SQL. The responsive design and high-quality visuals showcase their portfolio, supporting business objectives through iterative refinements.",
+    "url": "https://avrancecorp.com/"
+  },
+  {
+    "id": 7,
+    "title": "Best Value Distributors",
+    "thumbnail": "/assets/projects/bestvaluedist/thumbnail.png",
+    "category": "website",
+    "desktopImages": [
+      "/assets/projects/bestvaluedist/desktop/1.png",
+      "/assets/projects/bestvaluedist/desktop/2.png",
+      "/assets/projects/bestvaluedist/desktop/3.png",
+      "/assets/projects/bestvaluedist/desktop/4.png",
+      "/assets/projects/bestvaluedist/desktop/5.png",
+      "/assets/projects/bestvaluedist/desktop/6.png",
+      "/assets/projects/bestvaluedist/desktop/7.png",
+      "/assets/projects/bestvaluedist/desktop/8.png",
+    ],
+    "mobileImages": [
+      "/assets/projects/bestvaluedist/mobile/1.png",
+      "/assets/projects/bestvaluedist/mobile/2.png",
+      "/assets/projects/bestvaluedist/mobile/3.png",
+      "/assets/projects/bestvaluedist/mobile/4.png",
+      "/assets/projects/bestvaluedist/mobile/5.png",
+      "/assets/projects/bestvaluedist/mobile/6.png",
+      "/assets/projects/bestvaluedist/mobile/7.png",
+      "/assets/projects/bestvaluedist/mobile/8.png",
+    ],
+    "imagesAlt": [
+     "Home/Hero Section",
+     "Products Section",
+     "Contact Us Section",
+     "Contact Us Section",
+     "Interactive & Creative Footer",
+     "About Us Page",
+     "Products Page",
+     "About Us Page",
+    ],
+    "description": "Best Value Distributors’ e-commerce platform supports wholesale operations with secure transactions and seamless product browsing.",
+    "technologies": ["WordPress", "Elementor", "WooCommerce", "JavaScript", "PHP"],
+    "client": {
+      "name": "Best Value Distributors",
+      "intro": "Best Value Distributors provides a wide range of products to retailers across the USA.",
+      "industry": "Wholesale & Distribution",
+      "country": "USA"
+    },
+    "problem_statement": "Best Value Distributors required a scalable e-commerce platform to streamline wholesale operations, replacing an inefficient system.",
+    "features": [
+      "WooCommerce-powered e-commerce functionality",
+      "Secure transaction processing",
+      "Seamless product browsing and filtering",
+      "Responsive design for accessibility",
+      "Custom wholesale functionalities"
+    ],
+    "results": "The platform increased online sales by 45% and simplified product management, improving client relationships and efficiency.",
+    "journey": "We built a scalable WordPress and WooCommerce platform for Best Value Distributors, using Elementor, JavaScript, and PHP. Custom functionalities and a secure design streamlined operations and boosted sales through detailed consultations.",
+    "url": "https://bestvaluedist.com/"
+  },
+  {
+    "id": 8,
+    "title": "121 PCO Training",
+    "thumbnail": "/assets/projects/121pco/thumbnail.png",
+    "category": "website",
+    "desktopImages": [
+      "/assets/projects/121pco/desktop/1.png",
+      "/assets/projects/121pco/desktop/2.png",
+      "/assets/projects/121pco/desktop/3.png",
+      "/assets/projects/121pco/desktop/4.png",
+      "/assets/projects/121pco/desktop/5.png",
+      "/assets/projects/121pco/desktop/6.png",
+      "/assets/projects/121pco/desktop/7.png",
+      "/assets/projects/121pco/desktop/8.png",
+      "/assets/projects/121pco/desktop/9.png",
+      "/assets/projects/121pco/desktop/10.png"
+    ],
+    "mobileImages": [
+      "/assets/projects/121pco/mobile/1.png",
+      "/assets/projects/121pco/mobile/2.png",
+      "/assets/projects/121pco/mobile/3.png",
+      "/assets/projects/121pco/mobile/4.png",
+      "/assets/projects/121pco/mobile/5.png",
+      "/assets/projects/121pco/mobile/6.png",
+      "/assets/projects/121pco/mobile/7.png",
+      "/assets/projects/121pco/mobile/8.png",
+      "/assets/projects/121pco/mobile/9.png",
+      "/assets/projects/121pco/mobile/10.png"
+    ],
+    "imagesAlt": [
+      "Home/Hero section",
+      "Home/Hero section",
+      "Are You Ready Section",
+      "Our Expertise Section",
+      "Testimonails Section",
+      "Training Program Section",
+      "Latest News Section",
+      "Interactive & Creative Footer",
+      "Mock Test Page",
+      "Blog Page",      
+
+    ],
+    "description": "121 PCO Training’s website promotes specialized training programs with clear navigation and engaging content for students.",
+    "technologies": ["WordPress", "Elementor", "JavaScript", "PHP", "SQL"],
+    "client": {
+      "name": "121 PCO Training",
+      "intro": "121 PCO Training helps students pass topographical tests for professional certifications.",
+      "industry": "Education & Training",
+      "country": "UK"
+    },
+    "problem_statement": "121 PCO Training needed a platform to enhance credibility and attract students, replacing a site lacking engaging content.",
+    "features": [
+      "Flexible WordPress platform with Elementor",
+      "Interactive training program showcases",
+      "SQL-powered data management",
+      "Responsive design for all devices",
+      "Engaging visuals and content"
+    ],
+    "results": "The website increased student inquiries by 40% and enhanced credibility, supporting student success.",
+    "journey": "We designed a WordPress platform for 121 PCO Training using Elementor, JavaScript, PHP, and SQL. The clear navigation and engaging visuals improved user experience, supporting their mission through collaborative efforts.",
+    "url": "https://121pcotraining.com/"
+  },
+  {
+    "id": 9,
+    "title": "Employee and Payroll Management System",
+    "thumbnail": "/assets/projects/ems/thumbnail.png",
+    "category": "software",
+    "desktopImages": [
+      "/assets/projects/ems/desktop/1.png",
+      "/assets/projects/ems/desktop/2.png",
+      "/assets/projects/ems/desktop/3.png",
+      "/assets/projects/ems/desktop/4.png",
+      "/assets/projects/ems/desktop/5.png",
+      "/assets/projects/ems/desktop/6.png",
+      "/assets/projects/ems/desktop/7.png",
+      "/assets/projects/ems/desktop/8.png",
+      "/assets/projects/ems/desktop/9.png",
+      "/assets/projects/ems/desktop/10.png",
+      "/assets/projects/ems/desktop/11.png",
+      "/assets/projects/ems/desktop/12.png",
+      "/assets/projects/ems/desktop/13.png",
+      "/assets/projects/ems/desktop/14.png",
+      "/assets/projects/ems/desktop/15.png",
+      "/assets/projects/ems/desktop/16.png",
+      "/assets/projects/ems/desktop/17.png",
+      "/assets/projects/ems/desktop/18.png",
+      "/assets/projects/ems/desktop/19.png",
+      "/assets/projects/ems/desktop/20.png",
+      "/assets/projects/ems/desktop/21.png",
+      "/assets/projects/ems/desktop/22.png",
+      "/assets/projects/ems/desktop/23.png",
+      "/assets/projects/ems/desktop/24.png",
+      "/assets/projects/ems/desktop/25.png",
+      "/assets/projects/ems/desktop/26.png",
+    ],
+    "mobileImages": [
+      "/assets/projects/ems/mobile/1.png",
+      "/assets/projects/ems/mobile/2.png",
+      "/assets/projects/ems/mobile/3.png",
+      "/assets/projects/ems/mobile/4.png",
+      "/assets/projects/ems/mobile/5.png",
+      "/assets/projects/ems/mobile/6.png",
+      "/assets/projects/ems/mobile/7.png",
+      "/assets/projects/ems/mobile/8.png",
+      "/assets/projects/ems/mobile/9.png",
+      "/assets/projects/ems/mobile/10.png",
+      "/assets/projects/ems/mobile/11.png",
+      "/assets/projects/ems/mobile/12.png",
+      "/assets/projects/ems/mobile/13.png",
+      "/assets/projects/ems/mobile/14.png",
+      "/assets/projects/ems/mobile/15.png",
+      "/assets/projects/ems/mobile/16.png",
+      "/assets/projects/ems/mobile/17.png",
+      "/assets/projects/ems/mobile/18.png",
+      "/assets/projects/ems/mobile/19.png",
+      "/assets/projects/ems/mobile/20.png",
+      "/assets/projects/ems/mobile/21.png",
+      "/assets/projects/ems/mobile/22.png",
+      "/assets/projects/ems/mobile/23.png",
+      "/assets/projects/ems/mobile/24.png",
+      "/assets/projects/ems/mobile/25.png",
+      "/assets/projects/ems/mobile/26.png",
+    ],
+    "imagesAlt": [
+      "Home Screen",
+      "Login Screen",
+      "Admin Dashboard: Dashboard Home",
+      "Admin Dashboard: Attendance Management Screen",
+      "Admin Dashboard: Attendance Management Screen",
+      "Admin Dashboard: Employee Management Screen",
+      "Admin Dashboard: Employee Profile Screen",
+      "Admin Dashboard: Employee Leaves Screen",
+      "Admin Dashboard: Employee Attendance Screen",
+      "Admin Dashboard: Employee Attendance Screen",
+      "Admin Dashboard: Employee Attendance Screen",
+      "Admin Dashboard: Employee Attendance Screen",
+      "Admin Dashboard: Salary Management Screen",
+      "Admin Dashboard: Salary Profile Screen",
+      "Admin Dashboard: Salary Overview Screen",
+      "Admin Dashboard: Leaves Management Screen",
+      "Admin Dashboard: Leaves Update Screen",
+      "Admin Dashboard: Personal Setting Screen",
+      "Admin Dashboard: Attendance Setting Screen",
+      "Employee Dashboard : Dashboard Home",
+      "Employee Dashboard : Attendance Screen",
+      "Employee Dashboard : Attendance History Stats Screen",
+      "Employee Dashboard : Attendance History Screen",
+      "Employee Dashboard : Leave Screen",
+      "Employee Dashboard : Holiday Screen",
+      "Employee Dashboard : Settings Screen"
+    ],
+    "description": "This system streamlines HR operations with robust features for efficient employee and payroll management.",
+    "technologies": ["JavaScript", "Electron.js", "React", "Node.js", "Express", "MongoDB", "Cloudinary", "TailwindCSS", "D3.js", "excel.js"],
+    "client": {
+      "name": "In House Project",
+      "intro": "An in-house project to optimize internal HR processes for operational efficiency.",
+      "industry": "Operations & Management",
+      "country": "India"
+    },
+    "problem_statement": "The organization needed an in-house solution to automate HR processes, reducing manual errors and improving efficiency.",
+    "features": [
+      "Employee management",
+      "Payroll processing",
+      "Attendance tracking",
+      "Leave management",
+      "Reporting and analytics",
+      "User-friendly interface",
+      "Secure data storage",
+      "Customizable settings",
+      "Integration with accounting software",
+      "Mobile-friendly design",
+      "Multi-user access"
+    ],
+    "results": "The system reduced HR processing time by 50% and eliminated manual errors, improving decision-making and efficiency.",
+    "journey": "We developed a scalable system using Electron.js, React, Node.js, Express, and MongoDB. TailwindCSS and D3.js ensured a sleek interface and insightful analytics, delivering value through rigorous testing."
+  },
+  {
+    "id": 10,
+    "title": "Hospital Management System",
+    "thumbnail": "/assets/projects/healthcare/thumbnail.png",
+    "category": "software",
+    "desktopImages": [
+      "/assets/projects/healthcare/desktop/1.png",
+      "/assets/projects/healthcare/desktop/2.png",
+      "/assets/projects/healthcare/desktop/3.png",
+      "/assets/projects/healthcare/desktop/4.png",
+      "/assets/projects/healthcare/desktop/5.png",
+      "/assets/projects/healthcare/desktop/6.png",
+      "/assets/projects/healthcare/desktop/7.png",
+      "/assets/projects/healthcare/desktop/8.png",
+      "/assets/projects/healthcare/desktop/9.png",
+      "/assets/projects/healthcare/desktop/10.png",
+      "/assets/projects/healthcare/desktop/11.png",
+      "/assets/projects/healthcare/desktop/12.png",
+      "/assets/projects/healthcare/desktop/13.png",
+      "/assets/projects/healthcare/desktop/14.png",
+      "/assets/projects/healthcare/desktop/15.png",
+      "/assets/projects/healthcare/desktop/16.png",
+      "/assets/projects/healthcare/desktop/17.png"
+    ],
+    "mobileImages": [
+      "/assets/projects/healthcare/mobile/1.png",
+      "/assets/projects/healthcare/mobile/2.png",
+      "/assets/projects/healthcare/mobile/3.png",
+      "/assets/projects/healthcare/mobile/4.png",
+      "/assets/projects/healthcare/mobile/5.png",
+      "/assets/projects/healthcare/mobile/6.png",
+      "/assets/projects/healthcare/mobile/7.png",
+      "/assets/projects/healthcare/mobile/8.png",
+      "/assets/projects/healthcare/mobile/9.png",
+      "/assets/projects/healthcare/mobile/10.png",
+      "/assets/projects/healthcare/mobile/11.png",
+      "/assets/projects/healthcare/mobile/12.png",
+      "/assets/projects/healthcare/mobile/13.png",
+      "/assets/projects/healthcare/mobile/14.png",
+      "/assets/projects/healthcare/mobile/15.png",
+      "/assets/projects/healthcare/mobile/16.png",
+      "/assets/projects/healthcare/mobile/17.png"
+    ],
+    "imagesAlt": [
+      "Home Screen",
+      "Login Screen",
+      "Admin Dashboard: User Management",
+      "Admin Dashboard: Add New User",
+      "Admin Dashboard: User List",
+      "Admin Dashboard: Inventory Management",
+      "Admin Dashboard: Inventory List",
+      "Admin Dashboard: Patient Management",
+      "Admin Dashboard: Patient Profile View",
+      "Admin Dashboard: Patient Visit History",
+      "Admin Dashboard: Payment Management",
+      "Admin Dashboard: Issue Management",
+      "Admin Dashboard: Create New Issue",
+      "Admin Dashboard: Issue Details",
+      "Admin Dashboard: Settings Tab",
+      "Admin Dashboard: Location, Info, Education & Experience",
+      "Admin Dashboard: Fees Management"
+    ],
+    "description": "This system enhances healthcare operations with comprehensive features for patient care and administrative tasks.",
+    "technologies": [
+      "JavaScript",
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Cloudinary",
+      "TailwindCSS",
+      "D3.js",
+      "excel.js"
+    ],
+    "client": {
+      "name": "Himalaya Hospital",
+      "intro": "Himalaya Hospital is a leading healthcare provider committed to quality patient care.",
+      "industry": "Healthcare",
+      "country": "India"
+    },
+    "problem_statement": "Himalaya Hospital needed a solution to modernize operations and streamline patient care, replacing fragmented systems.",
+    "features": [
+      "Patient management",
+      "Appointment scheduling",
+      "Billing and invoicing",
+      "Inventory management",
+      "Reporting and analytics",
+      "User-friendly interface",
+      "Secure data storage",
+      "Customizable settings",
+      "Integration with accounting software",
+      "Mobile-friendly design",
+      "Multi-user access"
+    ],
+    "results": "The system improved patient care efficiency by 35% and reduced administrative overhead by 40%, enhancing decision-making.",
+    "journey": "We developed a comprehensive system for Himalaya Hospital using React, Node.js, Express, and MongoDB. TailwindCSS and D3.js enabled an intuitive interface and advanced analytics, supporting quality healthcare through collaboration."
+  }
+  
+];  
