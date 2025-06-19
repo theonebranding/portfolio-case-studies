@@ -30,7 +30,7 @@ const CosmicNebulaMastercard: React.FC<CosmicNebulaMastercardProps> = ({
   theme = {
     primaryColor: "#FFD700", // Bright gold/yellow
     secondaryColor: "#000", // Dark black
-    glowColor: "rgba(255, 215, 0, 0.7)", // Gold/yellow glow
+    glowColor: "rgba(255, 215, 0, 0.8)", // Gold/yellow glow
   },
   logoText = { topText: "The One Branding", bottomText: "Lets Make Your Business A Brand" },
   height = "310px",
@@ -154,19 +154,20 @@ const CosmicNebulaMastercard: React.FC<CosmicNebulaMastercardProps> = ({
     <div ref={containerRef} className={`perspective-3000 ${className}`} style={{ perspective: "3000px" }}>
       <div
         ref={cardRef}
-        className="relative"
+        className="relative w-full max-w-[480px] mx-auto"
         style={{
           transition: "transform 0.1s ease-out",
           transformStyle: "preserve-3d",
-          width: width,
-          height: height,
+          width: "min(480px, 90vw)",
+          height: "min(310px, 58vw)",
+          aspectRatio: "480/310",
         }}
       >
         {/* Card with yellow and black cosmic design */}
         <div
           className="absolute w-full h-full rounded-3xl overflow-hidden shadow-2xl"
           style={{
-            background: "linear-gradient(15deg, #222222 0%, #000000 50%, #222222 100%)",
+            background: "linear-gradient(15deg, #222222 10%, #000000 50%, #222222 100%)",
             boxShadow: `0 25px 50px -12px ${theme.glowColor}`,
           }}
         >
@@ -226,22 +227,22 @@ const CosmicNebulaMastercard: React.FC<CosmicNebulaMastercardProps> = ({
               <div className="flex items-center gap-4 md:gap-2 sm:gap-3">               
                 <div className="flex flex-col">
                   <span className="text-xs sm:text-sm text-brand-black">{logoText.topText}</span>                 
-                  <span className="text-xs sm:text-sm text-brand-black">{logoText.bottomText}</span>
+                  <span className="text-xs sm:text-sm text-wrap text-brand-black">{logoText.bottomText}</span>
                 </div>
-                <div className="flex flex-col ml-12 md:ml-24">
-                  <span className="text-xs sm:text-sm text-brand-black">{cardholderName}</span>                 
-                  <span className="text-xs sm:text-sm text-brand-black">{phoneNumber}</span>
+                <div className="flex flex-col md:flex-block md:ml-24 mr-4">
+                  <span className="text-xs sm:text-sm text-nowrap text-brand-black">{cardholderName}</span>                 
+                  <span className="text-xs sm:text-sm text-nowrap text-brand-black">{phoneNumber}</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="absolute left-24 md:left-24 top-2 md:-top-6">
+          <div className="absolute left-24 md:left-24 top-6 md:-top-6">
               {!imageError ? (
                   <img
                     src={logoSrc || "/assets/blacklogo.png"}
                     alt="Logo"
-                    className="w-72 h-72 md:h-80 md:w-80 rounded-full"
+                    className="w-36 h-36 md:h-80 md:w-80 rounded-full"
                     onError={handleImageError}
                     width={40}
                     height={40}
@@ -254,11 +255,11 @@ const CosmicNebulaMastercard: React.FC<CosmicNebulaMastercardProps> = ({
           </div>
          
           {/* Card holder name, phone number, email, address, and website */}          
-          <div className="absolute bottom-4 sm:bottom-4 left-0 w-full px-6 sm:px-6">
-            <div className="text-brand-black tracking-wider text-xs font-bold sm:text-sm">{cardholderName}</div>            
-            <div className="text-brand-black tracking-wider text-xs font-bold sm:text-sm">Ph. Number: {phoneNumber}</div>
-            <div className="text-brand-black tracking-wider font-bold text-xs sm:text-sm">Email: {email}</div>
-            <div className="text-brand-black tracking-wider text-xs font-bold sm:text-sm">Address: {address}</div>
+          <div className="absolute bottom-0 sm:bottom-4 left-0 w-full px-6 sm:px-4">
+            <div className="text-brand-black tracking-normal text-xs font-bold md:text-sm">{cardholderName}</div>            
+            <div className="text-brand-black tracking-normal text-xs font-bold md:text-sm">Ph. Number: {phoneNumber}</div>
+            <div className="text-brand-black tracking-normal font-bold text-xs md:text-sm">Email: {email}</div>
+            <div className="text-brand-black -tracking-normal text-xs font-bold md:text-sm">Address: {address}</div>
             {/* <div className="text-brand-black tracking-wider text-xs font-bold sm:text-sm">Website: {website}</div> */}
           </div>
          

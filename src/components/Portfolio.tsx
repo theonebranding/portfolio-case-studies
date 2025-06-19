@@ -13,7 +13,7 @@ const Portfolio = () => {
     (project) => project.category === "software"
   );
 
-  // Function to generate project slug
+   // Function to generate project slug
   const getProjectSlug = (project) => {
     return project.title.toLowerCase().replace(/\s+/g, "-") || project.id;
   };
@@ -60,86 +60,152 @@ const Portfolio = () => {
           </div>
 
           <TabsContent value="websites">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {websiteProjects.map((project) => (
-                <Link
-                  key={project.id}
-                  to={`/project/${getProjectSlug(project)}`}
-                  className="relative group overflow-hidden rounded-lg bg-gray-900 border border-gray-800 hover-card-effect cursor-pointer flex flex-col"
-                >
-                  <div className="aspect-video overflow-hidden">
-                    <img
-                      src={project.thumbnail}
-                      alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                  </div>
-                  <div className="p-6 flex flex-col flex-grow">
-                    <h3 className="text-xl font-bold font-primary text-white mb-2">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-400 line-clamp-3 mb-4 font-secondary">
-                      {project.description}
-                    </p>
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {project.technologies.slice(0, 3).map((tech, index) => (
-                        <span
-                          key={index}
-                          className="bg-gray-800 text-xs text-gray-300 px-2 py-1 rounded-full font-primary"
-                        >
-                          {tech}
-                        </span>
-                      ))}
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+              {websiteProjects.map((project) => {
+                const isInternational = project.client?.country !== 'India';
+                
+                return (
+                  <Link
+                    key={project.id}
+                    to={`/project/${getProjectSlug(project)}`}
+                    className="relative group overflow-hidden rounded-lg bg-gray-900 border border-gray-800 hover-card-effect cursor-pointer flex flex-col"
+                  >
+                    <div className="aspect-video overflow-hidden relative">
+                      <img
+                        src={project.thumbnail}
+                        alt={project.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      {/* Floating Badge */}
+                      <div className={`absolute bottom-3 left-3 px-2 py-1 rounded-md backdrop-blur-sm text-xs font-medium ${
+                        isInternational 
+                          ? 'bg-emerald-500/90 text-white' 
+                          : 'bg-orange-500/90 text-white'
+                      }`}>
+                        {isInternational ? (
+                          <span className="flex items-center">
+                            <img src="../assets/icon/global-icon.png" alt="Global Client" width={16} height={16} className="mr-1" />
+                            International Client
+                          </span>
+                        ) : (
+                          <span className="flex items-center">
+                            <img src="../assets/icon/india-icon.png" alt="Indian Client" width={16} height={16} className="mr-1" />
+                            Indian Client
+                          </span>
+                        )}        
+                      </div>
                     </div>
-                    <div className="flex items-center text-brand-yellow mt-auto">
-                      <span className="text-sm font-medium mr-2">View Project</span>
-                      <ArrowRight size={16} />
+                    <div className="p-6 flex flex-col flex-grow">
+                      <div className="mb-4 flex flex-col items-start">
+                        <h3 className="text-xl font-bold font-primary text-brand-yellow mb-2">
+                          {project.title}
+                        </h3>
+                        
+                        <div className="text-base font-secondary mb-1">
+                          <span className="text-gray-400">Client from </span>
+                          <span className={`font-bold underline-offset-2 underline ${isInternational ? 'text-emerald-400' : 'text-orange-400'}`}>
+                            {project.client?.country}
+                          </span>
+                        </div>
+                      </div> 
+                      
+                      <p className="text-gray-400 line-clamp-3 mb-4 font-secondary">
+                        {project.description}
+                      </p>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {project.technologies.slice(0, 3).map((tech, index) => (
+                          <span
+                            key={index}
+                            className="bg-gray-800 text-xs text-gray-300 px-2 py-1 rounded-full font-primary"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                      <div className="flex items-center text-brand-yellow mt-auto">
+                        <span className="text-sm font-medium mr-2">View Project</span>
+                        <ArrowRight size={16} />
+                      </div>
                     </div>
-                  </div>
-                </Link>
-              ))}
+                  </Link>
+                );
+              })}
             </div>
+                  
           </TabsContent>
 
           <TabsContent value="software">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {softwareProjects.map((project) => (
-                <Link
-                  key={project.id}
-                  to={`/project/${getProjectSlug(project)}`}
-                  className="relative group overflow-hidden rounded-lg bg-gray-900 border border-gray-800 hover-card-effect cursor-pointer flex flex-col"
-                >
-                  <div className="aspect-video overflow-hidden">
-                    <img
-                      src={project.thumbnail}
-                      alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                  </div>
-                  <div className="p-6 flex flex-col flex-grow">
-                    <h3 className="text-xl font-bold text-white mb-2">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-400 line-clamp-3 mb-4">
-                      {project.description}
-                    </p>
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {project.technologies.slice(0, 3).map((tech, index) => (
-                        <span
-                          key={index}
-                          className="bg-gray-800 text-xs text-gray-300 px-2 py-1 rounded-full"
-                        >
-                          {tech}
-                        </span>
-                      ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+              {softwareProjects.map((project) => {
+                const isInternational = project.client?.country !== 'India';
+                
+                return (
+                  <Link
+                    key={project.id}
+                    to={`/project/${getProjectSlug(project)}`}
+                    className="relative group overflow-hidden rounded-lg bg-gray-900 border border-gray-800 hover-card-effect cursor-pointer flex flex-col"
+                  >
+                    <div className="aspect-video overflow-hidden relative">
+                      <img
+                        src={project.thumbnail}
+                        alt={project.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      {/* Floating Badge */}
+                      <div className={`absolute bottom-3 left-3 px-2 py-1 rounded-md backdrop-blur-sm text-xs font-medium ${
+                        isInternational 
+                          ? 'bg-emerald-500/90 text-white' 
+                          : 'bg-orange-500/90 text-white'
+                      }`}>
+                        {isInternational ? (
+                          <span className="flex items-center">
+                            <img src="../assets/icon/global-icon.png" alt="Global Client" width={16} height={16} className="mr-1" />
+                            International Client
+                          </span>
+                        ) : (
+                          <span className="flex items-center">
+                            <img src="../assets/icon/india-icon.png" alt="Indian Client" width={16} height={16} className="mr-1" />
+                            Indian Client
+                          </span>
+                        )}        
+                      </div>
                     </div>
-                    <div className="flex items-center text-brand-yellow mt-auto">
-                      <span className="text-sm font-medium mr-2">View Project</span>
-                      <ArrowRight size={16} />
+                    <div className="p-6 flex flex-col flex-grow">
+                      <div className="mb-4 flex flex-col items-start">
+                        <h3 className="text-xl font-bold font-primary text-brand-yellow mb-2">
+                          {project.title}
+                        </h3>
+                        
+                        <div className="text-base font-secondary mb-1">
+                          <span className="text-gray-400">Client from </span>
+                          <span className={`font-bold underline-offset-2 underline ${isInternational ? 'text-emerald-400' : 'text-orange-400'}`}>
+                            {project.client?.country}
+                          </span>
+                        </div>
+                      </div> 
+                      
+                      <p className="text-gray-400 line-clamp-3 mb-4 font-secondary">
+                        {project.description}
+                      </p>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {project.technologies.slice(0, 3).map((tech, index) => (
+                          <span
+                            key={index}
+                            className="bg-gray-800 text-xs text-gray-300 px-2 py-1 rounded-full font-primary"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                      <div className="flex items-center text-brand-yellow mt-auto">
+                        <span className="text-sm font-medium mr-2">View Project</span>
+                        <ArrowRight size={16} />
+                      </div>
                     </div>
-                  </div>
-                </Link>
-              ))}
+                  </Link>
+                );
+              })}
             </div>
           </TabsContent>
         </Tabs>

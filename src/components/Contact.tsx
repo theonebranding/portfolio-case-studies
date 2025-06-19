@@ -111,7 +111,7 @@ const Contact = () => {
 
             <div className="space-y-6">
               <div className="flex items-start">
-                <div className="relative -left-8 top-8 md:left-4 -mt-0 md:-mt-10">
+                <div className="relative -left-3 top-6 md:left-4 -mt-0 md:-mt-10">
                   <CursorWanderCard />
                 </div>
               </div>
