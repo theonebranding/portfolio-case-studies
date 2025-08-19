@@ -1,7 +1,7 @@
 import { projects } from "@/lib/data";
 import { Link } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import { AnimatedText } from "@/components/ui/animated-underline-text-one";
 import TechnologySlider from "@/components/TechnologySlider";
 
@@ -13,7 +13,7 @@ const Portfolio = () => {
     (project) => project.category === "software"
   );
 
-   // Function to generate project slug
+  // Function to generate project slug
   const getProjectSlug = (project) => {
     return project.title.toLowerCase().replace(/\s+/g, "-") || project.id;
   };
@@ -21,13 +21,13 @@ const Portfolio = () => {
   return (
     <section id="portfolio" className="pb-24 pt-0 bg-brand-black/90">
       <div className="container mx-auto px-6">
-      <div className="relative z-20 mb-20">
-        <h2 className="text-center text-5xl font-bold text-brand-yellow mb-4 font-primary">Technologies We Work With</h2>
-        <p className="text-center text-gray-300 mb-8 font-secondary">Our expertise spans across a wide range of modern technologies.</p>
-        <div className="w-full overflow-hidden bg-gray-800 rounded-lg shadow-lg">
-          <TechnologySlider />
+        <div className="relative z-20 mb-20">
+          <h2 className="text-center text-5xl font-bold text-brand-yellow mb-4 font-primary">Technologies We Work With</h2>
+          <p className="text-center text-gray-300 mb-8 font-secondary">Our expertise spans across a wide range of modern technologies.</p>
+          <div className="w-full overflow-hidden bg-gray-800 rounded-lg shadow-lg">
+            <TechnologySlider />
+          </div>
         </div>
-      </div>
         <AnimatedText
           text="Our Portfolio"
           textClassName="text-7xl font-bold mb-2 text-brand-yellow"
@@ -43,25 +43,26 @@ const Portfolio = () => {
 
         <Tabs defaultValue="websites" className="w-full">
           <div className="flex justify-center mb-10 mt-8 md:mb-16">
-            <TabsList className="bg-gray-900 flex border py-6 px-6 border-brand-black/50 rounded-lg">
+            <TabsList className="bg-gray-900/30 backdrop-blur-lg flex border border-brand-yellow/20 rounded-2xl p-2 shadow-xl transition-all duration-300">
               <TabsTrigger
                 value="websites"
-                className="py-4 px-8 data-[state=active]:bg-brand-yellow data-[state=active]:text-brand-black"
+                className="relative py-3 px-10 text-lg font-semibold text-gray-100 rounded-xl transition-all duration-300 ease-in-out data-[state=active]:bg-brand-yellow data-[state=active]:text-brand-black data-[state=active]:shadow-lg hover:bg-gray-700/50 hover:text-brand-yellow focus:outline-none focus:ring-2 focus:ring-brand-yellow/40 group"
               >
-                Websites
+                <span className="relative z-10">Websites</span>
+                <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-brand-yellow/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 scale-95 group-hover:scale-100" />
               </TabsTrigger>
               <TabsTrigger
                 value="software"
-                className="py-4 px-8 data-[state=active]:bg-brand-yellow data-[state=active]:text-brand-black"
+                className="relative py-3 px-10 text-lg font-semibold text-gray-100 rounded-xl transition-all duration-300 ease-in-out data-[state=active]:bg-brand-yellow data-[state=active]:text-brand-black data-[state=active]:shadow-lg hover:bg-gray-700/50 hover:text-brand-yellow focus:outline-none focus:ring-2 focus:ring-brand-yellow/40 group"
               >
-                Software
+                <span className="relative z-10">Software</span>
+                <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-brand-yellow/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 scale-95 group-hover:scale-100" />
               </TabsTrigger>
             </TabsList>
           </div>
 
           <TabsContent value="websites">
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
               {websiteProjects.map((project) => {
                 const isInternational = project.client?.country !== 'India';
                 
@@ -69,15 +70,14 @@ const Portfolio = () => {
                   <Link
                     key={project.id}
                     to={`/project/${getProjectSlug(project)}`}
-                    className="relative group overflow-hidden rounded-lg bg-gray-900 border border-gray-800 hover-card-effect cursor-pointer flex flex-col"
+                    className="relative group overflow-hidden rounded-xl bg-gray-900 border border-gray-800 hover:shadow-xl transition-shadow duration-300 cursor-pointer flex flex-col"
                   >
                     <div className="aspect-video overflow-hidden relative">
                       <img
                         src={project.thumbnail}
                         alt={project.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
-                      {/* Floating Badge */}
                       <div className={`absolute bottom-3 left-3 px-2 py-1 rounded-md backdrop-blur-sm text-xs font-medium ${
                         isInternational 
                           ? 'bg-emerald-500/90 text-white' 
@@ -101,15 +101,24 @@ const Portfolio = () => {
                         <h3 className="text-xl font-bold font-primary text-brand-yellow mb-2">
                           {project.title}
                         </h3>
-                        
-                        <div className="text-base font-secondary mb-1">
+                        <div className="text-base font-secondary mb-1 flex items-center gap-2">
                           <span className="text-gray-400">Client from </span>
                           <span className={`font-bold underline-offset-2 underline ${isInternational ? 'text-emerald-400' : 'text-orange-400'}`}>
                             {project.client?.country}
                           </span>
+                          {project.url && (
+                            <a
+                              href={project.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center text-sm font-medium text-brand-yellow hover:text-brand-yellow/80 transition-colors duration-200"
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              <ExternalLink size={14} className="ml-1" />
+                            </a>
+                          )}
                         </div>
                       </div> 
-                      
                       <p className="text-gray-400 line-clamp-3 mb-4 font-secondary">
                         {project.description}
                       </p>
@@ -123,20 +132,33 @@ const Portfolio = () => {
                           </span>
                         ))}
                       </div>
-                      <div className="flex items-center text-brand-yellow mt-auto">
-                        <span className="text-sm font-medium mr-2">View Project</span>
-                        <ArrowRight size={16} />
+                      <div className="flex items-center justify-between mt-auto">
+                        <div className="flex items-center text-brand-yellow">
+                          <span className="text-sm font-medium mr-2">View Project</span>
+                          <ArrowRight size={16} />
+                        </div>
+                        {project.url && (
+                          <a
+                            href={project.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center text-sm font-medium text-brand-yellow hover:text-brand-yellow/80 transition-colors duration-200"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            <span className="mr-1">Open Project</span>
+                            <ExternalLink size={16} />
+                          </a>
+                        )}
                       </div>
                     </div>
                   </Link>
                 );
               })}
             </div>
-                  
           </TabsContent>
 
           <TabsContent value="software">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
               {softwareProjects.map((project) => {
                 const isInternational = project.client?.country !== 'India';
                 
@@ -144,15 +166,14 @@ const Portfolio = () => {
                   <Link
                     key={project.id}
                     to={`/project/${getProjectSlug(project)}`}
-                    className="relative group overflow-hidden rounded-lg bg-gray-900 border border-gray-800 hover-card-effect cursor-pointer flex flex-col"
+                    className="relative group overflow-hidden rounded-xl bg-gray-900 border border-gray-800 hover:shadow-xl transition-shadow duration-300 cursor-pointer flex flex-col"
                   >
                     <div className="aspect-video overflow-hidden relative">
                       <img
                         src={project.thumbnail}
                         alt={project.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
-                      {/* Floating Badge */}
                       <div className={`absolute bottom-3 left-3 px-2 py-1 rounded-md backdrop-blur-sm text-xs font-medium ${
                         isInternational 
                           ? 'bg-emerald-500/90 text-white' 
@@ -176,15 +197,25 @@ const Portfolio = () => {
                         <h3 className="text-xl font-bold font-primary text-brand-yellow mb-2">
                           {project.title}
                         </h3>
-                        
-                        <div className="text-base font-secondary mb-1">
+                          {project.url && (
+                            <a
+                              href={project.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center text-sm font-medium text-brand-yellow hover:text-brand-yellow/80 transition-colors duration-200"
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              <span className="mr-1">Open Project <ExternalLink size={14} className="ml-1" /></span>
+                             
+                            </a>
+                          )}
+                        <div className="text-base font-secondary mb-1 flex items-center gap-2">
                           <span className="text-gray-400">Client from </span>
                           <span className={`font-bold underline-offset-2 underline ${isInternational ? 'text-emerald-400' : 'text-orange-400'}`}>
                             {project.client?.country}
                           </span>
                         </div>
                       </div> 
-                      
                       <p className="text-gray-400 line-clamp-3 mb-4 font-secondary">
                         {project.description}
                       </p>
@@ -198,9 +229,23 @@ const Portfolio = () => {
                           </span>
                         ))}
                       </div>
-                      <div className="flex items-center text-brand-yellow mt-auto">
-                        <span className="text-sm font-medium mr-2">View Project</span>
-                        <ArrowRight size={16} />
+                      <div className="flex items-center justify-between mt-auto">
+                        <div className="flex items-center text-brand-yellow">
+                          <span className="text-sm font-medium mr-2">View Details</span>
+                          <ArrowRight size={16} />
+                        </div>
+                        {project.url && (
+                          <a
+                            href={project.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center text-sm font-medium text-brand-yellow hover:text-brand-yellow/80 transition-colors duration-200"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            <span className="mr-1">Open Project</span>
+                            <ExternalLink size={16} />
+                          </a>
+                        )}
                       </div>
                     </div>
                   </Link>

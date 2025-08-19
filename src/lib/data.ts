@@ -227,6 +227,106 @@ export const services: Service[] = [
 export const projects: Project[] = [
   {
     "id": 1,
+    "title": "Rudra Advisory",
+    "thumbnail": "/assets/projects/rudra/thumbnail.png",
+    "category": "website",
+    "desktopImages": [
+      "/assets/projects/rudra/desktop/1.png",
+      "/assets/projects/rudra/desktop/2.png",
+      "/assets/projects/rudra/desktop/3.png",
+      "/assets/projects/rudra/desktop/4.png",
+      "/assets/projects/rudra/desktop/5.png",
+      "/assets/projects/rudra/desktop/6.png",
+      "/assets/projects/rudra/desktop/7.png",
+      "/assets/projects/rudra/desktop/8.png",
+      "/assets/projects/rudra/desktop/9.png",
+      "/assets/projects/rudra/desktop/10.png",
+      "/assets/projects/rudra/desktop/11.png",
+      "/assets/projects/rudra/desktop/12.png",
+      "/assets/projects/rudra/desktop/13.png",
+      "/assets/projects/rudra/desktop/14.png",
+      "/assets/projects/rudra/desktop/15.png",
+      "/assets/projects/rudra/desktop/16.png",
+      "/assets/projects/rudra/desktop/17.png",
+      "/assets/projects/rudra/desktop/18.png",
+      "/assets/projects/rudra/desktop/19.png",
+      "/assets/projects/rudra/desktop/20.png",
+      "/assets/projects/rudra/desktop/21.png",
+      "/assets/projects/rudra/desktop/22.png",
+      "/assets/projects/rudra/desktop/23.png",
+    ],
+    "mobileImages": [
+      "/assets/projects/rudra/mobile/1.png",
+      "/assets/projects/rudra/mobile/2.png",
+      "/assets/projects/rudra/mobile/3.png",
+      "/assets/projects/rudra/mobile/4.png",
+      "/assets/projects/rudra/mobile/5.png",
+      "/assets/projects/rudra/mobile/6.png",
+      "/assets/projects/rudra/mobile/7.png",
+      "/assets/projects/rudra/mobile/8.png",
+      "/assets/projects/rudra/mobile/9.png",
+      "/assets/projects/rudra/mobile/10.png",
+      "/assets/projects/rudra/mobile/11.png",
+      "/assets/projects/rudra/mobile/12.png",
+      "/assets/projects/rudra/mobile/13.png",
+      "/assets/projects/rudra/mobile/14.png",
+      "/assets/projects/rudra/mobile/15.png",
+      "/assets/projects/rudra/mobile/16.png",
+      "/assets/projects/rudra/mobile/17.png",
+      "/assets/projects/rudra/mobile/18.png",
+      "/assets/projects/rudra/mobile/19.png",
+      "/assets/projects/rudra/mobile/20.png",
+      "/assets/projects/rudra/mobile/21.png",
+      "/assets/projects/rudra/mobile/22.png",
+      "/assets/projects/rudra/mobile/23.png",
+
+    ],
+    "imagesAlt": [
+      "Hero Section - Image Slider 1",
+      "Hero Section - Image Slider 2",
+      "Hero Section - Image Slider 3",
+      "Hero Section - Image Slider 4",
+      "Who we Are Section",
+      "Featured Properties Section",
+      "Why Choose Us Section",
+      "Happy Customers Section",
+      "Creative Footer",
+      "About Us Page",
+      "Meet The Team Section",
+      "Sole Selling Page",
+      "Our Process Section",
+      "Ongoing Projects Page",
+      "Ongoing Projects Page",
+      "Completed Projects Page",
+      "Career Page",
+      "Current Openings Section",
+      "Application Form Section",
+      "Contact Us Page",
+      "Our Location Section"
+    ],
+    "description": "Rudra Advisory is a 360 degree real estate sales and marketing strategies and solutions company that focused purely on ROI driven marketing partnerships",
+    "technologies": ["HTML", "CSS", "TypeScript", "Next.js", "React.js", "TailwindCSS", "Framer Motion", "Shadcn UI"],
+    "client": {
+      "name": "Rudra Infrastructure and Advisory",
+      "industry": "Real Estate",
+      "intro": "Rudra Advisory is a leading consulting firm specializing in real estate development and digital transformation.",
+      "country": "India"
+    },
+    "problem_statement": "Rudra Advisory needed a modern, responsive website to showcase their real estate expertise and attract clients, replacing an outdated site that lacked interactivity and visual appeal.",
+    "features": [
+      "Next.js for efficient server-side rendering and SEO optimization",
+      "Responsive design for cross-device compatibility",
+      "Dynamic image sliders for engaging visuals",
+      "Framer Motion animations for smooth transitions",
+      "Intuitive navigation for seamless user experience",
+      "Transparent storytelling about sustainable practices",
+    ],
+    "results": "The website increased client inquiries by 50% and improved brand visibility, establishing Rudra Advisory as a trusted name in real estate consulting.",
+    "journey": "The journey with Rudra Advisory began with their vision to establish a strong digital presence. We collaborated closely to design a visually captivating website using Next.js, TailwindCSS, and animations with Framer Motion. The responsive design ensures flawless performance across devices, while transparent storytelling builds audience trust.",
+    "url": "https://rudraadvisory.com"
+  },
+  {
+    "id": 2,
     "title": "Eggvita",
     "thumbnail": "/assets/projects/eggvita/thumbnail.png",
     "category": "website",
@@ -245,7 +345,12 @@ export const projects: Project[] = [
       "/assets/projects/eggvita/desktop/12.png",
       "/assets/projects/eggvita/desktop/13.png",
       "/assets/projects/eggvita/desktop/14.png",
-      "/assets/projects/eggvita/desktop/15.png"
+      "/assets/projects/eggvita/desktop/15.png",
+      "/assets/projects/eggvita/desktop/16.png",
+      "/assets/projects/eggvita/desktop/17.png",
+      "/assets/projects/eggvita/desktop/18.png",
+      "/assets/projects/eggvita/desktop/19.png",
+      "/assets/projects/eggvita/desktop/20.png",
     ],
     "mobileImages": [
       "/assets/projects/eggvita/mobile/1.png",
@@ -262,22 +367,32 @@ export const projects: Project[] = [
       "/assets/projects/eggvita/mobile/12.png",
       "/assets/projects/eggvita/mobile/13.png",
       "/assets/projects/eggvita/mobile/14.png",
-      "/assets/projects/eggvita/mobile/15.png"
+      "/assets/projects/eggvita/mobile/15.png",
+      "/assets/projects/eggvita/mobile/16.png",
+      "/assets/projects/eggvita/mobile/17.png",
+      "/assets/projects/eggvita/mobile/18.png",
+      "/assets/projects/eggvita/mobile/19.png",
+      "/assets/projects/eggvita/mobile/20.png"
     ],
     "imagesAlt": [
-      "Home/Hero Section",
-      "Why Our Eggs Section",
+      "Hero Section - Image Slider 1",
+      "Hero Section - Image Slider 2",
+      "Hero Section - Image Slider 3",
+      "Hero Section - Image Slider 4",
+      "Product Section",
+      "Why our Eggs Section",
       "Farm To Plate Section",
       "Benefits of Having Eggs Section",
-      "Products Section",
       "Premium Quality Diet Chart Section",
+      "Contact Us Section",
       "Contact Us Section",
       "Interactive & Creative Footer",
       "Why Choose Eggvita Page",
       "Why Choose Eggvita Page",
-      "Products Page",
-      "About Us Page",
-      "About Us Page",
+      "Products Page - Eggvita Gold",
+      "Products Page - Eggvita Gold Plus",
+      "About Us Page - Who We Are",
+      "About Us Page - Our Mission",
       "Contact Us Page",
       "Testimonial Page"
     ],
@@ -302,7 +417,7 @@ export const projects: Project[] = [
     "url": "https://eggvita.in"
   },
   {
-    "id": 2,
+    "id": 3,
     "title": "Reva-Clublife",
     "thumbnail": "/assets/projects/clublife/thumbnail.png",
     "category": "website",
@@ -371,7 +486,7 @@ export const projects: Project[] = [
     "url": "https://clublife.revadevelopers.com/"
   },
   {
-    "id": 3,
+    "id": 4,
     "title": "Reva-Landmark",
     "thumbnail": "/assets/projects/landmark/thumbnail.png",
     "category": "website",
@@ -432,7 +547,7 @@ export const projects: Project[] = [
     "url": "https://landmark.revadevelopers.com/"
   },
   {
-    "id": 4,
+    "id": 5,
     "title": "The One Academy",
     "thumbnail": "/assets/projects/oneacademy/thumbnail.png",
     "category": "website",
@@ -486,7 +601,7 @@ export const projects: Project[] = [
     "url": "https://onebrandingacademy.com/"
   },
   {
-    "id": 5,
+    "id": 6,
     "title": "Vashilla Industries",
     "thumbnail": "/assets/projects/vashilla/thumbnail.png",
     "category": "website",
@@ -555,7 +670,7 @@ export const projects: Project[] = [
     "url": "https://vashilaindustries.com/"
   },
   {
-    "id": 6,
+    "id": 7,
     "title": "AvranceCorp Development",
     "thumbnail": "/assets/projects/avrancecorp/thumbnail.png",
     "category": "website",
@@ -616,7 +731,7 @@ export const projects: Project[] = [
     "url": "https://avrancecorp.com/"
   },
   {
-    "id": 7,
+    "id": 8,
     "title": "Best Value Distributors",
     "thumbnail": "/assets/projects/bestvaluedist/thumbnail.png",
     "category": "website",
@@ -671,7 +786,7 @@ export const projects: Project[] = [
     "url": "https://bestvaluedist.com/"
   },
   {
-    "id": 8,
+    "id": 9,
     "title": "121 PCO Training",
     "thumbnail": "/assets/projects/121pco/thumbnail.png",
     "category": "website",
@@ -733,7 +848,7 @@ export const projects: Project[] = [
     "url": "https://121pcotraining.com/"
   },
   {
-    "id": 9,
+    "id": 10,
     "title": "Employee and Payroll Management System",
     "thumbnail": "/assets/projects/ems/thumbnail.png",
     "category": "software",
@@ -847,7 +962,7 @@ export const projects: Project[] = [
     "journey": "We developed a scalable system using Electron.js, React, Node.js, Express, and MongoDB. TailwindCSS and D3.js ensured a sleek interface and insightful analytics, delivering value through rigorous testing."
   },
   {
-    "id": 10,
+    "id": 11,
     "title": "Hospital Management System",
     "thumbnail": "/assets/projects/healthcare/thumbnail.png",
     "category": "software",
