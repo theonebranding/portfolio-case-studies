@@ -38,7 +38,7 @@ const Header = () => {
         isScrolled
           ? "bg-brand-black/90 backdrop-blur-md shadow-md"
           : "bg-transparent"
-      }`}
+      }`} 
     >
       <div className="container mx-auto flex items-center justify-between">
         <a href="#">
@@ -51,7 +51,7 @@ const Header = () => {
             <a
               key={item.name}
               href={item.href}
-              className="menu-item font-primary text-brand-white hover:text-brand-yellow transition-colors duration-300 py-2 text-lg"
+              className="menu-item font-secondary text-brand-white hover:text-brand-yellow transition-colors duration-300 py-2 text-lg"
             >
               {item.name}
             </a>
@@ -75,7 +75,7 @@ const Header = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="font-primary text-brand-white hover:text-brand-yellow transition-colors duration-300 text-xl py-2"
+                  className="font-secondary text-brand-white hover:text-brand-yellow transition-colors duration-300 text-xl py-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}

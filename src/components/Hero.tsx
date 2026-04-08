@@ -34,7 +34,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-radial from-black to-black animate-gradient-flow"></div>
   
       <div className="container mx-auto px-4 sm:px-6 z-10 text-center">
-        <h1 className="text-5xl sm:text-5xl md:text-7xl lg:text-7xl font-bold text-brand-white">          
+        <h1 className="text-5xl sm:text-5xl md:text-7xl lg:text-7xl font-bold text-brand-white font-primary">          
             Our Web & Software Case Studies
         </h1>
 
@@ -44,7 +44,7 @@ const Hero = () => {
             {rotatingTexts.map((text, index) => (
               <div
                 key={index}
-                className={`rotating-text-item text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold gradient-text z-20 ${
+                className={`rotating-text-item text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-primary font-bold gradient-text z-20 ${
                   index === activeTextIndex ? 'active' : ''
                 }`}
               >
@@ -81,18 +81,15 @@ const Hero = () => {
         </p> */}
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-          <Button className="bg-brand-yellow text-brand-black hover:bg-brand-yellow/90 px-6 py-4 sm:px-8 sm:py-6 text-base sm:text-lg">
-          <a href="#portfolio">
-            <span className="text-brand-black">View Our Work</span>
-          </a>            
+          <Button asChild className="bg-brand-yellow text-brand-black hover:bg-brand-yellow/90 px-6 py-4 sm:px-8 sm:py-6 text-base sm:text-lg font-tertiary">
+            <a href="#portfolio" className="text-brand-black">View Our Work</a>
           </Button>
           <Button
+            asChild
             variant="outline"
-            className="bg-brand-white text-brand-black hover:bg-gray-200 px-6 py-4 sm:px-10 sm:py-6 text-base sm:text-xl"
+            className="bg-brand-white text-brand-black hover:bg-gray-200 px-6 py-4 sm:px-10 sm:py-6 text-base sm:text-xl font-tertiary"
           >
-            <a href="#contact">
-              <span className="text-brand-black">Get In Touch</span>
-            </a>
+            <a href="#contact" className="text-brand-black">Get In Touch</a>
           </Button>
         </div>
       </div>

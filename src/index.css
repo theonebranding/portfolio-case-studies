@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500&family=Poppins:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,13 +6,13 @@
 
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--font-body);
   scrollbar-color: #FFC700 #F0F0F0; /* thumb track */
   scrollbar-width: auto;
 }
 
-h1, h2, h3, h4, h5, h6, p, span, a, li, button {
-  font-family: 'Poppins', sans-serif;
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
 }
 
 @tailwind base;
@@ -151,6 +151,9 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button {
 
 
   :root {
+    --font-display: 'Instrument Serif', serif;
+    --font-body: 'Inter', sans-serif;
+    --font-tertiary: 'Poppins', sans-serif;
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;

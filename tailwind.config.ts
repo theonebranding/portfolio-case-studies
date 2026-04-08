@@ -20,8 +20,9 @@ export default {
     	},
     	extend: {
 			fontFamily :{
-				primary: ["Poppins", "sans-serif"],
-        		secondary: ["Roboto", "sans-serif"],
+				primary: ["Instrument Serif", "serif"],
+	        	secondary: ["Inter", "sans-serif"],
+				tertiary: ["Poppins", "sans-serif"],
 			},
     		colors: {
     			border: 'hsl(var(--border))',

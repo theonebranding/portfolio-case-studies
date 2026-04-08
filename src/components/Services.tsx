@@ -75,16 +75,16 @@ const Services = () => {
               <h3 className="text-2xl font-bold mb-3 text-brand-yellow font-primary">
                 {service.title}
               </h3>
-              <p className="text-gray-400 mb-6 font-primary">{service.description}</p>
+              <p className="text-gray-400 mb-6 font-secondary">{service.description}</p>
 
               {/* Technologies */}
               <div className="mb-6">
-                <h4 className="text-sm text-gray-100 font-semibold mb-2 font-primary">TECHNOLOGIES</h4>
+                <h4 className="text-sm text-gray-100 font-semibold mb-2 font-secondary">TECHNOLOGIES</h4>
                 <div className="flex flex-wrap gap-2">
                   {service.technologies.map((tech, index) => (
                     <span
                       key={index}
-                      className="bg-gray-800/70 text-gray-300 text-xs px-2 py-1 rounded-full font-primary"
+                      className="bg-gray-800/70 text-gray-300 text-xs px-2 py-1 rounded-full font-tertiary"
                     >
                       {tech}
                     </span>
@@ -94,12 +94,12 @@ const Services = () => {
 
               {/* Features */}
               <div>
-                <h4 className="text-sm text-gray-100 font-semibold mb-2 font-primary">FEATURES</h4>
+                <h4 className="text-sm text-gray-100 font-semibold mb-2 font-secondary">FEATURES</h4>
                 <ul className="space-y-2">
                   {service.features.map((feature, index) => (
                     <li key={index} className="flex items-start">
                       <span className="text-brand-yellow mr-2">•</span>
-                      <span className="text-gray-400 text-sm font-primary">{feature}</span>
+                      <span className="text-gray-400 text-sm font-secondary">{feature}</span>
                     </li>
                   ))}
                 </ul>

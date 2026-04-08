@@ -1,7 +1,7 @@
 import { projects } from "@/lib/data";
 import { Link } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { AppWindow, ArrowRight, ExternalLink, Globe, MonitorCog } from "lucide-react";
 import { AnimatedText } from "@/components/ui/animated-underline-text-one";
 import TechnologySlider from "@/components/TechnologySlider";
 
@@ -12,6 +12,12 @@ const Portfolio = () => {
   const softwareProjects = projects.filter(
     (project) => project.category === "software"
   );
+  const applicationProjects = softwareProjects.filter((project) => {
+    const searchableText = `${project.title} ${project.description} ${project.technologies.join(" ")}`.toLowerCase();
+    return /(application|app|system|management|dashboard|mobile|electron|react)/.test(searchableText);
+  });
+  const tabsTriggerClassName =
+    "group relative inline-flex items-center justify-center gap-2 rounded-xl border border-transparent px-5 py-3 text-sm md:text-base font-semibold text-gray-200 transition-all duration-300 data-[state=active]:border-brand-yellow/60 data-[state=active]:bg-gradient-to-b data-[state=active]:from-brand-yellow data-[state=active]:to-yellow-300 data-[state=active]:text-brand-black data-[state=active]:shadow-[0_10px_30px_rgba(250,204,21,0.25)] hover:text-brand-yellow hover:border-brand-yellow/30 hover:bg-white/5";
 
   // Function to generate project slug
   const getProjectSlug = (project) => {
@@ -42,21 +48,28 @@ const Portfolio = () => {
         </p>
 
         <Tabs defaultValue="websites" className="w-full">
-          <div className="flex justify-center mb-10 mt-8 md:mb-16">
-            <TabsList className="bg-gray-900/30 backdrop-blur-lg flex border border-brand-yellow/20 rounded-2xl p-2 shadow-xl transition-all duration-300">
+          <div className="mb-10 mt-8 md:mb-16">
+            <TabsList className="mx-auto grid w-full max-w-2xl grid-cols-1 gap-2 rounded-2xl bg-black backdrop-blur-xl sm:grid-cols-3">
               <TabsTrigger
                 value="websites"
-                className="relative py-3 px-10 text-lg font-semibold text-gray-100 rounded-xl transition-all duration-300 ease-in-out data-[state=active]:bg-brand-yellow data-[state=active]:text-brand-black data-[state=active]:shadow-lg hover:bg-gray-700/50 hover:text-brand-yellow focus:outline-none focus:ring-2 focus:ring-brand-yellow/40 group"
+                className={tabsTriggerClassName}
               >
+                <Globe size={17} className="transition-transform duration-300 group-data-[state=active]:scale-105" />
                 <span className="relative z-10">Websites</span>
-                <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-brand-yellow/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 scale-95 group-hover:scale-100" />
               </TabsTrigger>
               <TabsTrigger
                 value="software"
-                className="relative py-3 px-10 text-lg font-semibold text-gray-100 rounded-xl transition-all duration-300 ease-in-out data-[state=active]:bg-brand-yellow data-[state=active]:text-brand-black data-[state=active]:shadow-lg hover:bg-gray-700/50 hover:text-brand-yellow focus:outline-none focus:ring-2 focus:ring-brand-yellow/40 group"
+                className={tabsTriggerClassName}
               >
+                <MonitorCog size={17} className="transition-transform duration-300 group-data-[state=active]:scale-105" />
                 <span className="relative z-10">Software</span>
-                <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-brand-yellow/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 scale-95 group-hover:scale-100" />
+              </TabsTrigger>
+              <TabsTrigger
+                value="applications"
+                className={tabsTriggerClassName}
+              >
+                <AppWindow size={17} className="transition-transform duration-300 group-data-[state=active]:scale-105" />
+                <span className="relative z-10">Applications</span>
               </TabsTrigger>
             </TabsList>
           </div>
@@ -126,7 +139,7 @@ const Portfolio = () => {
                         {project.technologies.slice(0, 3).map((tech, index) => (
                           <span
                             key={index}
-                            className="bg-gray-800 text-xs text-gray-300 px-2 py-1 rounded-full font-primary"
+                            className="bg-gray-800 text-xs text-gray-300 px-2 py-1 rounded-full font-tertiary"
                           >
                             {tech}
                           </span>
@@ -223,7 +236,104 @@ const Portfolio = () => {
                         {project.technologies.slice(0, 3).map((tech, index) => (
                           <span
                             key={index}
-                            className="bg-gray-800 text-xs text-gray-300 px-2 py-1 rounded-full font-primary"
+                            className="bg-gray-800 text-xs text-gray-300 px-2 py-1 rounded-full font-tertiary"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                      <div className="flex items-center justify-between mt-auto">
+                        <div className="flex items-center text-brand-yellow">
+                          <span className="text-sm font-medium mr-2">View Details</span>
+                          <ArrowRight size={16} />
+                        </div>
+                        {project.url && (
+                          <a
+                            href={project.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center text-sm font-medium text-brand-yellow hover:text-brand-yellow/80 transition-colors duration-200"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            <span className="mr-1">Open Project</span>
+                            <ExternalLink size={16} />
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </TabsContent>
+
+          <TabsContent value="applications">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+              {applicationProjects.map((project) => {
+                const isInternational = project.client?.country !== 'India';
+
+                return (
+                  <Link
+                    key={project.id}
+                    to={`/project/${getProjectSlug(project)}`}
+                    className="relative group overflow-hidden rounded-xl bg-gray-900 border border-gray-800 hover:shadow-xl transition-shadow duration-300 cursor-pointer flex flex-col"
+                  >
+                    <div className="aspect-video overflow-hidden relative">
+                      <img
+                        src={project.thumbnail}
+                        alt={project.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className={`absolute bottom-3 left-3 px-2 py-1 rounded-md backdrop-blur-sm text-xs font-medium ${
+                        isInternational
+                          ? 'bg-emerald-500/90 text-white'
+                          : 'bg-orange-500/90 text-white'
+                      }`}>
+                        {isInternational ? (
+                          <span className="flex items-center">
+                            <img src="../assets/icon/global-icon.png" alt="Global Client" width={16} height={16} className="mr-1" />
+                            International Client
+                          </span>
+                        ) : (
+                          <span className="flex items-center">
+                            <img src="../assets/icon/india-icon.png" alt="Indian Client" width={16} height={16} className="mr-1" />
+                            Indian Client
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    <div className="p-6 flex flex-col flex-grow">
+                      <div className="mb-4 flex flex-col items-start">
+                        <h3 className="text-xl font-bold font-primary text-brand-yellow mb-2">
+                          {project.title}
+                        </h3>
+                        {project.url && (
+                          <a
+                            href={project.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center text-sm font-medium text-brand-yellow hover:text-brand-yellow/80 transition-colors duration-200"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            <span className="mr-1">Open Project <ExternalLink size={14} className="ml-1" /></span>
+
+                          </a>
+                        )}
+                        <div className="text-base font-secondary mb-1 flex items-center gap-2">
+                          <span className="text-gray-400">Client from </span>
+                          <span className={`font-bold underline-offset-2 underline ${isInternational ? 'text-emerald-400' : 'text-orange-400'}`}>
+                            {project.client?.country}
+                          </span>
+                        </div>
+                      </div>
+                      <p className="text-gray-400 line-clamp-3 mb-4 font-secondary">
+                        {project.description}
+                      </p>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {project.technologies.slice(0, 3).map((tech, index) => (
+                          <span
+                            key={index}
+                            className="bg-gray-800 text-xs text-gray-300 px-2 py-1 rounded-full font-tertiary"
                           >
                             {tech}
                           </span>

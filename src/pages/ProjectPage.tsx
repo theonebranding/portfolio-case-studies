@@ -165,7 +165,7 @@ const ProjectPage = () => {
                 <h3 className="text-3xl font-semibold mb-3 text-brand-yellow border-b border-brand-yellow/30 pb-2 font-primary">
                   Project Description
                 </h3>
-                <p className="text-gray-300 leading-relaxed">{project.description}</p>
+                <p className="text-gray-300 leading-relaxed font-secondary">{project.description}</p>
               </div>
                 
               {/* Client Details */}
@@ -173,10 +173,10 @@ const ProjectPage = () => {
                 <h3 className="text-3xl font-semibold mb-3 text-brand-yellow border-b border-brand-yellow/30 pb-2 font-primary">
                   Client Details
                 </h3>
-                <div className="space-y-2 text-gray-300">
-                  <p><span className="font-medium">Client:</span> {project.client.name}</p>
-                  <p><span className="font-medium">Industry:</span> {project.client.industry}</p>
-                  <p><span className="font-medium">Location:</span> {project.client.country}</p>
+                <div className="space-y-2 text-gray-300 font-secondary">
+                  <p><span className="font-medium font-tertiary">Client:</span> {project.client.name}</p>
+                  <p><span className="font-medium font-tertiary">Industry:</span> {project.client.industry}</p>
+                  <p><span className="font-medium font-tertiary">Location:</span> {project.client.country}</p>
                 </div>
               </div>
             </div>
@@ -186,7 +186,7 @@ const ProjectPage = () => {
               <h3 className="text-3xl font-primary font-semibold mb-3 text-brand-yellow border-b border-brand-yellow/30 pb-2">
                 Problem Statement
               </h3>
-              <p className="text-gray-300 leading-relaxed font-primary">
+              <p className="text-gray-300 leading-relaxed font-secondary">
                 {project.problem_statement || 
                 "The client faced challenges with their existing systems that were affecting efficiency and growth. They needed a modern solution that would streamline their operations while providing a better experience for their users."}
               </p>
@@ -202,7 +202,7 @@ const ProjectPage = () => {
                 {/* Features */}
                 <div>
                   <h4 className="text-lg font-medium mb-2 text-brand-yellow/90 font-primary">Key Features</h4>
-                  <ul className="list-disc list-inside space-y-1 text-gray-300 font-primary">
+                  <ul className="list-disc list-inside space-y-1 text-gray-300 font-secondary">
                     {project.features?.map((feature, index) => (
                       <li key={index}>{feature}</li>
                     ))}
@@ -212,7 +212,7 @@ const ProjectPage = () => {
                 {/* Technologies */}
                 <div>
                   <h4 className="text-lg font-medium mb-2 text-brand-yellow/90 font-primary">Technologies Used</h4>
-                  <div className="flex flex-wrap gap-2 font-primary">
+                  <div className="flex flex-wrap gap-2 font-tertiary">
                     {project.technologies?.map((tech, index) => (
                       <span
                         key={index}
@@ -231,7 +231,7 @@ const ProjectPage = () => {
               <h3 className="text-3xl font-primary font-semibold mb-3 text-brand-yellow border-b border-brand-yellow/30 pb-2">
                 Project Results
               </h3>
-              <p className="text-gray-300 leading-relaxed font-primary">
+              <p className="text-gray-300 leading-relaxed font-secondary">
                 {project.results || project.journey || 
                 "The implemented solution successfully addressed the client's challenges, resulting in improved efficiency, better user experience, and positive business outcomes. The project helped streamline operations while providing a scalable platform for future growth."}
               </p>

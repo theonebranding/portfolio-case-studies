@@ -32,9 +32,9 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold font-primary text-white mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-brand-yellow transition-colors">Home</a></li>
-              <li><a href="#portfolio" className="text-gray-400 hover:text-brand-yellow   font-secondarytransition-colors">Portfolio</a></li>
-              <li><a href="#services" className="text-gray-400 hover:text-brand-yellow   font-secondarytransition-colors">Services</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-brand-yellow font-secondary transition-colors">Home</a></li>
+              <li><a href="#portfolio" className="text-gray-400 hover:text-brand-yellow font-secondary transition-colors">Portfolio</a></li>
+              <li><a href="#services" className="text-gray-400 hover:text-brand-yellow font-secondary transition-colors">Services</a></li>
               <li><a href="#contact" className="text-gray-400 hover:text-brand-yellow  font-secondary transition-colors">Contact</a></li>             
             </ul>
           </div>
@@ -44,8 +44,8 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><a href="#" className="text-gray-400 hover:text-brand-yellow  font-secondary transition-colors">Custom Websites</a></li>
               <li><a href="#" className="text-gray-400 hover:text-brand-yellow font-secondary transition-colors">WordPress Websites</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-brand-yellow  font-secondarytransition-colors">Ecommerce Websites</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-brand-yellow  font-secondarytransition-colors">Software Solutions</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-brand-yellow font-secondary transition-colors">Ecommerce Websites</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-brand-yellow font-secondary transition-colors">Software Solutions</a></li>
               <li><a href="#" className="text-gray-400 hover:text-brand-yellow font-secondary transition-colors">App Development</a></li>
             </ul>
           </div>          
@@ -53,7 +53,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-800 pt-8 mt-8 text-center">
-          <p className="text-gray-400 text-sm font-primary">
+          <p className="text-gray-400 text-sm font-secondary">
             &copy; {currentYear} The One Branding. All rights reserved.
           </p>
         </div>

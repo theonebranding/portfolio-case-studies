@@ -35,7 +35,7 @@ function TechnologySlider() {
             alt={`${tech.name} logo`} 
             className="h-[80px] w-auto mb-3" 
           />
-          <span className="text-white font-medium font-primary text-sm">{tech.name}</span>
+          <span className="text-white font-medium font-tertiary text-sm">{tech.name}</span>
         </div>
       ))}
     </InfiniteSlider>
