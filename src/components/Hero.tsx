@@ -1,11 +1,57 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, type ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
-// import { Mouse } from 'lucide-react';
-import { SparklesCore } from '@/components/ui/sparkles';
-// import { TypewriterEffectSmooth } from '@/components/ui/typewriter-effect';
-// import { words } from '@/lib/data';
+import { ArrowRight, Sparkles } from 'lucide-react';
+import { AnimatePresence, motion } from 'framer-motion';
+
+type BlurInProps = {
+  children: ReactNode;
+  delay?: number;
+  duration?: number;
+  className?: string;
+};
+
+const BlurIn = ({ children, delay = 0, duration = 0.6, className = '' }: BlurInProps) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
+    animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+    transition={{ delay, duration, ease: 'easeOut' }}
+    className={className}
+  >
+    {children}
+  </motion.div>
+);
+
+type SplitTextProps = {
+  text: string;
+  className?: string;
+  delay?: number;
+};
+
+const SplitText = ({ text, className = '', delay = 0 }: SplitTextProps) => {
+  const words = text.split(' ');
+
+  return (
+    <span className={className}>
+      {words.map((word, index) => (
+        <motion.span
+          key={`${word}-${index}`}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: delay + index * 0.08,
+            duration: 0.6,
+            ease: 'easeOut',
+          }}
+          className="inline-block mr-2"
+        >
+          {word}
+        </motion.span>
+      ))}
+    </span>
+  );
+};
 
 const Hero = () => {
   const [activeTextIndex, setActiveTextIndex] = useState(0);
@@ -28,78 +74,84 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col pt-20 items-center justify-center relative overflow-hidden"
+      className="relative h-screen w-full overflow-hidden bg-[#070612]"
     >
-      {/* Gradient Background Effect */}
-      <div className="absolute inset-0 bg-gradient-radial from-black to-black animate-gradient-flow"></div>
-  
-      <div className="container mx-auto px-4 sm:px-6 z-10 text-center">
-        <h1 className="text-5xl sm:text-5xl md:text-7xl lg:text-7xl font-bold text-brand-white font-primary">          
-            Our Web & Software Case Studies
-        </h1>
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 z-0 h-full w-full object-cover origin-left scale-[1.2] ml-[80px] md:ml-[140px] lg:ml-[200px]"
+      >
+        <source src="/assets/bg-video.mp4" type="video/mp4" />
+        <source
+          src="https://stream.mux.com/s8pMcOvMQXc4GD6AX4e1o01xFogFxipmuKltNfSYza0200.m3u8"
+          type="application/x-mpegURL"
+        />
+      </video>
 
-        <div className="rotating-text mt-6 sm:mt-8 h-16 sm:h-20 md:h-32 mb-8 sm:mb-12 overflow-hidden relative">
-          {/* Rotating Text */}
-          <div className="absolute inset-0 flex items-center justify-center space-y-6">
-            {rotatingTexts.map((text, index) => (
-              <div
-                key={index}
-                className={`rotating-text-item text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-primary font-bold gradient-text z-20 ${
-                  index === activeTextIndex ? 'active' : ''
-                }`}
-              >
-                {text}
+      <div className="absolute bottom-0 left-0 z-10 h-40 w-full bg-gradient-to-t from-[#070612] to-transparent" />
+      <div className="absolute inset-0 z-10 bg-[#070612]/55" />
+
+      <div className="relative z-20 mx-auto flex h-full w-full max-w-7xl items-center px-6 lg:px-12">
+        <div className="flex w-full flex-col items-center gap-12 text-center">
+          <div className="flex w-full flex-col items-center gap-6">
+            <BlurIn duration={0.6}>
+              <div className="inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-2.5 backdrop-blur-sm">
+                <span className="text-lg font-medium font-secondary text-white/80">
+                The One Branding - Crafting Digital Excellence
+                </span>
               </div>
-            ))}
+            </BlurIn>
+
+            <h1 className="w-full text-center text-[clamp(1rem,4.25vw,5.1rem)] font-medium leading-relaxed text-white font-primary whitespace-nowrap">
+              <SplitText text="Our Web & Software Case Studies" />
+            </h1>
+
+            <BlurIn delay={0.4} duration={0.6}>
+              <p className="mx-auto max-w-3xl text-xl md:text-2xl font-normal leading-relaxed text-white/80 font-inter text-center">
+                We build high-impact digital products, from conversion-ready websites
+                to scalable software and mobile applications.
+              </p>
+              <div className="mt-6 mx-auto inline-flex h-14 min-w-[300px] items-center justify-center rounded-full border border-white/35 bg-white/10 px-6 backdrop-blur-sm">
+                <AnimatePresence mode="wait">
+                  <motion.p
+                    key={rotatingTexts[activeTextIndex]}
+                    initial={{ opacity: 0, y: 18, filter: 'blur(8px)' }}
+                    animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                    exit={{ opacity: 0, y: -18, filter: 'blur(8px)' }}
+                    transition={{ duration: 0.55, ease: 'easeOut' }}
+                    className="text-base md:text-lg text-white font-secondary tracking-wide"
+                  >
+                    {rotatingTexts[activeTextIndex]}
+                  </motion.p>
+                </AnimatePresence>
+              </div>
+            </BlurIn>
           </div>
-          <div>
-            {/* Gradients */}
-            <div className="h-[30rem] sm:h-[40rem] w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md z-0 relative">
-              <div className="absolute inset-x-10 sm:inset-x-20 top-0 bg-gradient-to-r from-transparent via-brand-yellow to-transparent h-[2px] w-full blur-sm" />
-              <div className="absolute inset-x-10 sm:inset-x-20 top-0 bg-gradient-to-r from-transparent via-brand-yellow to-transparent h-px w-full" />
-              <div className="absolute inset-x-30 sm:inset-x-60 top-0 bg-gradient-to-r from-transparent via-yellow-400 to-transparent h-[5px] w-3/4 blur-sm" />
-              <div className="absolute inset-x-30 sm:inset-x-60 top-0 bg-gradient-to-r from-transparent via-yellow-200 to-transparent h-px w-3/4" />
 
-              {/* Core component */}
-              <SparklesCore
-                background="transparent"
-                minSize={1}
-                maxSize={1.5}
-                particleDensity={180}
-                className="w-full h-full"
-                particleColor="#FFFFFF"
-              />
-
-              {/* Radial Gradient to prevent sharp edges */}
-              <div className="absolute inset-0 w-full h-full bg-brand-black [mask-image:radial-gradient(500px_200px_at_top,transparent_30%,white)] sm:[mask-image:radial-gradient(700px_250px_at_top,transparent_30%,white)]"></div>
+          <BlurIn delay={0.6} duration={0.6}>
+            <div className="flex flex-wrap items-center gap-4">
+              <Button
+                asChild
+                className="rounded-full px-6 py-3.5 h-auto min-h-0 bg-white text-[#070612] hover:bg-white/90 font-tertiary text-base md:text-lg"
+              >
+                <a href="#portfolio" className="inline-flex items-center gap-2">
+                  View Our Work
+                  <ArrowRight className="h-4.5 w-4.5" />
+                </a>
+              </Button>
+              <Button
+                asChild
+                variant="ghost"
+                className="rounded-full px-9 py-3.5 h-auto min-h-0 bg-white/20 text-white backdrop-blur-sm hover:bg-white/30 font-tertiary text-base md:text-lg"
+              >
+                <a href="#contact">Get In Touch</a>
+              </Button>
             </div>
-          </div>
-        </div>
-        {/* 
-        <p className="max-w-3xl sm:max-w-5xl mx-auto mb-6 sm:mb-8 -mt-2 sm:-mt-4 text-sm sm:text-base md:text-lg">
-          <TypewriterEffectSmooth words={words} className='text-brand-white text-sm sm:text-base md:text-lg' />
-        </p> */}
-
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-          <Button asChild className="bg-brand-yellow text-brand-black hover:bg-brand-yellow/90 px-6 py-4 sm:px-8 sm:py-6 text-base sm:text-lg font-tertiary">
-            <a href="#portfolio" className="text-brand-black">View Our Work</a>
-          </Button>
-          <Button
-            asChild
-            variant="outline"
-            className="bg-brand-white text-brand-black hover:bg-gray-200 px-6 py-4 sm:px-10 sm:py-6 text-base sm:text-xl font-tertiary"
-          >
-            <a href="#contact" className="text-brand-black">Get In Touch</a>
-          </Button>
+          </BlurIn>
         </div>
       </div>
-
-      {/* <a
-        href="#portfolio"
-        className="absolute bottom-0 md:bottom-4 left-1/2 transform -translate-x-1/2 text-brand-yellow animate-bounce"
-      >
-        <Mouse size={40} />
-      </a> */}
     </section>
   );
 };
