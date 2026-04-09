@@ -102,30 +102,40 @@ const ProjectPage = () => {
         >
           <ChevronLeft size={40}/>
         </Button>
-        
-        <ContainerScroll
-          titleComponent={
-            <>
+
+        {isMobileOnlyProject ? (
+          <div className="w-full px-6 pt-24 pb-8 md:pt-28 md:pb-10">
+            <div className="max-w-6xl mx-auto text-center">
               <h1 className="text-4xl font-semibold text-white">
                 <span className="text-brand-white font-secondary">Featured Project</span> <br />
                 <span className="text-4xl md:text-6xl font-bold mt-1 leading-none text-brand-yellow font-primary">
                   {project.title}
                 </span>
               </h1>
-            </>
-          }
-        >
-          {isMobileOnlyProject ? (
-            <div className="h-full w-full flex items-center justify-center bg-gradient-to-b from-zinc-900 to-black rounded-2xl">
+            </div>
+            <div className="mt-8 flex items-center justify-center rounded-3xl bg-gradient-to-b from-zinc-900 to-black py-8 md:py-12">
               <Android
                 src={project.mobileImages?.[0] || heroImage}
                 style={{
-                  maxWidth: "260px",
-                  width: "70%",
+                  maxWidth: "300px",
+                  width: "78%",
                 }}
               />
             </div>
-          ) : (
+          </div>
+        ) : (
+          <ContainerScroll
+            titleComponent={
+              <>
+                <h1 className="text-4xl font-semibold text-white">
+                  <span className="text-brand-white font-secondary">Featured Project</span> <br />
+                  <span className="text-4xl md:text-6xl font-bold mt-1 leading-none text-brand-yellow font-primary">
+                    {project.title}
+                  </span>
+                </h1>
+              </>
+            }
+          >
             <img
               src={heroImage}
               alt={project.title}
@@ -133,8 +143,8 @@ const ProjectPage = () => {
               draggable={false}
               loading="lazy"
             />
-          )}
-        </ContainerScroll>
+          </ContainerScroll>
+        )}
       </div>
       
       {/* Case Study Content */}

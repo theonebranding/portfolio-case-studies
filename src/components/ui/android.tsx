@@ -1,4 +1,4 @@
-import { SVGProps } from "react";
+import { SVGProps, useId } from "react";
 
 export interface AndroidProps extends SVGProps<SVGSVGElement> {
   width?: number;
@@ -14,6 +14,13 @@ export function Android({
   videoSrc,
   ...props
 }: AndroidProps) {
+  const uid = useId();
+  const clipId = `iosScreenClip-${uid}`;
+  const bezelId = `iosBezelGradient-${uid}`;
+  const frameId = `iosFrameGradient-${uid}`;
+  const buttonId = `iosButtonGradient-${uid}`;
+  const shadowId = `iosDropShadow-${uid}`;
+
   return (
     <svg
       width={width}
@@ -23,8 +30,7 @@ export function Android({
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      {/* Drop Shadow for 3D Effect */}
-      <filter id="dropShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <filter id={shadowId} x="-50%" y="-50%" width="200%" height="200%">
         <feGaussianBlur in="SourceAlpha" stdDeviation="5" />
         <feOffset dx="2" dy="4" result="offsetblur" />
         <feComponentTransfer>
@@ -36,158 +42,114 @@ export function Android({
         </feMerge>
       </filter>
 
-      {/* Outer Bezel with Glass-like Gradient */}
       <rect
         x="0"
         y="0"
         width="280"
         height="620"
-        rx="25"
-        ry="25"
-        fill="url(#bezelGradient)"
-        stroke="#C0C0C0"
+        rx="48"
+        ry="48"
+        fill={`url(#${bezelId})`}
+        stroke="#8E949A"
         strokeWidth="1"
-        filter="url(#dropShadow)"
-        className="dark:stroke-[#404040]"
+        filter={`url(#${shadowId})`}
       />
 
-      {/* Side Frame with Metallic Texture */}
       <rect
         x="2"
         y="2"
         width="276"
         height="616"
-        rx="23"
-        ry="23"
-        fill="url(#frameGradient)"
+        rx="46"
+        ry="46"
+        fill={`url(#${frameId})`}
       />
 
-      {/* Screen Area */}
-      <g clipPath="url(#screenClip)">
+      <g clipPath={`url(#${clipId})`}>
         <rect
-          x="6"
-          y="10"
+          x="8"
+          y="8"
           width="268"
-          height="600"
-          rx="20"
-          ry="20"
+          height="604"
+          rx="40"
+          ry="40"
           fill="#000000"
         />
       </g>
 
-      {/* Punch-Hole Camera */}
-      <circle
-        cx="30"
-        cy="25"
-        r="8"
-        fill="#000000"
-      />
-      <circle
-        cx="30"
-        cy="25"
-        r="4"
-        fill="#1A1A1A"
+      <rect
+        x="92"
+        y="20"
+        width="96"
+        height="24"
+        rx="12"
+        fill="#060708"
+        opacity="0.95"
       />
 
-      {/* Back Camera Module */}
-      <rect
-        x="210"
-        y="10"
-        width="60"
-        height="40"
-        rx="8"
-        ry="8"
-        fill="#1A1A1A"
-        className="dark:fill-[#303030]"
-      />
-      <circle
-        cx="230"
-        cy="30"
-        r="8"
-        fill="#000000"
-      />
-      <circle
-        cx="250"
-        cy="30"
-        r="8"
-        fill="#000000"
-      />
-      <circle
-        cx="250"
-        cy="30"
-        r="3"
-        fill="#FFFFFF"
-        opacity="0.2"
-      />
+      <circle cx="166" cy="32" r="3" fill="#15181B" />
+      <circle cx="166" cy="32" r="1.3" fill="#2A3138" />
 
-      {/* Power Button */}
       <rect
-        x="274"
-        y="140"
-        width="4"
-        height="50"
-        rx="2"
-        fill="url(#buttonGradient)"
-        className="dark:fill-[#404040]"
-      />
-
-      {/* Volume Buttons */}
-      <rect
-        x="2"
-        y="120"
-        width="4"
-        height="40"
-        rx="2"
-        fill="url(#buttonGradient)"
-        className="dark:fill-[#404040]"
+        x="275"
+        y="138"
+        width="3"
+        height="78"
+        rx="1.5"
+        fill={`url(#${buttonId})`}
       />
       <rect
         x="2"
-        y="170"
-        width="4"
-        height="40"
-        rx="2"
-        fill="url(#buttonGradient)"
-        className="dark:fill-[#404040]"
+        y="122"
+        width="3"
+        height="48"
+        rx="1.5"
+        fill={`url(#${buttonId})`}
       />
-
-      {/* Antenna Lines */}
       <rect
         x="2"
+        y="180"
+        width="3"
+        height="48"
+        rx="1.5"
+        fill={`url(#${buttonId})`}
+      />
+
+      <rect
+        x="24"
         y="50"
-        width="276"
-        height="2"
-        fill="#C0C0C0"
-        className="dark:fill-[#404040]"
+        width="232"
+        height="1"
+        fill="#BFC5CC"
+        opacity="0.55"
       />
       <rect
-        x="2"
-        y="568"
-        width="276"
-        height="2"
-        fill="#C0C0C0"
-        className="dark:fill-[#404040]"
+        x="24"
+        y="570"
+        width="232"
+        height="1"
+        fill="#BFC5CC"
+        opacity="0.55"
       />
 
-      {/* Image or Video Content */}
       {src && (
         <image
           href={src}
-          x="8"
-          y="12"
+          x="10"
+          y="10"
           width="264"
-          height="596"
-          preserveAspectRatio="xMidYMid meet"
-          clipPath="url(#screenClip)"
+          height="600"
+          preserveAspectRatio="xMidYMid slice"
+          clipPath={`url(#${clipId})`}
         />
       )}
       {videoSrc && (
         <foreignObject
-          x="8"
-          y="12"
+          x="10"
+          y="10"
           width="264"
-          height="596"
-          clipPath="url(#screenClip)"
+          height="600"
+          clipPath={`url(#${clipId})`}
         >
           <video
             className="size-full object-cover"
@@ -200,31 +162,31 @@ export function Android({
         </foreignObject>
       )}
 
-      {/* Definitions */}
       <defs>
-        <clipPath id="screenClip">
+        <clipPath id={clipId}>
           <rect
-            x="6"
-            y="10"
+            x="8"
+            y="8"
             width="268"
-            height="600"
-            rx="20"
-            ry="20"
+            height="604"
+            rx="40"
+            ry="40"
             fill="#FFFFFF"
-            className="dark:fill-[#262626]"
           />
         </clipPath>
-        <linearGradient id="bezelGradient" x1="0" y1="0" x2="280" y2="620">
-          <stop offset="0%" stopColor="#2A2A2A" className="dark:stop-color-[#4A4A4A]" />
-          <stop offset="100%" stopColor="#1A1A1A" className="dark:stop-color-[#303030]" />
+        <linearGradient id={bezelId} x1="0" y1="0" x2="280" y2="620">
+          <stop offset="0%" stopColor="#AFB4BA" />
+          <stop offset="45%" stopColor="#808790" />
+          <stop offset="100%" stopColor="#5E656D" />
         </linearGradient>
-        <linearGradient id="frameGradient" x1="0" y1="0" x2="0" y2="620">
-          <stop offset="0%" stopColor="#C0C0C0" className="dark:stop-color-[#404040]" />
-          <stop offset="100%" stopColor="#A0A0A0" className="dark:stop-color-[#303030]" />
+        <linearGradient id={frameId} x1="0" y1="0" x2="0" y2="620">
+          <stop offset="0%" stopColor="#E6E8EB" />
+          <stop offset="30%" stopColor="#A8AEB5" />
+          <stop offset="100%" stopColor="#7D858D" />
         </linearGradient>
-        <linearGradient id="buttonGradient" x1="0" y1="0" x2="0" y2="50">
-          <stop offset="0%" stopColor="#C0C0C0" className="dark:stop-color-[#404040]" />
-          <stop offset="100%" stopColor="#A0A0A0" className="dark:stop-color-[#303030]" />
+        <linearGradient id={buttonId} x1="0" y1="0" x2="0" y2="80">
+          <stop offset="0%" stopColor="#BFC5CC" />
+          <stop offset="100%" stopColor="#76808A" />
         </linearGradient>
       </defs>
     </svg>

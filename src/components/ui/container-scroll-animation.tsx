@@ -54,13 +54,7 @@ export const ContainerScroll = ({
   );
 };
 
-export const Header = ({
-  translate,
-  titleComponent,
-}: {
-  translate: MotionValue<number>;
-  titleComponent: string | React.ReactNode;
-}) => {
+export const Header = ({ translate, titleComponent }: any) => {
   return (
     <motion.div
       style={{
