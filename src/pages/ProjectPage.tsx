@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronLeft, ExternalLink, Share2, ZoomIn, ZoomOut, X } from "lucide-react";
 import { AnimatedText } from "@/components/ui/animated-underline-text-one";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
-import { MobileFrame } from "@/components/ui/android";
+import { MobileFrame } from "@/components/ui/mobile-frame";
 import ProjectGallery from "@/components/ProjectGallery"; 
 
 const ProjectPage = () => {

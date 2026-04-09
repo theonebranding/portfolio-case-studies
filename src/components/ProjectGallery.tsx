@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { MacbookPro } from "@/components/ui/macbook-pro";
-import { MobileFrame } from "@/components/ui/android";
+import { MobileFrame } from "@/components/ui/mobile-frame";
 
 type ProjectGalleryProps = {
   images?: string[];
