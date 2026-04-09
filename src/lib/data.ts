@@ -15,7 +15,7 @@ export interface Project {
   id: number;
   title: string;
   thumbnail: string;
-  category: 'website' | 'software';
+  category: 'website' | 'software' | 'applications';
   desktopImages?: string[];
   mobileImages?: string[];
   imagesAlt?: string[];
@@ -120,25 +120,9 @@ export const services: Service[] = [
       "Progressive web app (PWA) capabilities",
       "Custom animations and transitions"
     ]
-  },
+  },  
   {
     id: 2,
-    title: "WordPress Websites",
-    description: "Elegant and powerful WordPress solutions with custom themes and advanced functionality for businesses of all sizes.",
-    icon: "file-text",
-    technologies: ["WordPress", "PHP", "MySQL", "JavaScript", "CSS", "HTML", "Gutenberg"],
-    features: [
-      "User-friendly CMS",
-      "Custom themes and plugins",
-      "Plugin development",
-      "E-commerce integration",
-      "SEO-friendly architecture",
-      "Performance optimization",
-      "Security hardening"
-    ]
-  },
-  {
-    id: 3,
     title: "E-commerce Websites",
     description: "Full-featured online stores built with WooCommerce and Shopify to sell products and services effortlessly.",
     icon: "shopping-cart",
@@ -154,7 +138,7 @@ export const services: Service[] = [
     ]
   },
   {
-    id: 4,
+    id: 3,
     title: "Backend Development",
     description: "Robust and scalable backend solutions to power your applications with secure and efficient APIs.",
     icon: "server",
@@ -171,7 +155,7 @@ export const services: Service[] = [
     ]
   },
   {
-    id: 5,
+    id: 4,
     title: "Application Development",
     description: "Full-stack mobile applications using React Native and Expo with robust backend integration for iOS and Android.",
     icon: "smartphone",
@@ -190,7 +174,7 @@ export const services: Service[] = [
     ]
   },
   {
-    id: 6,
+    id: 5,
     title: "Software Solutions",
     description: "Custom software applications built with modern frameworks to streamline processes and solve complex challenges.",
     icon: "settings",
@@ -207,7 +191,7 @@ export const services: Service[] = [
     ]
   },
   {
-    id: 7,
+    id: 6,
     title: "Cloud Deployment",
     description: "Seamless cloud deployment solutions to ensure your applications are scalable, secure, and highly available.",
     icon: "cloud",
@@ -221,7 +205,23 @@ export const services: Service[] = [
       "Continuous integration and deployment",
       "Monitoring and logging"
     ]
-  }
+  },
+  {
+    id: 7,
+    title: "WordPress Websites",
+    description: "Elegant and powerful WordPress solutions with custom themes and advanced functionality for businesses of all sizes.",
+    icon: "file-text",
+    technologies: ["WordPress", "PHP", "MySQL", "JavaScript", "CSS", "HTML", "Gutenberg"],
+    features: [
+      "User-friendly CMS",
+      "Custom themes and plugins",
+      "Plugin development",
+      "E-commerce integration",
+      "SEO-friendly architecture",
+      "Performance optimization",
+      "Security hardening"
+    ]
+  },
 ];
 
 export const projects: Project[] = [
@@ -1062,7 +1062,7 @@ export const projects: Project[] = [
     "id": 12,
     "title": "Talktime",
     "thumbnail": "/assets/projects/talktime/mobile/1.png",
-    "category": "software",
+    "category": "applications",
     "desktopImages": [],
     "mobileImages": [
       "/assets/projects/talktime/mobile/1.png",
