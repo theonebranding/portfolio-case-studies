@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { MacbookPro } from "@/components/ui/macbook-pro";
-import { Android } from "@/components/ui/android";
+import { MobileFrame } from "@/components/ui/android";
 
 type ProjectGalleryProps = {
   images?: string[];
@@ -246,7 +246,7 @@ const ProjectGallery = ({ images = [], mobileImages = [], imagesAlt = [], onImag
             <div className={`absolute z-10 mr-0 md:mr-10 transition-all duration-100 transform ${isAnimating ? 'scale-100 opacity-100' : 'scale-100 opacity-100'}`}>
               {isMobileOnlyProject ? (
                 <div className="relative flex items-center justify-center">
-                  <Android
+                  <MobileFrame
                     src={selectedMobileImage}
                     style={{
                       maxWidth: isMobile ? "180px" : isTablet ? "210px" : "260px",
@@ -265,7 +265,7 @@ const ProjectGallery = ({ images = [], mobileImages = [], imagesAlt = [], onImag
                     right: deviceSizes.android.right,
                     zIndex: 20,
                   }}>
-                    <Android
+                    <MobileFrame
                       src={selectedMobileImage}
                       style={deviceSizes.android}
                     />

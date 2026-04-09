@@ -1,19 +1,19 @@
 import { SVGProps, useId } from "react";
 
-export interface AndroidProps extends SVGProps<SVGSVGElement> {
+export interface MobileFrameProps extends SVGProps<SVGSVGElement> {
   width?: number;
   height?: number;
   src?: string;
   videoSrc?: string;
 }
 
-export function Android({
+export function MobileFrame({
   width = 280,
   height = 620,
   src,
   videoSrc,
   ...props
-}: AndroidProps) {
+}: MobileFrameProps) {
   const uid = useId();
   const clipId = `iosScreenClip-${uid}`;
   const bezelId = `iosBezelGradient-${uid}`;

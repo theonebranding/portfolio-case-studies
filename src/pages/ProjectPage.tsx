@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronLeft, ExternalLink, Share2, ZoomIn, ZoomOut, X } from "lucide-react";
 import { AnimatedText } from "@/components/ui/animated-underline-text-one";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
-import { Android } from "@/components/ui/android";
+import { MobileFrame } from "@/components/ui/android";
 import ProjectGallery from "@/components/ProjectGallery"; 
 
 const ProjectPage = () => {
@@ -114,7 +114,7 @@ const ProjectPage = () => {
               </h1>
             </div>
             <div className="mt-8 flex items-center justify-center rounded-3xl bg-gradient-to-b from-zinc-900 to-black py-8 md:py-12">
-              <Android
+              <MobileFrame
                 src={project.mobileImages?.[0] || heroImage}
                 style={{
                   maxWidth: "300px",
