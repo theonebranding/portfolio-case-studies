@@ -3,16 +3,36 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { MacbookPro } from "@/components/ui/macbook-pro";
 import { Android } from "@/components/ui/android";
 
-const ProjectGallery = ({ images = [], mobileImages = [], imagesAlt = [], onImageClick = null }) => {
+type ProjectGalleryProps = {
+  images?: string[];
+  mobileImages?: string[];
+  imagesAlt?: string[];
+  onImageClick?: ((imageSrc: string) => void) | null;
+};
+
+const ProjectGallery = ({ images = [], mobileImages = [], imagesAlt = [], onImageClick = null }: ProjectGalleryProps) => {
+  const desktopImages = images || [];
+  const phoneImages = mobileImages || [];
+  const galleryImages = desktopImages.length > 0 ? desktopImages : phoneImages;
+  const isMobileOnlyProject = desktopImages.length === 0 && phoneImages.length > 0;
+
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedDesktopImage, setSelectedDesktopImage] = useState(images?.length > 0 ? images[0] : null);
-  const [screenTitle, setScreenTitle] = useState(imagesAlt?.length > 0 ? imagesAlt[0] : null);
-  const [selectedMobileImage, setSelectedMobileImage] = useState(mobileImages?.length > 0 ? mobileImages[0] : null);  
+  const [selectedDesktopImage, setSelectedDesktopImage] = useState(galleryImages.length > 0 ? galleryImages[0] : null);
+  const [screenTitle, setScreenTitle] = useState(imagesAlt?.length > 0 ? imagesAlt[0] : "Project Screen 1");
+  const [selectedMobileImage, setSelectedMobileImage] = useState(phoneImages.length > 0 ? phoneImages[0] : galleryImages[0] || null);
   const [isPaused, setIsPaused] = useState(false);
   const [rotation, setRotation] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [hoverIndex, setHoverIndex] = useState(null);
   const carouselRef = useRef(null);
+
+  useEffect(() => {
+    setCurrentIndex(0);
+    setRotation(0);
+    setSelectedDesktopImage(galleryImages.length > 0 ? galleryImages[0] : null);
+    setSelectedMobileImage(phoneImages.length > 0 ? phoneImages[0] : galleryImages[0] || null);
+    setScreenTitle(imagesAlt.length > 0 ? imagesAlt[0] : "Project Screen 1");
+  }, [galleryImages, phoneImages, imagesAlt]);
 
   // Responsive states
   const [isMobile, setIsMobile] = useState(false);
@@ -49,7 +69,7 @@ const ProjectGallery = ({ images = [], mobileImages = [], imagesAlt = [], onImag
             
             // Subtle rotation based on mouse position
             const rotationOffset = distanceFromCenter / 50;
-            setRotation(prev => (currentIndex * 360) / images.length - rotationOffset);
+            setRotation((currentIndex * 360) / galleryImages.length - rotationOffset);
             
             throttledRotate.current = null;
           }, 30);
@@ -66,19 +86,19 @@ const ProjectGallery = ({ images = [], mobileImages = [], imagesAlt = [], onImag
         }
       };
     }
-  }, [currentIndex, isPaused, isAnimating, images.length]);
+  }, [currentIndex, isPaused, isAnimating, galleryImages.length]);
 
   // Auto rotate carousel every 4 seconds
   useEffect(() => {
-    if (!isPaused && images.length > 0) {
+    if (!isPaused && galleryImages.length > 0) {
       const interval = setInterval(() => {
         setIsAnimating(true);
         setCurrentIndex((prevIndex) => {
-          const newIndex = (prevIndex + 1) % images.length;
-          setRotation((newIndex * 360) / images.length);
-          setSelectedDesktopImage(images[newIndex]);
-          setSelectedMobileImage(mobileImages[newIndex]);
-          setScreenTitle(imagesAlt[newIndex]);
+          const newIndex = (prevIndex + 1) % galleryImages.length;
+          setRotation((newIndex * 360) / galleryImages.length);
+          setSelectedDesktopImage(galleryImages[newIndex]);
+          setSelectedMobileImage(phoneImages[newIndex] || galleryImages[newIndex]);
+          setScreenTitle(imagesAlt[newIndex] || `Project Screen ${newIndex + 1}`);
           return newIndex;
         });
         
@@ -89,18 +109,18 @@ const ProjectGallery = ({ images = [], mobileImages = [], imagesAlt = [], onImag
 
       return () => clearInterval(interval);
     }
-  }, [currentIndex, images, mobileImages, imagesAlt, isPaused]);
+  }, [galleryImages, phoneImages, imagesAlt, isPaused]);
 
   const handlePrev = () => {
-    if (images.length === 0 || isAnimating) return;
+    if (galleryImages.length === 0 || isAnimating) return;
     
     setIsAnimating(true);
-    const newIndex = (currentIndex - 1 + images.length) % images.length;
+    const newIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
     setCurrentIndex(newIndex);
-    setRotation((newIndex * 360) / images.length);
-    setSelectedDesktopImage(images[newIndex]);
-    setSelectedMobileImage(mobileImages[newIndex]);
-    setScreenTitle(imagesAlt[newIndex]);
+    setRotation((newIndex * 360) / galleryImages.length);
+    setSelectedDesktopImage(galleryImages[newIndex]);
+    setSelectedMobileImage(phoneImages[newIndex] || galleryImages[newIndex]);
+    setScreenTitle(imagesAlt[newIndex] || `Project Screen ${newIndex + 1}`);
     setIsPaused(true);
     
     setTimeout(() => {
@@ -110,15 +130,15 @@ const ProjectGallery = ({ images = [], mobileImages = [], imagesAlt = [], onImag
   };
 
   const handleNext = () => {
-    if (images.length === 0 || isAnimating) return;
+    if (galleryImages.length === 0 || isAnimating) return;
     
     setIsAnimating(true);
-    const newIndex = (currentIndex + 1) % images.length;
+    const newIndex = (currentIndex + 1) % galleryImages.length;
     setCurrentIndex(newIndex);
-    setRotation((newIndex * 360) / images.length);
-    setSelectedDesktopImage(images[newIndex]);
-    setSelectedMobileImage(mobileImages[newIndex]);
-    setScreenTitle(imagesAlt[newIndex]);
+    setRotation((newIndex * 360) / galleryImages.length);
+    setSelectedDesktopImage(galleryImages[newIndex]);
+    setSelectedMobileImage(phoneImages[newIndex] || galleryImages[newIndex]);
+    setScreenTitle(imagesAlt[newIndex] || `Project Screen ${newIndex + 1}`);
     setIsPaused(true);
     
     setTimeout(() => {
@@ -132,10 +152,10 @@ const ProjectGallery = ({ images = [], mobileImages = [], imagesAlt = [], onImag
     
     setIsAnimating(true);
     setCurrentIndex(index);
-    setRotation((index * 360) / images.length);
-    setSelectedDesktopImage(images[index]);
-    setSelectedMobileImage(mobileImages[index]);
-    setScreenTitle(imagesAlt[index]);
+    setRotation((index * 360) / galleryImages.length);
+    setSelectedDesktopImage(galleryImages[index]);
+    setSelectedMobileImage(phoneImages[index] || galleryImages[index]);
+    setScreenTitle(imagesAlt[index] || `Project Screen ${index + 1}`);
     setIsPaused(true);
     
     setTimeout(() => {
@@ -144,7 +164,7 @@ const ProjectGallery = ({ images = [], mobileImages = [], imagesAlt = [], onImag
     }, 500);
 
     if (onImageClick && typeof onImageClick === 'function') {
-      onImageClick(images[index]);
+      onImageClick(galleryImages[index]);
     }
   };
 
@@ -187,7 +207,7 @@ const ProjectGallery = ({ images = [], mobileImages = [], imagesAlt = [], onImag
 
   // Calculate opacity based on proximity to currentIndex
   const getOpacityForIndex = (index) => {
-    const length = images.length;
+    const length = galleryImages.length;
     // Calculate the shortest distance between indices in a circular manner
     const distance = Math.min(
       Math.abs(index - currentIndex),
@@ -212,7 +232,7 @@ const ProjectGallery = ({ images = [], mobileImages = [], imagesAlt = [], onImag
         Project Gallery
       </h3>
 
-      {images.length === 0 ? (
+      {galleryImages.length === 0 ? (
         <p className="text-gray-400 italic my-8">No gallery images available for this project.</p>
       ) : (
         <div className="flex flex-col items-center justify-center mt-16 md:mt-0">        
@@ -224,22 +244,34 @@ const ProjectGallery = ({ images = [], mobileImages = [], imagesAlt = [], onImag
           >
             {/* MacbookPro and Android in the Center */}
             <div className={`absolute z-10 mr-0 md:mr-10 transition-all duration-100 transform ${isAnimating ? 'scale-100 opacity-100' : 'scale-100 opacity-100'}`}>
-              <div className="relative">
-                <MacbookPro
-                  src={selectedDesktopImage}
-                  style={deviceSizes.macbook}
-                />
-                <div className="absolute" style={{ 
-                  top: deviceSizes.android.top, 
-                  right: deviceSizes.android.right,
-                  zIndex: 20,
-                }}>
+              {isMobileOnlyProject ? (
+                <div className="relative flex items-center justify-center">
                   <Android
                     src={selectedMobileImage}
-                    style={deviceSizes.android}
+                    style={{
+                      maxWidth: isMobile ? "180px" : isTablet ? "210px" : "260px",
+                      width: "100%",
+                    }}
                   />
                 </div>
-              </div>
+              ) : (
+                <div className="relative">
+                  <MacbookPro
+                    src={selectedDesktopImage}
+                    style={deviceSizes.macbook}
+                  />
+                  <div className="absolute" style={{ 
+                    top: deviceSizes.android.top, 
+                    right: deviceSizes.android.right,
+                    zIndex: 20,
+                  }}>
+                    <Android
+                      src={selectedMobileImage}
+                      style={deviceSizes.android}
+                    />
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* 3D Carousel for Images */}
@@ -251,8 +283,8 @@ const ProjectGallery = ({ images = [], mobileImages = [], imagesAlt = [], onImag
                 transition: isAnimating ? 'transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)' : 'transform 0.8s ease',
               }}
             >
-              {images.map((image, index) => {
-                const angle = (360 / images.length) * index;
+              {galleryImages.map((image, index) => {
+                const angle = (360 / galleryImages.length) * index;
                 const radius = getRadius();
                 const isHovered = index === hoverIndex;
                 const baseOpacity = getOpacityForIndex(index);

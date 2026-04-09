@@ -1057,6 +1057,48 @@ export const projects: Project[] = [
     ],
     "results": "The system improved patient care efficiency by 35% and reduced administrative overhead by 40%, enhancing decision-making.",
     "journey": "We developed a comprehensive system for Himalaya Hospital using React, Node.js, Express, and MongoDB. TailwindCSS and D3.js enabled an intuitive interface and advanced analytics, supporting quality healthcare through collaboration."
+  },
+  {
+    "id": 12,
+    "title": "Talktime",
+    "thumbnail": "/assets/projects/talktime/mobile/1.png",
+    "category": "software",
+    "desktopImages": [],
+    "mobileImages": [
+      "/assets/projects/talktime/mobile/1.png",
+      "/assets/projects/talktime/mobile/2.png",
+      "/assets/projects/talktime/mobile/3.png",
+      "/assets/projects/talktime/mobile/4.png",
+      "/assets/projects/talktime/mobile/5.png",
+      "/assets/projects/talktime/mobile/6.png"
+    ],
+    "imagesAlt": [
+      "Splash Screen",
+      "Onboarding Screen",
+      "Sign In Screen",
+      "Chat Room List",
+      "Conversation Screen",
+      "User Profile Screen"
+    ],
+    "description": "Talktime is a mobile-first social chat app focused on real-time conversations, clean UI, and smooth onboarding for new users.",
+    "technologies": ["React Native", "Expo", "TypeScript", "Firebase", "Node.js", "Socket.IO", "TailwindCSS"],
+    "client": {
+      "name": "Talktime Labs",
+      "intro": "Talktime Labs builds modern communication products for digital-first communities.",
+      "industry": "Social Communication",
+      "country": "India"
+    },
+    "problem_statement": "The client needed a dedicated mobile communication platform to increase user engagement and deliver reliable real-time messaging on low and high bandwidth networks.",
+    "features": [
+      "Real-time 1:1 and group messaging",
+      "Media sharing with compression",
+      "Push notifications for new chats",
+      "Secure login and session management",
+      "Profile personalization and status",
+      "Lightweight, responsive UI for mobile"
+    ],
+    "results": "The app prototype improved conversation retention metrics and reduced onboarding drop-off with a faster, clearer mobile experience.",
+    "journey": "We designed and developed Talktime as a mobile-first app with iterative UX testing, scalable chat architecture, and polished performance across Android devices."
   }
   
 ];  

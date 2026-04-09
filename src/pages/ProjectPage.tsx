@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronLeft, ExternalLink, Share2, ZoomIn, ZoomOut, X } from "lucide-react";
 import { AnimatedText } from "@/components/ui/animated-underline-text-one";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
+import { Android } from "@/components/ui/android";
 import ProjectGallery from "@/components/ProjectGallery"; 
 
 const ProjectPage = () => {
@@ -86,6 +87,11 @@ const ProjectPage = () => {
     );
   }
 
+  const hasDesktopImages = (project.desktopImages?.length || 0) > 0;
+  const hasMobileImages = (project.mobileImages?.length || 0) > 0;
+  const isMobileOnlyProject = !hasDesktopImages && hasMobileImages;
+  const heroImage = project.thumbnail || project.desktopImages?.[0] || project.mobileImages?.[0];
+
   return (
     <div className="min-h-screen bg-brand-black/95 min-w-full text-brand-white overflow-hidden">
       {/* Hero Section with Featured Image - Kept as is */}
@@ -109,13 +115,25 @@ const ProjectPage = () => {
             </>
           }
         >
-          <img
-            src={project.thumbnail || project.desktopImages[0]}
-            alt={project.title}
-            className="mx-auto rounded-2xl object-cover h-full w-full"
-            draggable={false}
-            loading="lazy"
-          />
+          {isMobileOnlyProject ? (
+            <div className="h-full w-full flex items-center justify-center bg-gradient-to-b from-zinc-900 to-black rounded-2xl">
+              <Android
+                src={project.mobileImages?.[0] || heroImage}
+                style={{
+                  maxWidth: "260px",
+                  width: "70%",
+                }}
+              />
+            </div>
+          ) : (
+            <img
+              src={heroImage}
+              alt={project.title}
+              className="mx-auto rounded-2xl object-cover h-full w-full"
+              draggable={false}
+              loading="lazy"
+            />
+          )}
         </ContainerScroll>
       </div>
       
@@ -242,7 +260,8 @@ const ProjectPage = () => {
               <ProjectGallery 
                 images={project?.desktopImages || []} 
                 mobileImages={project?.mobileImages || []}
-                imagesAlt ={project?.imagesAlt || []}  
+                imagesAlt ={project?.imagesAlt || []}
+                onImageClick={openImageViewer}
               />
             </div>
           </div>
