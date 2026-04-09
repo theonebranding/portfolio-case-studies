@@ -198,6 +198,12 @@ const ProjectGallery = ({ images = [], mobileImages = [], imagesAlt = [], onImag
   const deviceSizes = getDeviceSizes();
 
   const getThumbnailSize = () => {
+    if (isMobileOnlyProject) {
+      if (isMobile) return { width: 48, height: 96 };
+      if (isTablet) return { width: 62, height: 124 };
+      return { width: 78, height: 156 };
+    }
+
     if (isMobile) return { width: "60px", height: "65px" };
     if (isTablet) return { width: "80px", height: "90px" };
     return { width: "120px", height: "130px" };
@@ -296,12 +302,12 @@ const ProjectGallery = ({ images = [], mobileImages = [], imagesAlt = [], onImag
                     style={{
                       transform: `rotateY(${angle}deg) translateZ(${radius}px) ${isHovered ? 'scale(1.1)' : ''}`,
                       transformStyle: 'preserve-3d',
-                      width: thumbnailSize.width,
-                      height: thumbnailSize.height,
+                      width: typeof thumbnailSize.width === "number" ? `${thumbnailSize.width}px` : thumbnailSize.width,
+                      height: typeof thumbnailSize.height === "number" ? `${thumbnailSize.height}px` : thumbnailSize.height,
                       top: '51%',
                       left: '49%',
-                      marginLeft: isMobile ? '-30px' : isTablet ? '-40px' : '-70px',
-                      marginTop: isMobile ? '-32px' : isTablet ? '-45px' : '-75px',
+                      marginLeft: typeof thumbnailSize.width === "number" ? `-${thumbnailSize.width / 2}px` : isMobile ? '-30px' : isTablet ? '-40px' : '-70px',
+                      marginTop: typeof thumbnailSize.height === "number" ? `-${thumbnailSize.height / 2}px` : isMobile ? '-32px' : isTablet ? '-45px' : '-75px',
                       opacity: isHovered ? 1 : baseOpacity,
                     }}
                     onClick={() => handleThumbnailClick(index)}
@@ -310,7 +316,7 @@ const ProjectGallery = ({ images = [], mobileImages = [], imagesAlt = [], onImag
                   >
                     <img
                       src={image}
-                      alt={`Project Image ${index + 1}`}
+                      alt={imagesAlt[index] || `Project Image ${index + 1}`}
                       className={`w-full h-full object-cover rounded-lg shadow-xl transition-all duration-300 ${
                         isHovered ? 'shadow-yellow-400/50' : 'shadow-black/70'
                       }`}
