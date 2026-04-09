@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronLeft, ExternalLink, Share2, ZoomIn, ZoomOut, X } from "lucide-react";
 import { AnimatedText } from "@/components/ui/animated-underline-text-one";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
-import { MobileFrame } from "@/components/ui/mobile-frame";
+import { MobileContainerScroll } from "@/components/ui/mobile-container-scroll-animation";
 import ProjectGallery from "@/components/ProjectGallery"; 
 
 const ProjectPage = () => {
@@ -87,9 +87,7 @@ const ProjectPage = () => {
     );
   }
 
-  const hasDesktopImages = (project.desktopImages?.length || 0) > 0;
-  const hasMobileImages = (project.mobileImages?.length || 0) > 0;
-  const isMobileOnlyProject = !hasDesktopImages && hasMobileImages;
+  const isApplicationProject = project.category === "application";
   const heroImage = project.thumbnail || project.desktopImages?.[0] || project.mobileImages?.[0];
 
   return (
@@ -103,26 +101,20 @@ const ProjectPage = () => {
           <ChevronLeft size={40}/>
         </Button>
 
-        {isMobileOnlyProject ? (
-          <div className="w-full px-6 pt-24 pb-8 md:pt-28 md:pb-10">
-            <div className="max-w-6xl mx-auto text-center">
-              <h1 className="text-4xl font-semibold text-white">
-                <span className="text-brand-white font-secondary">Featured Project</span> <br />
-                <span className="text-4xl md:text-6xl font-bold mt-1 leading-none text-brand-yellow font-primary">
-                  {project.title}
-                </span>
-              </h1>
-            </div>
-            <div className="mt-8 flex items-center justify-center rounded-3xl bg-gradient-to-b from-zinc-900 to-black py-8 md:py-12">
-              <MobileFrame
-                src={project.mobileImages?.[0] || heroImage}
-                style={{
-                  maxWidth: "300px",
-                  width: "78%",
-                }}
-              />
-            </div>
-          </div>
+        {isApplicationProject ? (
+          <MobileContainerScroll
+            titleComponent={
+              <>
+                <h1 className="text-4xl font-semibold text-white">
+                  <span className="text-brand-white font-secondary">Featured Project</span> <br />
+                  <span className="text-4xl md:text-6xl font-bold mt-1 leading-none text-brand-yellow font-primary">
+                    {project.title}
+                  </span>
+                </h1>
+              </>
+            }
+            imageSrc={project.mobileImages?.[0] || heroImage}
+          />
         ) : (
           <ContainerScroll
             titleComponent={

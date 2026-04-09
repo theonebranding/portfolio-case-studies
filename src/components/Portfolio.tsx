@@ -12,8 +12,8 @@ const Portfolio = () => {
   const softwareProjects = projects.filter(
     (project) => project.category === "software"
   );
-  const applicationProjects = softwareProjects.filter(
-    (project) => project.title.toLowerCase() === "talktime"
+  const applicationProjects = projects.filter(
+    (project) => project.category === "application"
   );
   const tabsTriggerClassName =
     "group relative inline-flex items-center justify-center gap-2 rounded-xl border border-transparent px-5 py-3 text-sm md:text-base font-semibold text-gray-200 transition-all duration-300 data-[state=active]:border-brand-yellow/60 data-[state=active]:bg-gradient-to-b data-[state=active]:from-brand-yellow data-[state=active]:to-yellow-300 data-[state=active]:text-brand-black data-[state=active]:shadow-[0_10px_30px_rgba(250,204,21,0.25)] hover:text-brand-yellow hover:border-brand-yellow/30 hover:bg-white/5";
@@ -64,11 +64,11 @@ const Portfolio = () => {
                 <span className="relative z-10">Software</span>
               </TabsTrigger>
               <TabsTrigger
-                value="applications"
+                value="application"
                 className={tabsTriggerClassName}
               >
                 <AppWindow size={17} className="transition-transform duration-300 group-data-[state=active]:scale-105" />
-                <span className="relative z-10">Applications</span>
+                <span className="relative z-10">Application</span>
               </TabsTrigger>
             </TabsList>
           </div>
@@ -266,7 +266,7 @@ const Portfolio = () => {
             </div>
           </TabsContent>
 
-          <TabsContent value="applications">
+          <TabsContent value="application">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
               {applicationProjects.map((project) => {
                 const isInternational = project.client?.country !== 'India';

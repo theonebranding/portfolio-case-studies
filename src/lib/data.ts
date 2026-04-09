@@ -15,7 +15,7 @@ export interface Project {
   id: number;
   title: string;
   thumbnail: string;
-  category: 'website' | 'software' | 'applications';
+  category: 'website' | 'software' | 'application';
   desktopImages?: string[];
   mobileImages?: string[];
   imagesAlt?: string[];
@@ -1140,45 +1140,37 @@ export const projects: Project[] = [
   },
   {
     "id": 12,
-    "title": "Talktime",
-    "thumbnail": "/assets/projects/talktime/mobile/1.png",
-    "category": "applications",
+    "title": "Talktime Shop Management Application",
+    "thumbnail": "/assets/projects/talktime/thumbnail.png",
+    "category": "application",
     "desktopImages": [],
-    "mobileImages": [
-      "/assets/projects/talktime/mobile/1.png",
-      "/assets/projects/talktime/mobile/2.png",
-      "/assets/projects/talktime/mobile/3.png",
-      "/assets/projects/talktime/mobile/4.png",
-      "/assets/projects/talktime/mobile/5.png",
-      "/assets/projects/talktime/mobile/6.png"
-    ],
-    "imagesAlt": [
-      "Splash Screen",
-      "Onboarding Screen",
-      "Sign In Screen",
-      "Chat Room List",
-      "Conversation Screen",
-      "User Profile Screen"
-    ],
-    "description": "Talktime is a mobile-first social chat app focused on real-time conversations, clean UI, and smooth onboarding for new users.",
-    "technologies": ["React Native", "Expo", "TypeScript", "Firebase", "Node.js", "Socket.IO", "TailwindCSS"],
+    "mobileImages": [],
+    "imagesAlt": [],
+    "description": "Talktime is a mobile shop management application built for multi-branch businesses to run POS billing, inventory, sales, purchases, customer management, and CRM operations from a single platform.",
+    "technologies": ["React Native", "Expo", "TypeScript", "Node.js", "Express.js", "MongoDB", "Redis", "Socket.IO", "TailwindCSS"],
     "client": {
-      "name": "Talktime Labs",
-      "intro": "Talktime Labs builds modern communication products for digital-first communities.",
-      "industry": "Social Communication",
+      "name": "Talktime Retail Solutions",
+      "intro": "Talktime Retail Solutions operates and supports mobile retail businesses requiring centralized control for multiple branches and field teams.",
+      "industry": "Retail Operations & Distribution",
       "country": "India"
     },
-    "problem_statement": "The client needed a dedicated mobile communication platform to increase user engagement and deliver reliable real-time messaging on low and high bandwidth networks.",
+    "problem_statement": "The client was managing billing, stock, branch reporting, purchase entries, and customer follow-ups across separate tools, causing data mismatch, delayed decisions, and poor visibility into real-time branch performance.",
     "features": [
-      "Real-time 1:1 and group messaging",
-      "Media sharing with compression",
-      "Push notifications for new chats",
-      "Secure login and session management",
-      "Profile personalization and status",
-      "Lightweight, responsive UI for mobile"
+      "Multi-branch POS with fast billing flow",
+      "Centralized inventory with stock transfer between branches",
+      "Sales tracking by branch, staff, category, and date range",
+      "Purchase management with supplier records and GRN workflow",
+      "Customer profiles with credit balance and purchase history",
+      "CRM module for follow-ups, reminders, and lead status",
+      "Returns, exchanges, and adjustment entries",
+      "Role-based access for owner, manager, cashier, and sales staff",
+      "Live dashboard with KPI cards and branch-level performance",
+      "Automated low-stock alerts and reorder recommendations",
+      "Invoice and receipt generation with tax-ready summaries",
+      "Exportable reports for accounting and reconciliation"
     ],
-    "results": "The app prototype improved conversation retention metrics and reduced onboarding drop-off with a faster, clearer mobile experience.",
-    "journey": "We designed and developed Talktime as a mobile-first app with iterative UX testing, scalable chat architecture, and polished performance across Android devices."
+    "results": "The application reduced manual reconciliation effort, improved billing speed at counters, and gave management real-time visibility into sales, stock movement, and branch health.",
+    "journey": "We mapped retail operations end-to-end, designed a mobile-first UX for fast in-store usage, and built modular workflows for POS, inventory, purchases, customers, and CRM so the product can scale branch by branch."
   }
   
 ];  
