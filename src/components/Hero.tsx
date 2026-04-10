@@ -131,14 +131,13 @@ const Hero = () => {
           </div>
 
           <BlurIn delay={0.6} duration={0.6}>
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="flex flex-wrap justify-center items-center gap-4">
               <Button
                 asChild
-                className="rounded-full px-6 py-3.5 h-auto min-h-0 bg-white text-[#070612] hover:bg-white/90 font-tertiary text-base md:text-lg"
+                className="rounded-full px-6 py-3.5 h-auto min-h-0 bg-white text-[#070612] hover:bg-white/70 font-tertiary text-base md:text-lg"
               >
                 <a href="#portfolio" className="inline-flex items-center gap-2">
                   View Our Work
-                  <ArrowRight className="h-4.5 w-4.5" />
                 </a>
               </Button>
               <Button

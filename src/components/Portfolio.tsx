@@ -146,7 +146,7 @@ const Portfolio = () => {
                       </div>
                       <div className="flex items-center justify-between mt-auto">
                         <div className="flex items-center text-brand-yellow">
-                          <span className="text-sm font-medium mr-2">View Project</span>
+                          <span className="text-sm font-medium mr-2">View Details</span>
                           <ArrowRight size={16} />
                         </div>
                         {project.url && (

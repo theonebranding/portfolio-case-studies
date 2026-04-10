@@ -44,7 +44,7 @@ const Header = () => {
             px-4 md:px-6
             ${isScrolled ? "py-1.5" : "py-1"}
             ${isScrolled
-              ? "w-[75%] translate-y-0 scale-[0.985] bg-slate-900/35 border-sky-300/35 backdrop-blur-2xl shadow-[0_16px_44px_rgba(8,12,25,0.5),0_0_34px_rgba(56,189,248,0.24)]"
+              ? "w-[75%] translate-y-0 scale-[0.985] bg-slate-900/35 border-yellow-300/35 backdrop-blur-2xl shadow-[0_16px_44px_rgba(8,12,25,0.5),0_0_34px_rgba(225,220,0,0.24)]"
               : "w-[90%] -translate-y-[2px] scale-[0.95] bg-white/10 border-white/25 backdrop-blur-xl shadow-[0_10px_30px_rgba(4,8,20,0.35)]"
             }
           `}

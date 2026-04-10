@@ -925,7 +925,7 @@ export const projects: Project[] = [
     ],
     "results": "The website increased student inquiries by 40% and enhanced credibility, supporting student success.",
     "journey": "We designed a WordPress platform for 121 PCO Training using Elementor, JavaScript, PHP, and SQL. The clear navigation and engaging visuals improved user experience, supporting their mission through collaborative efforts.",
-    "url": "https://121pcotraining.com/"
+    "url": "https://121pcotraining.theonebranding.com/"
   },
   {
     "id": 10,
@@ -1187,16 +1187,38 @@ export const projects: Project[] = [
       "Admin Dashboard: Home Screen",
       "Quick Actions Screen",
       "Master Search Screen",
-      "Sales Analytics Screen",
-      
-
-
-
-      ""
-
+      "Sales Analytics: By Store",
+      "Sales Analytics: By Staff",
+      "Sales Analytics: By Brand",
+      "Inventory Management: New Phone",
+      "Inventory Management: Low Stock Alert",
+      "Inventory Management: Old Phone Inventory",
+      "Inventory Management: Old Phone Analytics",
+      "Store Management: Employee List",
+      "Store Management: Employee Profile Screen",
+      "Store Management: Store Profile",
+      "New Phone : List",
+      "New Phone : Phone Details",
+      "New Phone : Add New Phone",
+      "Old Phone : List",
+      "Old Phone : Phone Details",
+      "Old Phone : Phone Details",
+      "Old Phone : Phone Conditions",
+      "CRM : Dashboard",
+      "CRM : Modules",
+      "CRM: Leads List",
+      "CRM: Leads Profile",
+      "CRM: Campaign List",
+      "CRM: Campaign List",
+      "CRM: Templates List",
+      "CRM: Actvity List",
+      "CRM: Notifications List",
+      "CRM: Customers Lsit",
+      "CRM: Customer Profile",
+      "CRM: CRM Analytics",
     ],
     "description": "Talktime is a mobile shop management application built for multi-branch businesses to run POS billing, inventory, sales, purchases, customer management, and CRM operations from a single platform.",
-    "technologies": ["React Native", "Expo", "TypeScript", "Node.js", "Express.js", "MongoDB", "Supabase", "AWS S3", "TailwindCSS"],
+    "technologies": ["React Native", "Expo", "TypeScript", "Node.js", "Express.js", "MongoDB", "Supabase", "S3 Bucket", "TailwindCSS"],
     "client": {
       "name": "Talktime Retail Solutions",
       "intro": "Talktime Retail Solutions operates and supports mobile retail businesses requiring centralized control for multiple branches and field teams.",
