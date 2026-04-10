@@ -1180,7 +1180,6 @@ export const projects: Project[] = [
       "/assets/projects/talktime/mobile/33.jpg",
       "/assets/projects/talktime/mobile/34.jpg",
       "/assets/projects/talktime/mobile/35.jpg",
-      "/assets/projects/talktime/mobile/36.jpg"
     ],
     "imagesAlt": [
       "Secure Login Screen",
@@ -1213,7 +1212,8 @@ export const projects: Project[] = [
       "CRM: Templates List",
       "CRM: Actvity List",
       "CRM: Notifications List",
-      "CRM: Customers Lsit",
+      "CRM: Customers List",
+      "CRM: Customers List",
       "CRM: Customer Profile",
       "CRM: CRM Analytics",
     ],
