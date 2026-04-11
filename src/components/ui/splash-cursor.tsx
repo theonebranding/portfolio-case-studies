@@ -58,6 +58,10 @@ function SplashCursor({
     let pointers = [new pointerPrototype()];
 
     const { gl, ext } = getWebGLContext(canvas);
+    if (!gl) {
+      return;
+    }
+
     if (!ext.supportLinearFiltering) {
       config.DYE_RESOLUTION = 256;
       config.SHADING = false;
@@ -77,6 +81,20 @@ function SplashCursor({
         gl =
           canvas.getContext("webgl", params) ||
           canvas.getContext("experimental-webgl", params);
+
+      if (!gl) {
+        return {
+          gl: null,
+          ext: {
+            formatRGBA: null,
+            formatRG: null,
+            formatR: null,
+            halfFloatTexType: null,
+            supportLinearFiltering: false,
+          },
+        };
+      }
+
       let halfFloat;
       let supportLinearFiltering;
       if (isWebGL2) {

@@ -42,12 +42,14 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold font-primary text-white mb-4">Services</h4>
             <ul className="space-y-2">
-              <li><a href="/services/custom-websites-frontend" className="text-gray-400 hover:text-brand-yellow  font-secondary transition-colors hover:underline underline-offset-4 decoration-transparent hover:decoration-current">Custom Websites</a></li>
-              <li><a href="/services/wordpress-websites" className="text-gray-400 hover:text-brand-yellow font-secondary transition-colors hover:underline underline-offset-4 decoration-transparent hover:decoration-current">WordPress Websites</a></li>
-              <li><a href="/services/e-commerce-websites" className="text-gray-400 hover:text-brand-yellow font-secondary transition-colors hover:underline underline-offset-4 decoration-transparent hover:decoration-current">Ecommerce Websites</a></li>
-              <li><a href="/services/software-solutions" className="text-gray-400 hover:text-brand-yellow font-secondary transition-colors hover:underline underline-offset-4 decoration-transparent hover:decoration-current">Software Solutions</a></li>
-              <li><a href="/services/application-development" className="text-gray-400 hover:text-brand-yellow font-secondary transition-colors hover:underline underline-offset-4 decoration-transparent hover:decoration-current">App Development</a></li>
+              <li><a href="/services/software-solutions" className="text-gray-400 hover:text-brand-yellow  font-secondary transition-colors hover:underline underline-offset-4 decoration-transparent hover:decoration-current">Software Solutions</a></li>
+              <li><a href="/services/application-development" className="text-gray-400 hover:text-brand-yellow font-secondary transition-colors hover:underline underline-offset-4 decoration-transparent hover:decoration-current">Application Development</a></li>
               <li><a href="/services/ai-custom-software" className="text-gray-400 hover:text-brand-yellow font-secondary transition-colors hover:underline underline-offset-4 decoration-transparent hover:decoration-current">AI Custom Software</a></li>
+              <li><a href="/services/custom-website-development" className="text-gray-400 hover:text-brand-yellow font-secondary transition-colors hover:underline underline-offset-4 decoration-transparent hover:decoration-current">Custom Website Development</a></li>
+              <li><a href="/services/ecommerce-website-development" className="text-gray-400 hover:text-brand-yellow font-secondary transition-colors hover:underline underline-offset-4 decoration-transparent hover:decoration-current">Ecommerce Website Development</a></li>
+              <li><a href="/services/backend-development" className="text-gray-400 hover:text-brand-yellow font-secondary transition-colors hover:underline underline-offset-4 decoration-transparent hover:decoration-current">Backend Development</a></li>
+              <li><a href="/services/cloud-development" className="text-gray-400 hover:text-brand-yellow font-secondary transition-colors hover:underline underline-offset-4 decoration-transparent hover:decoration-current">Cloud Development</a></li>
+              <li><a href="/services/wordpress-website-development" className="text-gray-400 hover:text-brand-yellow font-secondary transition-colors hover:underline underline-offset-4 decoration-transparent hover:decoration-current">WordPress Website Development</a></li>
             </ul>
           </div>
 

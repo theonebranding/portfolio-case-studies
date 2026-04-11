@@ -231,14 +231,14 @@ const Contact = () => {
               
               <Button
                 type="submit"
-                className="w-full bg-brand-yellow text-brand-black hover:bg-brand-white flex items-center justify-center gap-2"
+                className="w-full bg-brand-yellow text-brand-black hover:bg-brand-white flex items-center text-lg justify-center gap-2"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (
                   "Sending..."
                 ) : (
                   <>
-                    Send Message <Send size={16} />
+                    Send Message <Send size={28} />
                   </>
                 )}
               </Button>

@@ -1,5 +1,5 @@
 import { services } from "@/lib/data";
-import { Code, FileText, ShoppingCart, Settings, Smartphone } from "lucide-react";
+import { ArrowRight, Cloud, FileText, Globe, MonitorCog, Server, ShoppingCart, Smartphone, Sparkles } from "lucide-react";
 import { AnimatedText } from "./ui/animated-underline-text-one";
 import ListOfServices from "./ListOfServices";
 import { useEffect, useRef, useState } from "react";
@@ -8,18 +8,24 @@ import { getServiceSlug } from "@/lib/service-utils";
 
 const ServiceIcon = ({ icon }: { icon: string }) => {
   switch (icon) {
-    case "code":
-      return <Code className="h-8 w-8 text-brand-yellow" />;
+    case "monitor-cog":
+      return <MonitorCog className="h-8 w-8 text-brand-yellow" />;
+    case "sparkles":
+      return <Sparkles className="h-8 w-8 text-brand-yellow" />;
+    case "globe":
+      return <Globe className="h-8 w-8 text-brand-yellow" />;
     case "file-text":
       return <FileText className="h-8 w-8 text-brand-yellow" />;
     case "shopping-cart":
       return <ShoppingCart className="h-8 w-8 text-brand-yellow" />;
-    case "settings":
-      return <Settings className="h-8 w-8 text-brand-yellow" />;
+    case "server":
+      return <Server className="h-8 w-8 text-brand-yellow" />;
+    case "cloud":
+      return <Cloud className="h-8 w-8 text-brand-yellow" />;
     case "smartphone":
       return <Smartphone className="h-8 w-8 text-brand-yellow" />;
     default:
-      return <Code className="h-8 w-8 text-brand-yellow" />;
+      return <MonitorCog className="h-8 w-8 text-brand-yellow" />;
   }
 };
 
@@ -66,24 +72,39 @@ const Services = () => {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service) => (
+          {services.map((service) => {
+            const topTechnologies = service.technologies.slice(0, 4);
+            const topHighlights = service.features.slice(0, 2);
+
+            return (
             <div
               key={service.id}
-              className="service-card bg-gray-900/50 backdrop-blur-sm rounded-lg p-8 border border-gray-800"
+              className="service-card bg-gray-900/50 backdrop-blur-sm rounded-lg p-6 border border-gray-800"
             >
-              <div className="mb-6">
+              
+
+              <div className="flex items-center justify-between mb-4">
                 <ServiceIcon icon={service.icon} />
+            
+              {/* <div className="mb-4"> */}
+                <Link
+                  to={`/services/${getServiceSlug(service.title)}`}
+                  className="inline-flex items-between gap-2 rounded-full border border-brand-yellow/40 bg-brand-yellow/10 px-4 py-2 text-sm text-brand-yellow hover:text-white transition-colors font-secondary"
+                >
+                  <span className="hover:underline underline-offset-4">Explore Service</span>
+                  <ArrowRight size={16} />
+                </Link>
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-brand-yellow font-primary">
+              <h3 className="text-xl font-bold mb-2 text-brand-yellow font-primary">
                 {service.title}
               </h3>
-              <p className="text-gray-400 mb-6 font-secondary">{service.description}</p>
+              <p className="text-gray-400 mb-4 text-sm font-secondary">{service.description}</p>
 
               {/* Technologies */}
-              <div className="mb-6">
+              <div className="mb-4">
                 <h4 className="text-sm text-gray-100 font-semibold mb-2 font-secondary">TECHNOLOGIES</h4>
                 <div className="flex flex-wrap gap-2">
-                  {service.technologies.map((tech, index) => (
+                  {topTechnologies.map((tech, index) => (
                     <span
                       key={index}
                       className="bg-gray-800/70 text-gray-300 text-xs px-2 py-1 rounded-full font-tertiary"
@@ -96,9 +117,9 @@ const Services = () => {
 
               {/* Features */}
               <div>
-                <h4 className="text-sm text-gray-100 font-semibold mb-2 font-secondary">FEATURES</h4>
+                <h4 className="text-sm text-gray-100 font-semibold mb-2 font-secondary">KEY HIGHLIGHTS</h4>
                 <ul className="space-y-2">
-                  {service.features.map((feature, index) => (
+                  {topHighlights.map((feature, index) => (
                     <li key={index} className="flex items-start">
                       <span className="text-brand-yellow mr-2">•</span>
                       <span className="text-gray-400 text-sm font-secondary">{feature}</span>
@@ -106,17 +127,8 @@ const Services = () => {
                   ))}
                 </ul>
               </div>
-
-              <div className="mt-6">
-                <Link
-                  to={`/services/${getServiceSlug(service.title)}`}
-                  className="inline-flex items-center gap-2 text-brand-yellow hover:text-white hover:underline underline-offset-4 transition-colors font-secondary"
-                >
-                  Explore Service
-                </Link>
-              </div>
             </div>
-          ))}
+          )})}
         </div>
       </div>
       <div ref={sectionRef} className="md:block hidden">

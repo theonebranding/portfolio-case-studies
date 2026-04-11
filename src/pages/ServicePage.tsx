@@ -7,6 +7,7 @@ import { projects, services } from "@/lib/data";
 import { applySeo, getProjectSlug, upsertJsonLd } from "@/lib/seo";
 import { getRelatedProjectsForService, getServiceProjectCategories, getServiceSlug } from "@/lib/service-utils";
 import { ArrowLeft, ArrowRight, Sparkles } from "lucide-react";
+import AnimatedGradientBackground from "@/components/ui/animated-gradient-background";
 
 const ServicePage = () => {
   const { serviceSlug } = useParams();
@@ -18,7 +19,7 @@ const ServicePage = () => {
 
   const relatedProjects = useMemo(() => {
     if (!service) return [];
-    return getRelatedProjectsForService(service, projects).slice(0, 6);
+    return getRelatedProjectsForService(service, projects);
   }, [service]);
 
   useEffect(() => {
@@ -84,32 +85,39 @@ const ServicePage = () => {
 
       <main className="pt-32 pb-20">
         <section className="container mx-auto px-6">
-          <div className="rounded-3xl border border-brand-yellow/30 bg-[radial-gradient(circle_at_top_right,rgba(255,199,0,0.18),transparent_45%),linear-gradient(155deg,rgba(16,16,16,0.95),rgba(0,0,0,0.92))] p-8 md:p-12 shadow-[0_24px_80px_rgba(0,0,0,0.55)]">
+          <div className="relative overflow-hidden rounded-3xl border border-brand-yellow/30 p-8 md:p-12 shadow-[0_24px_80px_rgba(0,0,0,0.55)]">
+            <AnimatedGradientBackground
+              Breathing={true}
+              startingGap={120}
+              breathingRange={1}
+              animationSpeed={0.08}
+              gradientColors={[
+                "#000000",
+                "#121212",
+                "#1C1C1C",
+                "#6B5600",
+                "#A27F00",
+                "#FFC700",
+                "#FFC700",
+              ]}
+              gradientStops={[30, 45, 58, 70, 82, 92, 100]}
+              containerClassName="opacity-85"
+            />
+            <div className="absolute inset-0 bg-black/45" />
+
+            <div className="relative z-10">
             <Link to="/#services" className="inline-flex items-center gap-2 text-sm font-secondary text-gray-300 hover:text-brand-yellow transition-colors mb-6">
               <ArrowLeft size={14} /> Back to Services
             </Link>
 
-            <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+            <div className="flex flex-col gap-6">
               <div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-brand-yellow/40 bg-brand-yellow/10 px-4 py-1 text-xs font-secondary uppercase tracking-[0.2em] text-brand-yellow mb-4">
-                  <Sparkles size={14} /> Custom Service
-                </div>
                 <h1 className="text-4xl md:text-6xl font-primary font-bold text-brand-yellow leading-tight">{service.title}</h1>
                 <p className="text-gray-200 text-base md:text-lg max-w-3xl mt-4 font-secondary leading-relaxed">
                   {service.description}
                 </p>
               </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 min-w-[260px]">
-                <div className="rounded-xl border border-gray-700 bg-black/35 p-4">
-                  <p className="text-xs uppercase tracking-wider text-gray-400 font-secondary">Tech Stack</p>
-                  <p className="text-2xl font-primary text-brand-yellow mt-1">{service.technologies.length}</p>
-                </div>
-                <div className="rounded-xl border border-gray-700 bg-black/35 p-4">
-                  <p className="text-xs uppercase tracking-wider text-gray-400 font-secondary">Capabilities</p>
-                  <p className="text-2xl font-primary text-brand-yellow mt-1">{service.features.length}</p>
-                </div>
-              </div>
+            </div>
             </div>
           </div>
         </section>
@@ -136,17 +144,6 @@ const ServicePage = () => {
                     {tech}
                   </span>
                 ))}
-              </div>
-
-              <div className="rounded-xl border border-gray-700 bg-black/30 p-4">
-                <p className="text-sm text-gray-300 font-secondary mb-2">Best suited for project types:</p>
-                <div className="flex flex-wrap gap-2">
-                  {categories.map((category) => (
-                    <span key={category} className="rounded-full bg-gray-800 px-3 py-1 text-xs uppercase tracking-wide text-brand-yellow font-secondary">
-                      {category}
-                    </span>
-                  ))}
-                </div>
               </div>
             </div>
           </div>

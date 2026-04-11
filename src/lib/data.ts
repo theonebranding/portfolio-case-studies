@@ -104,58 +104,23 @@ export interface Service {
 export const services: Service[] = [
   {
     id: 1,
-    title: "Custom Websites (Frontend)",
-    description: "Modern, responsive frontend websites designed to engage users with stunning visuals and seamless interactions.",
-    icon: "code",
-    technologies: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Angular", "Vue", "Tailwind CSS"],
+    title: "Software Solutions",
+    description: "Custom software applications built with modern frameworks to streamline processes and solve complex challenges.",
+    icon: "monitor-cog",
+    technologies: ["MERN (MongoDB, Express.js, React, Node.js)", "Electron", "SQL", "Tauri", "TypeScript", "PostgreSQL", "Docker"],
     features: [
-      "SEO-optimized structure",
-      "Responsive and adaptive design",
-      "Interactive user interfaces",
-      "Fast load times with lazy loading",
-      "Cross-browser compatibility",
-      "Accessibility (WCAG) compliance",
-      "Content management system (CMS) integration",
-      "Server side rendering (SSR) and static site generation (SSG)",
-      "Progressive web app (PWA) capabilities",
-      "Custom animations and transitions"
+      "Scalable architecture",
+      "Secure authentication",
+      "Database optimization",
+      "API integration",
+      "Real-time data processing",
+      "User-friendly interfaces",
+      "Cross-platform desktop apps",
+      "Containerized deployment"
     ]
   },  
   {
     id: 2,
-    title: "E-commerce Websites",
-    description: "Full-featured online stores built with WooCommerce and Shopify to sell products and services effortlessly.",
-    icon: "shopping-cart",
-    technologies: ["WordPress", "WooCommerce", "Shopify", "Stripe"],
-    features: [
-      "Secure payment processing",
-      "Inventory management",
-      "Order tracking and analytics",
-      "Customer accounts and loyalty programs",
-      "Responsive design",
-      "SEO optimization",
-      "Third-party integrations (e.g., PayPal, Shopify Apps)"
-    ]
-  },
-  {
-    id: 3,
-    title: "Backend Development",
-    description: "Robust and scalable backend solutions to power your applications with secure and efficient APIs.",
-    icon: "server",
-    technologies: ["Node.js", "PHP", "Express.js", "Laravel", "MongoDB", "SQL", "Redis", "GraphQL", "REST"],
-    features: [
-      "Rest and GraphQL APIs",
-      "Scalable API development",
-      "Secure authentication (OAuth, JWT)",
-      "Database optimization",
-      "Real-time data processing",
-      "Microservices architecture",
-      "Rate limiting and caching",
-      "API documentation"
-    ]
-  },
-  {
-    id: 4,
     title: "Application Development",
     description: "Full-stack mobile applications using React Native and Expo with robust backend integration for iOS and Android.",
     icon: "smartphone",
@@ -174,59 +139,10 @@ export const services: Service[] = [
     ]
   },
   {
-    id: 5,
-    title: "Software Solutions",
-    description: "Custom software applications built with modern frameworks to streamline processes and solve complex challenges.",
-    icon: "settings",
-    technologies: ["MERN (MongoDB, Express.js, React, Node.js)", "Electron", "SQL", "Tauri", "TypeScript", "PostgreSQL", "Docker"],
-    features: [
-      "Scalable architecture",
-      "Secure authentication",
-      "Database optimization",
-      "API integration",
-      "Real-time data processing",
-      "User-friendly interfaces",
-      "Cross-platform desktop apps",
-      "Containerized deployment"
-    ]
-  },
-  {
-    id: 6,
-    title: "Cloud Deployment",
-    description: "Seamless cloud deployment solutions to ensure your applications are scalable, secure, and highly available.",
-    icon: "cloud",
-    technologies: ["Docker", "AWS", "Google Cloud", "Kubernetes", "Terraform", "CI/CD", "Jenkins"],
-    features: [
-      "Containerized deployments",
-      "Auto-scaling infrastructure",
-      "High availability and redundancy",
-      "Cost optimization",
-      "Security compliance (e.g., GDPR, HIPAA)",
-      "Continuous integration and deployment",
-      "Monitoring and logging"
-    ]
-  },
-  {
-    id: 7,
-    title: "WordPress Websites",
-    description: "Elegant and powerful WordPress solutions with custom themes and advanced functionality for businesses of all sizes.",
-    icon: "file-text",
-    technologies: ["WordPress", "PHP", "MySQL", "JavaScript", "CSS", "HTML", "Gutenberg"],
-    features: [
-      "User-friendly CMS",
-      "Custom themes and plugins",
-      "Plugin development",
-      "E-commerce integration",
-      "SEO-friendly architecture",
-      "Performance optimization",
-      "Security hardening"
-    ]
-  },
-  {
-    id: 8,
+    id: 3,
     title: "AI Custom Software",
     description: "Intelligent custom software powered by AI to automate workflows, improve decisions, and deliver measurable business growth.",
-    icon: "settings",
+    icon: "sparkles",
     technologies: [
       "Python",
       "TypeScript",
@@ -247,6 +163,90 @@ export const services: Service[] = [
       "Secure role-based access and audit trails",
       "API-first architecture for easy integrations",
       "Scalable deployment with monitoring and observability"
+    ]
+  },
+  {
+    id: 4,
+    title: "Custom Website Development",
+    description: "Modern, responsive frontend websites designed to engage users with stunning visuals and seamless interactions.",
+    icon: "globe",
+    technologies: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Angular", "Vue", "Tailwind CSS"],
+    features: [
+      "SEO-optimized structure",
+      "Responsive and adaptive design",
+      "Interactive user interfaces",
+      "Fast load times with lazy loading",
+      "Cross-browser compatibility",
+      "Accessibility (WCAG) compliance",
+      "Content management system (CMS) integration",
+      "Server side rendering (SSR) and static site generation (SSG)",
+      "Progressive web app (PWA) capabilities",
+      "Custom animations and transitions"
+    ]
+  },
+  {
+    id: 5,
+    title: "Ecommerce Website Development",
+    description: "Full-featured online stores built with WooCommerce and Shopify to sell products and services effortlessly.",
+    icon: "shopping-cart",
+    technologies: ["WordPress", "WooCommerce", "Shopify", "Stripe"],
+    features: [
+      "Secure payment processing",
+      "Inventory management",
+      "Order tracking and analytics",
+      "Customer accounts and loyalty programs",
+      "Responsive design",
+      "SEO optimization",
+      "Third-party integrations (e.g., PayPal, Shopify Apps)"
+    ]
+  },
+  {
+    id: 6,
+    title: "Backend Development",
+    description: "Robust and scalable backend solutions to power your applications with secure and efficient APIs.",
+    icon: "server",
+    technologies: ["Node.js", "PHP", "Express.js", "Laravel", "MongoDB", "SQL", "Redis", "GraphQL", "REST"],
+    features: [
+      "Rest and GraphQL APIs",
+      "Scalable API development",
+      "Secure authentication (OAuth, JWT)",
+      "Database optimization",
+      "Real-time data processing",
+      "Microservices architecture",
+      "Rate limiting and caching",
+      "API documentation"
+    ]
+  },
+  {
+    id: 7,
+    title: "Cloud Development",
+    description: "Seamless cloud deployment solutions to ensure your applications are scalable, secure, and highly available.",
+    icon: "cloud",
+    technologies: ["Docker", "AWS", "Google Cloud", "Kubernetes", "Terraform", "CI/CD", "Jenkins"],
+    features: [
+      "Containerized deployments",
+      "Auto-scaling infrastructure",
+      "High availability and redundancy",
+      "Cost optimization",
+      "Security compliance (e.g., GDPR, HIPAA)",
+      "Continuous integration and deployment",
+      "Monitoring and logging"
+    ]
+  },
+  {
+    id: 8,
+    title: "WordPress Website Development",
+    description: "Elegant and powerful WordPress solutions with custom themes and advanced functionality for businesses of all sizes.",
+    icon: "file-text",
+    technologies: ["WordPress", "PHP", "MySQL", "JavaScript", "CSS", "HTML", "Gutenberg"],
+    features: [
+      "User-friendly CMS",
+      "Custom themes and plugins",
+      "Plugin development",
+      "E-commerce integration",
+      "SEO-friendly architecture",
+      "Performance optimization",
+      "Security hardening"
     ]
   },
 ];
