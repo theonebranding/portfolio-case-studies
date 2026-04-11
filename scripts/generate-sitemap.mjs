@@ -47,6 +47,9 @@ const today = new Date().toISOString().split("T")[0];
 
 const urls = [
   { loc: `${SITE_URL}/`, changefreq: "weekly", priority: "1.0" },
+  { loc: `${SITE_URL}/project/website`, changefreq: "weekly", priority: "0.9" },
+  { loc: `${SITE_URL}/project/software`, changefreq: "weekly", priority: "0.9" },
+  { loc: `${SITE_URL}/project/application`, changefreq: "weekly", priority: "0.9" },
   ...uniqueServiceSlugs.map((slug) => ({
     loc: `${SITE_URL}/services/${slug}`,
     changefreq: "monthly",

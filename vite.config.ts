@@ -9,8 +9,8 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
   },
   build: {
-    outDir: "dist",  // Ensure the output directory is correctly set
-    chunkSizeWarningLimit: 1500, // Adjust this as needed
+    outDir: "dist", 
+    chunkSizeWarningLimit: 1500, 
     rollupOptions: {
       output: {
         manualChunks(id) {

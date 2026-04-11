@@ -104,7 +104,7 @@ export interface Service {
 export const services: Service[] = [
   {
     id: 1,
-    title: "Software Solutions",
+    title: "Custom Software Solutions",
     description: "Custom software applications built with modern frameworks to streamline processes and solve complex challenges.",
     icon: "monitor-cog",
     technologies: ["MERN (MongoDB, Express.js, React, Node.js)", "Electron", "SQL", "Tauri", "TypeScript", "PostgreSQL", "Docker"],
@@ -121,7 +121,7 @@ export const services: Service[] = [
   },  
   {
     id: 2,
-    title: "Application Development",
+    title: "Custom Application Development",
     description: "Full-stack mobile applications using React Native and Expo with robust backend integration for iOS and Android.",
     icon: "smartphone",
     technologies: ["React Native", "Expo", "JavaScript", "TypeScript", "Firebase", "Node.js", "Express.js", "MongoDB", "SQL", "GraphQL"],
@@ -138,39 +138,39 @@ export const services: Service[] = [
       "Custom animations and transitions"
     ]
   },
+  // {
+  //   id: 3,
+  //   title: "AI Custom Software",
+  //   description: "Intelligent custom software powered by AI to automate workflows, improve decisions, and deliver measurable business growth.",
+  //   icon: "sparkles",
+  //   technologies: [
+  //     "Python",
+  //     "TypeScript",
+  //     "Node.js",
+  //     "FastAPI",
+  //     "OpenAI API",
+  //     "LangChain",
+  //     "Vector Databases",
+  //     "PostgreSQL",
+  //     "Docker"
+  //   ],
+  //   features: [
+  //     "AI assistants and copilots for internal teams",
+  //     "Workflow automation with smart decision engines",
+  //     "Document and knowledge-base chat systems",
+  //     "Predictive analytics and recommendation models",
+  //     "Custom AI dashboards with real-time insights",
+  //     "Secure role-based access and audit trails",
+  //     "API-first architecture for easy integrations",
+  //     "Scalable deployment with monitoring and observability"
+  //   ]
+  // },
   {
     id: 3,
-    title: "AI Custom Software",
-    description: "Intelligent custom software powered by AI to automate workflows, improve decisions, and deliver measurable business growth.",
-    icon: "sparkles",
-    technologies: [
-      "Python",
-      "TypeScript",
-      "Node.js",
-      "FastAPI",
-      "OpenAI API",
-      "LangChain",
-      "Vector Databases",
-      "PostgreSQL",
-      "Docker"
-    ],
-    features: [
-      "AI assistants and copilots for internal teams",
-      "Workflow automation with smart decision engines",
-      "Document and knowledge-base chat systems",
-      "Predictive analytics and recommendation models",
-      "Custom AI dashboards with real-time insights",
-      "Secure role-based access and audit trails",
-      "API-first architecture for easy integrations",
-      "Scalable deployment with monitoring and observability"
-    ]
-  },
-  {
-    id: 4,
     title: "Custom Website Development",
     description: "Modern, responsive frontend websites designed to engage users with stunning visuals and seamless interactions.",
     icon: "globe",
-    technologies: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Angular", "Vue", "Tailwind CSS"],
+    technologies: ["JavaScript", "TypeScript", "React", "Next.js", "Angular", "Vue", "Tailwind CSS"],
     features: [
       "SEO-optimized structure",
       "Responsive and adaptive design",
@@ -184,71 +184,71 @@ export const services: Service[] = [
       "Custom animations and transitions"
     ]
   },
-  {
-    id: 5,
-    title: "Ecommerce Website Development",
-    description: "Full-featured online stores built with WooCommerce and Shopify to sell products and services effortlessly.",
-    icon: "shopping-cart",
-    technologies: ["WordPress", "WooCommerce", "Shopify", "Stripe"],
-    features: [
-      "Secure payment processing",
-      "Inventory management",
-      "Order tracking and analytics",
-      "Customer accounts and loyalty programs",
-      "Responsive design",
-      "SEO optimization",
-      "Third-party integrations (e.g., PayPal, Shopify Apps)"
-    ]
-  },
-  {
-    id: 6,
-    title: "Backend Development",
-    description: "Robust and scalable backend solutions to power your applications with secure and efficient APIs.",
-    icon: "server",
-    technologies: ["Node.js", "PHP", "Express.js", "Laravel", "MongoDB", "SQL", "Redis", "GraphQL", "REST"],
-    features: [
-      "Rest and GraphQL APIs",
-      "Scalable API development",
-      "Secure authentication (OAuth, JWT)",
-      "Database optimization",
-      "Real-time data processing",
-      "Microservices architecture",
-      "Rate limiting and caching",
-      "API documentation"
-    ]
-  },
-  {
-    id: 7,
-    title: "Cloud Development",
-    description: "Seamless cloud deployment solutions to ensure your applications are scalable, secure, and highly available.",
-    icon: "cloud",
-    technologies: ["Docker", "AWS", "Google Cloud", "Kubernetes", "Terraform", "CI/CD", "Jenkins"],
-    features: [
-      "Containerized deployments",
-      "Auto-scaling infrastructure",
-      "High availability and redundancy",
-      "Cost optimization",
-      "Security compliance (e.g., GDPR, HIPAA)",
-      "Continuous integration and deployment",
-      "Monitoring and logging"
-    ]
-  },
-  {
-    id: 8,
-    title: "WordPress Website Development",
-    description: "Elegant and powerful WordPress solutions with custom themes and advanced functionality for businesses of all sizes.",
-    icon: "file-text",
-    technologies: ["WordPress", "PHP", "MySQL", "JavaScript", "CSS", "HTML", "Gutenberg"],
-    features: [
-      "User-friendly CMS",
-      "Custom themes and plugins",
-      "Plugin development",
-      "E-commerce integration",
-      "SEO-friendly architecture",
-      "Performance optimization",
-      "Security hardening"
-    ]
-  },
+  // {
+  //   id: 5,
+  //   title: "Ecommerce Website Development",
+  //   description: "Full-featured online stores built with WooCommerce and Shopify to sell products and services effortlessly.",
+  //   icon: "shopping-cart",
+  //   technologies: ["WordPress", "WooCommerce", "Shopify", "Stripe"],
+  //   features: [
+  //     "Secure payment processing",
+  //     "Inventory management",
+  //     "Order tracking and analytics",
+  //     "Customer accounts and loyalty programs",
+  //     "Responsive design",
+  //     "SEO optimization",
+  //     "Third-party integrations (e.g., PayPal, Shopify Apps)"
+  //   ]
+  // },
+  // {
+  //   id: 6,
+  //   title: "Backend Development",
+  //   description: "Robust and scalable backend solutions to power your applications with secure and efficient APIs.",
+  //   icon: "server",
+  //   technologies: ["Node.js", "PHP", "Express.js", "Laravel", "MongoDB", "SQL", "Redis", "GraphQL", "REST"],
+  //   features: [
+  //     "Rest and GraphQL APIs",
+  //     "Scalable API development",
+  //     "Secure authentication (OAuth, JWT)",
+  //     "Database optimization",
+  //     "Real-time data processing",
+  //     "Microservices architecture",
+  //     "Rate limiting and caching",
+  //     "API documentation"
+  //   ]
+  // },
+  // {
+  //   id: 7,
+  //   title: "Cloud Development",
+  //   description: "Seamless cloud deployment solutions to ensure your applications are scalable, secure, and highly available.",
+  //   icon: "cloud",
+  //   technologies: ["Docker", "AWS", "Google Cloud", "Kubernetes", "Terraform", "CI/CD", "Jenkins"],
+  //   features: [
+  //     "Containerized deployments",
+  //     "Auto-scaling infrastructure",
+  //     "High availability and redundancy",
+  //     "Cost optimization",
+  //     "Security compliance (e.g., GDPR, HIPAA)",
+  //     "Continuous integration and deployment",
+  //     "Monitoring and logging"
+  //   ]
+  // },
+  // {
+  //   id: 8,
+  //   title: "WordPress Website Development",
+  //   description: "Elegant and powerful WordPress solutions with custom themes and advanced functionality for businesses of all sizes.",
+  //   icon: "file-text",
+  //   technologies: ["WordPress", "PHP", "MySQL", "JavaScript", "CSS", "HTML", "Gutenberg"],
+  //   features: [
+  //     "User-friendly CMS",
+  //     "Custom themes and plugins",
+  //     "Plugin development",
+  //     "E-commerce integration",
+  //     "SEO-friendly architecture",
+  //     "Performance optimization",
+  //     "Security hardening"
+  //   ]
+  // },
 ];
 
 export const projects: Project[] = [
@@ -312,7 +312,7 @@ export const projects: Project[] = [
       "Contact Form and Location Section"
     ],
     "description": "Shivansh Enterprise is a professional consultancy website designed to present services clearly, establish trust, and turn visitors into qualified business inquiries.",
-    "technologies": ["HTML", "CSS", "JavaScript", "TypeScript", "Next.js", "React.js", "TailwindCSS", "Framer Motion"],
+    "technologies": ["JavaScript", "TypeScript", "Next.js", "React.js", "TailwindCSS", "Framer Motion", "HTML", "CSS"],
     "client": {
       "name": "Shivansh Enterprise",
       "intro": "Shivansh Enterprise provides business consultancy and operational support services for growing organizations.",
@@ -412,7 +412,7 @@ export const projects: Project[] = [
       "Our Location Section"
     ],
     "description": "Rudra Advisory is a 360 degree real estate sales and marketing strategies and solutions company that focused purely on ROI driven marketing partnerships",
-    "technologies": ["HTML", "CSS", "TypeScript", "Next.js", "React.js", "TailwindCSS", "Framer Motion", "Shadcn UI"],
+    "technologies": ["TypeScript", "Next.js", "React.js", "TailwindCSS", "Framer Motion", "Shadcn UI", "HTML", "CSS"],
     "client": {
       "name": "Rudra Infrastructure and Advisory",
       "industry": "Real Estate",
@@ -504,7 +504,7 @@ export const projects: Project[] = [
       "Testimonial Page"
     ],
     "description": "Eggvita’s responsive website showcases premium egg products from Anand City, emphasizing sustainable farming with dynamic visuals and intuitive navigation.",
-    "technologies": ["HTML", "CSS", "JavaScript", "React.js", "TailwindCSS", "Framer Motion", "Material UI", "Lottie Animation"],
+    "technologies": ["JavaScript", "React.js", "TailwindCSS", "Framer Motion", "Material UI", "Lottie Animation", "HTML", "CSS"],
     "client": {
       "name": "Eggvita",
       "intro": "Eggvita is a leading poultry farming brand committed to delivering high-quality egg products with a focus on sustainability.",
@@ -573,7 +573,7 @@ export const projects: Project[] = [
       
     ],
     "description": "Reva-Clublife’s website promotes a premium residential project with elegant design and interactive features to captivate potential buyers.",
-    "technologies": ["HTML", "CSS", "JavaScript", "React.js", "TailwindCSS", "AOS Animation", "Google Maps API"],
+    "technologies": ["JavaScript", "React.js", "TailwindCSS", "AOS Animation", "Google Maps API", "HTML", "CSS"],
     "client": {
       "name": "Reva Developers",
       "intro": "Reva Developers specializes in upscale residential and commercial real estate projects in India.",
@@ -634,7 +634,7 @@ export const projects: Project[] = [
       "Interactive & Creative Footer",
     ],
     "description": "Reva-Landmark’s sleek website promotes a premium commercial project with interactive elements and responsive design.",
-    "technologies": ["HTML", "CSS", "JavaScript", "React.js", "TailwindCSS", "AOS Animation", "Google Maps API"],
+    "technologies": ["JavaScript", "React.js", "TailwindCSS", "AOS Animation", "Google Maps API", "HTML", "CSS"],
     "client": {
       "name": "Reva Developers",
       "intro": "Reva Developers creates landmark real estate projects that redefine commercial and residential spaces.",
@@ -688,7 +688,7 @@ export const projects: Project[] = [
 
     ],
     "description": "The One Academy’s vibrant landing page promotes educational programs with Lottie animations and modern design to engage students.",
-    "technologies": ["HTML", "CSS", "JavaScript", "Lottie Animation", "PHP"],
+    "technologies": ["JavaScript", "Lottie Animation", "PHP", "HTML", "CSS"],
     "client": {
       "name": "The One Academy",
       "intro": "The One Academy offers specialized training programs in branding and creative fields.",
@@ -757,7 +757,7 @@ export const projects: Project[] = [
       "Interactive & Creative Footer",
     ],
     "description": "Vashilla Industries’ modern website showcases agricultural products with intuitive navigation and robust functionality using WordPress.",
-    "technologies": ["WordPress", "Elementor", "JavaScript", "PHP"],
+    "technologies": ["WordPress", "Elementor", "JavaScript", "PHP", "HTML", "CSS"],
     "client": {
       "name": "Vashilla Industries",
       "intro": "Vashilla Industries is a leading supplier of agricultural products, focusing on quality and retail innovation.",
@@ -818,7 +818,7 @@ export const projects: Project[] = [
       "Location Page",
     ],
     "description": "AvranceCorp’s professional website showcases real estate projects with elegant design and robust functionality using WordPress.",
-    "technologies": ["WordPress", "Elementor", "JavaScript", "PHP", "SQL"],
+    "technologies": ["WordPress", "Elementor", "JavaScript", "PHP", "SQL", "HTML", "CSS"],
     "client": {
       "name": "AvranceCorp Development",
       "intro": "AvranceCorp Development is a leading real estate firm specializing in innovative architectural designs.",
@@ -873,7 +873,7 @@ export const projects: Project[] = [
      "About Us Page",
     ],
     "description": "Best Value Distributors’ e-commerce platform supports wholesale operations with secure transactions and seamless product browsing.",
-    "technologies": ["WordPress", "Elementor", "WooCommerce", "JavaScript", "PHP"],
+    "technologies": ["WordPress", "Elementor", "WooCommerce", "JavaScript", "PHP", "HTML", "CSS"],
     "client": {
       "name": "Best Value Distributors",
       "intro": "Best Value Distributors provides a wide range of products to retailers across the USA.",
@@ -935,7 +935,7 @@ export const projects: Project[] = [
 
     ],
     "description": "121 PCO Training’s website promotes specialized training programs with clear navigation and engaging content for students.",
-    "technologies": ["WordPress", "Elementor", "JavaScript", "PHP", "SQL"],
+    "technologies": ["WordPress", "Elementor", "JavaScript", "PHP", "SQL", "HTML", "CSS"],
     "client": {
       "name": "121 PCO Training",
       "intro": "121 PCO Training helps students pass topographical tests for professional certifications.",

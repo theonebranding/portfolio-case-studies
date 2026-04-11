@@ -1,8 +1,18 @@
 import { Gravity, MatterBody } from "@/components/ui/gravity";
-import {services} from "@/lib/data";
+// import {services} from "@/lib/data";
+
+const services = [
+  { id: 1, title: "Website Development" },
+  { id: 2, title: "Software Development" },
+  { id: 3, title: "Mobile App Development" },
+  { id: 4, title: "AI-Powered Software" },
+  { id: 5 , title: "E-commerce Solutions" },
+  { id: 6 , title: "Wordpress Solutions" },
+
+];
 const ListOfServices = () => {
  
-
+  
   const colors = [
     "#0015ff", // Blue
     "#E794DA", // Pink

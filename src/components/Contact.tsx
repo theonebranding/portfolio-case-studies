@@ -3,8 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
-import  CursorWanderCard  from "@/components/ui/cursor-wander-card"
+import { Mail, Phone, MapPin, Send, ArrowUpRight } from "lucide-react";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -110,7 +109,7 @@ const Contact = () => {
             </p>
 
             <div className="space-y-6">
-              <div className="hidden md:flex md:items-start">
+              {/* <div className="hidden md:flex md:items-start">
                 <div className="relative -left-3 top-6 md:left-4 -mt-0 md:-mt-10">
                   <CursorWanderCard
                     cardholderName="Faizal Vahora"
@@ -130,33 +129,75 @@ const Contact = () => {
                     logoSrc="/assets/blacklogo.png"
                   />
                 </div>
-              </div>
+              </div> */}
 
-              <div className="md:hidden rounded-xl border border-gray-800 bg-gray-900/50 p-5 space-y-4">
-                <div>
-                  <p className="text-brand-yellow text-lg font-primary">The One Branding</p>
+              <div className="relative overflow-hidden rounded-2xl border border-brand-yellow/30 bg-gradient-to-br from-gray-900 via-gray-900 to-gray-950 p-6 md:p-7">
+                <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-brand-yellow to-transparent" />
+
+                <div className="mb-6 justify-center flex-col items-center text-center">
+                  <p className="mt-3 text-brand-yellow text-2xl font-primary">The One Branding</p>
                   <p className="text-gray-300 text-sm font-secondary">Lets Make Your Business A Brand</p>
                 </div>
 
-                <div className="space-y-3 text-sm">
-                  <div className="flex items-start gap-3">
-                    <Phone size={16} className="text-brand-yellow mt-0.5" />
-                    <p className="text-gray-200 font-secondary">+91 81609 21279</p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <Mail size={16} className="text-brand-yellow mt-0.5" />
-                    <p className="text-gray-200 font-secondary">info@theonebranding.com</p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <MapPin size={28} className="text-brand-yellow mt-0.5" />
-                    <p className="text-gray-200 font-secondary">T-3, Central hub, Indira Gandhi Marg, 100 Feet Rd, Near Jio Petrol Pump, Anand, Gujarat - 388001</p>
-                  </div>
+                <div className="space-y-3">
+                  <a
+                    href="tel:+918160921279"
+                    className="group flex items-center justify-between rounded-xl border border-gray-800 bg-black/30 px-4 py-3 transition-all hover:border-brand-yellow/50 hover:bg-brand-yellow/10"
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-yellow/15 text-brand-yellow">
+                        <Phone size={16} />
+                      </span>
+                      <div>
+                        <p className="text-xs uppercase tracking-wide text-gray-400 font-tertiary">Phone</p>
+                        <p className="text-gray-100 font-secondary">+91 81609 21279</p>
+                      </div>
+                    </div>
+                    <ArrowUpRight size={16} className="text-gray-500 transition-colors group-hover:text-brand-yellow" />
+                  </a>
+
+                  <a
+                    href="mailto:info@theonebranding.com"
+                    className="group flex items-center justify-between rounded-xl border border-gray-800 bg-black/30 px-4 py-3 transition-all hover:border-brand-yellow/50 hover:bg-brand-yellow/10"
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-yellow/15 text-brand-yellow">
+                        <Mail size={16} />
+                      </span>
+                      <div>
+                        <p className="text-xs uppercase tracking-wide text-gray-400 font-tertiary">Email</p>
+                        <p className="text-gray-100 font-secondary">info@theonebranding.com</p>
+                      </div>
+                    </div>
+                    <ArrowUpRight size={16} className="text-gray-500 transition-colors group-hover:text-brand-yellow" />
+                  </a>
+
+                  <a
+                    href="https://maps.google.com/?q=T-3,+Central+hub,+Indira+Gandhi+Marg,+100+Feet+Rd,+Near+Jio+Petrol+Pump,+Anand,+Gujarat+388001"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-start justify-between rounded-xl border border-gray-800 bg-black/30 px-4 py-3 transition-all hover:border-brand-yellow/50 hover:bg-brand-yellow/10"
+                  >
+                    <div className="flex items-start gap-3">
+                      <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-yellow/15 text-brand-yellow">
+                        <MapPin size={16} />
+                      </span>
+                      <div>
+                        <p className="text-xs uppercase tracking-wide text-gray-400 font-tertiary">Address</p>
+                        <p className="text-gray-100 font-secondary leading-relaxed">
+                          T-3, Central hub, Indira Gandhi Marg, 100 Feet Rd, Near Jio Petrol Pump, Anand, Gujarat - 388001
+                        </p>
+                      </div>
+                    </div>
+                    <ArrowUpRight size={16} className="mt-1 text-gray-500 transition-colors group-hover:text-brand-yellow" />
+                  </a>
                 </div>
               </div>
             </div>
           </div>
           
-          <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-gray-800">
+         <div className="relative overflow-hidden rounded-2xl border border-brand-yellow/30 bg-gradient-to-br from-gray-900 via-gray-900 to-gray-950 p-6 md:p-7">
+                <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-brand-yellow to-transparent" />
             <h3 className="text-2xl font-bold mb-6 font-primary">Send us a message</h3>
             
             <form onSubmit={handleSubmit} className="space-y-5">

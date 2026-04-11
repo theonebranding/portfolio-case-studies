@@ -10,9 +10,9 @@ const Hero = () => {
   const [activeTextIndex, setActiveTextIndex] = useState(0);
   const [activeHeadingTextIndex, setActiveHeadingTextIndex] = useState(0);
   const headingRotatingTexts = [
-    'Our Website Case Studies',
-    'Our Software Case Studies',
-    'Our Application Case Studies',
+    'Website',
+    'Application',
+    'Software',
   ];
   const rotatingTexts = [
     'E-commerce Websites',
@@ -45,7 +45,7 @@ const Hero = () => {
   
       <div className="container mx-auto px-4 sm:px-6 z-10 text-center">
         <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-6xl font-bold text-brand-white font-primary">          
-          {headingRotatingTexts[activeHeadingTextIndex]}
+          <span className="inline-block min-w-[9ch] text-right">{headingRotatingTexts[activeHeadingTextIndex]}</span> Case Studies
         </h1>
 
         <div className="rotating-text mt-6 sm:mt-8 h-16 sm:h-20 md:h-32 mb-8 sm:mb-12 overflow-hidden relative">
