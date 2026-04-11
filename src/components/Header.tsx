@@ -26,10 +26,10 @@ const Header = () => {
   }, []);
 
   const menuItems = [
-    { name: "Home", href: "#home" },
-    { name: "Portfolio", href: "#portfolio" },
-    { name: "Services", href: "#services" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/#home" },
+    { name: "Portfolio", href: "/#portfolio" },
+    { name: "Services", href: "/#services" },
+    { name: "Contact", href: "/#contact" },
   ];
 
   return (
@@ -49,7 +49,7 @@ const Header = () => {
             }
           `}
         >
-          <a href="#home" aria-label="Go to home section">
+          <a href="/#home" aria-label="Go to home section">
             <img
               src={logo}
               alt="The One Branding logo"
