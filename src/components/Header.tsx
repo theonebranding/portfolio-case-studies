@@ -49,16 +49,16 @@ const Header = () => {
             }
           `}
         >
-          <a href="#">
+          <a href="#home" aria-label="Go to home section">
             <img
               src={logo}
-              alt="Logo"
+              alt="The One Branding logo"
               className={`w-auto transition-all duration-500 ease-out ${isScrolled ? "h-16 md:h-16" : "h-16 md:h-16"}`}
             />
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav aria-label="Primary navigation" className="hidden md:flex items-center space-x-8">
             {menuItems.map((item) => (
               <a
                 key={item.name}
@@ -75,6 +75,7 @@ const Header = () => {
             <SheetTrigger asChild className="md:hidden block">
               <Button
                 variant="ghost"
+                aria-label="Open mobile menu"
                 className="text-brand-white hover:text-brand-yellow rounded-full"
               >
                 <Menu />

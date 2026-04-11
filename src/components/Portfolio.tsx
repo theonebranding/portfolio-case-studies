@@ -4,6 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { AppWindow, ArrowRight, ExternalLink, Globe, MonitorCog } from "lucide-react";
 import { AnimatedText } from "@/components/ui/animated-underline-text-one";
 import TechnologySlider from "@/components/TechnologySlider";
+import { getProjectSlug } from "@/lib/seo";
 
 const Portfolio = () => {
   const websiteProjects = projects.filter(
@@ -17,11 +18,6 @@ const Portfolio = () => {
   );
   const tabsTriggerClassName =
     "group relative inline-flex items-center justify-center gap-2 rounded-xl border border-transparent px-5 py-3 text-sm md:text-base font-semibold text-gray-200 transition-all duration-300 data-[state=active]:border-brand-yellow/60 data-[state=active]:bg-gradient-to-b data-[state=active]:from-brand-yellow data-[state=active]:to-yellow-300 data-[state=active]:text-brand-black data-[state=active]:shadow-[0_10px_30px_rgba(250,204,21,0.25)] hover:text-brand-yellow hover:border-brand-yellow/30 hover:bg-white/5";
-
-  // Function to generate project slug
-  const getProjectSlug = (project) => {
-    return project.title.toLowerCase().replace(/\s+/g, "-") || project.id;
-  };
 
   return (
     <section id="portfolio" className="pb-24 pt-12 bg-brand-black/90">

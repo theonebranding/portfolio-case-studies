@@ -110,9 +110,47 @@ const Contact = () => {
             </p>
 
             <div className="space-y-6">
-              <div className="flex items-start">
+              <div className="hidden md:flex md:items-start">
                 <div className="relative -left-3 top-6 md:left-4 -mt-0 md:-mt-10">
-                  <CursorWanderCard />
+                  <CursorWanderCard
+                    cardholderName="Faizal Vahora"
+                    className=""
+                    theme={{
+                      primaryColor: "#FFD700",
+                      secondaryColor: "#000",
+                      glowColor: "rgba(255, 215, 0, 0.8)",
+                    }}
+                    logoText={{ topText: "The One Branding", bottomText: "Lets Make Your Business A Brand" }}
+                    height="310px"
+                    width="480px"
+                    phoneNumber="+91 81609 21279"
+                    email="info@theonebranding.com"
+                    address="T-3, Central hub, Indira Gandhi Marg, 100 Feet Rd, Near Jio Petrol Pump, Anand, Gujarat - 388001"
+                    website="https://theonebranding.com"
+                    logoSrc="/assets/blacklogo.png"
+                  />
+                </div>
+              </div>
+
+              <div className="md:hidden rounded-xl border border-gray-800 bg-gray-900/50 p-5 space-y-4">
+                <div>
+                  <p className="text-brand-yellow text-lg font-primary">The One Branding</p>
+                  <p className="text-gray-300 text-sm font-secondary">Lets Make Your Business A Brand</p>
+                </div>
+
+                <div className="space-y-3 text-sm">
+                  <div className="flex items-start gap-3">
+                    <Phone size={16} className="text-brand-yellow mt-0.5" />
+                    <p className="text-gray-200 font-secondary">+91 81609 21279</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Mail size={16} className="text-brand-yellow mt-0.5" />
+                    <p className="text-gray-200 font-secondary">info@theonebranding.com</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <MapPin size={28} className="text-brand-yellow mt-0.5" />
+                    <p className="text-gray-200 font-secondary">T-3, Central hub, Indira Gandhi Marg, 100 Feet Rd, Near Jio Petrol Pump, Anand, Gujarat - 388001</p>
+                  </div>
                 </div>
               </div>
             </div>

@@ -3,6 +3,8 @@ import { Code, FileText, ShoppingCart, Settings, Smartphone } from "lucide-react
 import { AnimatedText } from "./ui/animated-underline-text-one";
 import ListOfServices from "./ListOfServices";
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import { getServiceSlug } from "@/lib/service-utils";
 
 const ServiceIcon = ({ icon }: { icon: string }) => {
   switch (icon) {
@@ -103,6 +105,15 @@ const Services = () => {
                     </li>
                   ))}
                 </ul>
+              </div>
+
+              <div className="mt-6">
+                <Link
+                  to={`/services/${getServiceSlug(service.title)}`}
+                  className="inline-flex items-center gap-2 text-brand-yellow hover:text-white hover:underline underline-offset-4 transition-colors font-secondary"
+                >
+                  Explore Service
+                </Link>
               </div>
             </div>
           ))}

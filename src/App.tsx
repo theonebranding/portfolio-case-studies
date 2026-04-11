@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ProjectPage from "./pages/ProjectPage";
+import ServicePage from "./pages/ServicePage";
 import {SplashCursor} from "@/components/ui/splash-cursor";
 const queryClient = new QueryClient();
 
@@ -20,6 +21,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/project/:projectSlug" element={<ProjectPage />} />
+          <Route path="/services/:serviceSlug" element={<ServicePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

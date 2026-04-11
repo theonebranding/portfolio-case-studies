@@ -7,6 +7,7 @@ import { AnimatedText } from "@/components/ui/animated-underline-text-one";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { MobileContainerScroll } from "@/components/ui/mobile-container-scroll-animation";
 import ProjectGallery from "@/components/ProjectGallery"; 
+import Footer from "@/components/Footer";
 
 const ProjectPage = () => {
   const { projectSlug } = useParams();
@@ -285,6 +286,8 @@ const ProjectPage = () => {
           </Button>
         </div>
       </div>
+
+      <Footer />
 
       {/* Image Viewer Modal */}
       {selectedImage && (

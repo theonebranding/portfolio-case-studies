@@ -222,6 +222,33 @@ export const services: Service[] = [
       "Security hardening"
     ]
   },
+  {
+    id: 8,
+    title: "AI Custom Software",
+    description: "Intelligent custom software powered by AI to automate workflows, improve decisions, and deliver measurable business growth.",
+    icon: "settings",
+    technologies: [
+      "Python",
+      "TypeScript",
+      "Node.js",
+      "FastAPI",
+      "OpenAI API",
+      "LangChain",
+      "Vector Databases",
+      "PostgreSQL",
+      "Docker"
+    ],
+    features: [
+      "AI assistants and copilots for internal teams",
+      "Workflow automation with smart decision engines",
+      "Document and knowledge-base chat systems",
+      "Predictive analytics and recommendation models",
+      "Custom AI dashboards with real-time insights",
+      "Secure role-based access and audit trails",
+      "API-first architecture for easy integrations",
+      "Scalable deployment with monitoring and observability"
+    ]
+  },
 ];
 
 export const projects: Project[] = [
