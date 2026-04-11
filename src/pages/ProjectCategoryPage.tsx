@@ -171,8 +171,9 @@ const ProjectCategoryPage = ({ category }: ProjectCategoryPageProps) => {
       <Header />
       <section className="container mx-auto px-6 pt-32 pb-20">
         <Button
+          variant="glass"
           onClick={() => navigate(-1)}
-          className="mb-10 bg-brand-black/80 hover:bg-brand-black border border-brand-yellow/90 text-brand-yellow"
+          className="mb-10"
         >
           <ChevronLeft size={20} className="mr-1" />
           Back

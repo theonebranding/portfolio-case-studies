@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { MacbookPro } from "@/components/ui/macbook-pro";
 import { MobileFrame } from "@/components/ui/mobile-frame";
+import { Button } from "@/components/ui/button";
 
 type ProjectGalleryProps = {
   images?: string[];
@@ -340,26 +341,28 @@ const ProjectGallery = ({ images = [], mobileImages = [], imagesAlt = [], onImag
             </div>
 
             {/* Navigation Buttons */}
-            <button
+            <Button
+              variant="primary"
+              size="icon"
               onClick={handlePrev}
               disabled={isAnimating}
               className={`absolute top-1/2 -left-10 md:left-4 transform -translate-y-1/2 z-20 
-                bg-yellow-500 text-black p-2 md:p-3 rounded-full 
-                hover:bg-yellow-400 transition-all ${isAnimating ? 'opacity-50 cursor-not-allowed' : 'opacity-100'} 
-                hover:shadow-lg hover:shadow-yellow-500/30 active:scale-95`}
+                h-10 w-10 md:h-12 md:w-12 rounded-full ${isAnimating ? 'opacity-50 cursor-not-allowed' : 'opacity-100'} 
+                hover:shadow-lg hover:shadow-yellow-500/30`}
             >
               <ChevronLeft size={isMobile ? 18 : 24} />
-            </button>
-            <button
+            </Button>
+            <Button
+              variant="primary"
+              size="icon"
               onClick={handleNext}
               disabled={isAnimating}
               className={`absolute top-1/2 -right-10 md:right-4 transform -translate-y-1/2 z-20 
-                bg-yellow-500 text-black p-2 md:p-3 rounded-full 
-                hover:bg-yellow-400 transition-all ${isAnimating ? 'opacity-50 cursor-not-allowed' : 'opacity-100'} 
-                hover:shadow-lg hover:shadow-yellow-500/30 active:scale-95`}
+                h-10 w-10 md:h-12 md:w-12 rounded-full ${isAnimating ? 'opacity-50 cursor-not-allowed' : 'opacity-100'} 
+                hover:shadow-lg hover:shadow-yellow-500/30`}
             >
               <ChevronRight size={isMobile ? 18 : 24} />
-            </button>
+            </Button>
           </div>
 
             {/* Screen Title */}

@@ -91,15 +91,15 @@ const Hero = () => {
         </p> */}
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-          <Button asChild className="bg-brand-yellow text-brand-black hover:bg-brand-yellow/90 px-6 py-4 sm:px-8 sm:py-6 text-base sm:text-lg font-tertiary">
+          <Button asChild variant="primary" className="px-6 py-4 sm:px-8 sm:py-6 text-base sm:text-lg font-tertiary">
             <a href="#portfolio" className="text-brand-black">View Our Work</a>
           </Button>
           <Button
             asChild
-            variant="outline"
-            className="bg-brand-white text-brand-black hover:bg-gray-200 px-6 py-4 sm:px-10 sm:py-6 text-base sm:text-xl font-tertiary"
+            variant="glass"
+            className="px-6 py-4 sm:px-10 sm:py-6 text-base sm:text-xl font-tertiary"
           >
-            <a href="#contact" className="text-brand-black">Get In Touch</a>
+            <a href="#contact">Get In Touch</a>
           </Button>
         </div>
       </div>

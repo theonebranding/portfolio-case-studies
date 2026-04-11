@@ -9,6 +9,7 @@ import ProjectPage from "./pages/ProjectPage";
 import ServicePage from "./pages/ServicePage";
 import ProjectCategoryPage from "./pages/ProjectCategoryPage";
 import {SplashCursor} from "@/components/ui/splash-cursor";
+import BackToTop from "@/components/BackToTop";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/services/:serviceSlug" element={<ServicePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <BackToTop />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

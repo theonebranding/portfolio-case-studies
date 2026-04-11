@@ -74,9 +74,9 @@ const Header = () => {
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild className="md:hidden block">
               <Button
-                variant="ghost"
+                variant="glass"
                 aria-label="Open mobile menu"
-                className="text-brand-white hover:text-brand-yellow rounded-full"
+                className="rounded-full"
               >
                 <Menu />
               </Button>

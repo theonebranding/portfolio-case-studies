@@ -229,7 +229,7 @@ const ServicePage = () => {
               <p className="text-gray-200 max-w-3xl mx-auto font-secondary leading-relaxed mb-6">
                 We can design and deliver a custom solution tailored to your goals, timeline, and budget.
               </p>
-              <Button className="bg-brand-yellow text-brand-black hover:bg-brand-white px-8 py-6 text-lg font-secondary">
+              <Button variant="primary" className="px-8 py-6 text-lg font-secondary">
                 <a href="/#contact">Start Your Project</a>
               </Button>
             </div>

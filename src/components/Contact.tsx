@@ -272,7 +272,8 @@ const Contact = () => {
               
               <Button
                 type="submit"
-                className="w-full bg-brand-yellow text-brand-black hover:bg-brand-white flex items-center text-lg justify-center gap-2"
+                variant="primary"
+                className="w-full flex items-center text-lg justify-center gap-2"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (

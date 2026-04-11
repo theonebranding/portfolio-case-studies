@@ -1,6 +1,6 @@
 
 import { Facebook, Twitter, Instagram, Linkedin, Phone, Mail, MapPin } from "lucide-react";
-
+import logo from "/assets/logo.png";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   
@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           <div>
-            <h3 className="text-2xl font-bold text-brand-yellow mb-4 font-primary">The One Branding</h3>
+            <img src={logo} alt="The One Branding Logo" className="h-20 scale-125 mb-4" />
             <p className="text-gray-400 mb-6 font-secondary">
               We create stunning digital experiences that elevate brands and drive results.
             </p>

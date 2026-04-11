@@ -58,7 +58,7 @@ const ProjectModal = memo(({ project, isOpen, onClose }: ProjectModalProps) => {
             <div className="mb-6">
               <h4 className="text-lg font-semibold mb-2 text-brand-yellow">Project Link</h4>
               {project?.url && (
-              <Button className="w-full bg-brand-yellow text-brand-black hover:bg-brand-yellow/90">
+              <Button variant="secondary" className="w-full">
                 <a href={project.url} target="_blank" rel="noopener noreferrer">
                   Visit Project
                 </a>

@@ -4,6 +4,7 @@ import { ArrowRight, ExternalLink } from "lucide-react";
 import { AnimatedText } from "@/components/ui/animated-underline-text-one";
 import TechnologySlider from "@/components/TechnologySlider";
 import { getProjectSlug } from "@/lib/seo";
+import { Button } from "@/components/ui/button";
 
 type ProjectCategory = "website" | "software" | "application";
 
@@ -19,13 +20,12 @@ const SectionHeader = ({
 }) => (
   <div className="mb-6 flex items-center justify-between gap-4">
     <h2 className="text-3xl md:text-4xl font-bold text-brand-yellow font-primary">{title}</h2>
-    <Link
-      to={`/project/${category}`}
-      className="group inline-flex items-center gap-2 rounded-lg border border-brand-yellow/40 px-4 py-2 text-sm font-semibold text-brand-yellow transition-all hover:border-brand-yellow hover:bg-brand-yellow hover:text-brand-black"
-    >
-      View All
-      <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-    </Link>
+    <Button asChild variant="secondary" className="group px-4 py-2 text-sm font-semibold text-brand-yellow">
+      <Link to={`/project/${category}`}>
+        View All
+        <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+      </Link>
+    </Button>
   </div>
 );
 
