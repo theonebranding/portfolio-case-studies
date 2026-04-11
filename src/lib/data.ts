@@ -1168,7 +1168,7 @@ export const projects: Project[] = [
   {
     "id": 12,
     "title": "Talktime Shop Management Application",
-    "thumbnail": "/assets/projects/talktime/mobile/01.png",
+    "thumbnail": "/assets/projects/talktime/thumbnail.png",
     "category": "application",
     "desktopImages": [],
     "mobileImages": [
