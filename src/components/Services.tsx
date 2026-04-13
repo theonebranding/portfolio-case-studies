@@ -60,7 +60,7 @@ const Services = () => {
       <div className="container mx-auto px-6">
         <AnimatedText
           text="Our Services"
-          textClassName="text-7xl font-bold mb-2 text-brand-yellow"
+          textClassName="text-5xl  md:text-6xl font-bold mb-2 text-brand-yellow"
           underlinePath="M 0,10 Q 75,0 150,10 Q 225,20 300,10"
           underlineHoverPath="M 0,10 Q 75,20 150,10 Q 225,0 300,10"
           underlineDuration={2}

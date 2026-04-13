@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronLeft } from "lucide-react";
 import { useEffect } from "react";
 
-type ProjectCategory = "website" | "software" | "application";
+type ProjectCategory = "website" | "software" | "applications";
 
 interface ProjectCategoryPageProps {
   category: ProjectCategory;
@@ -17,13 +17,13 @@ interface ProjectCategoryPageProps {
 const categoryTitleMap: Record<ProjectCategory, string> = {
   website: "Website Projects",
   software: "Software Projects",
-  application: "Application Projects",
+  applications: "Application Projects",
 };
 
 const categoryDescriptionMap: Record<ProjectCategory, string> = {
   website: "Explore all website case studies delivered by The One Branding across industries.",
   software: "Explore all software case studies built by The One Branding for business operations.",
-  application: "Explore all mobile application case studies created by The One Branding.",
+  applications: "Explore all mobile application case studies created by The One Branding.",
 };
 
 const categoryHeroCopy: Record<ProjectCategory, { intro: string; highlights: string[] }> = {
@@ -37,7 +37,7 @@ const categoryHeroCopy: Record<ProjectCategory, { intro: string; highlights: str
       "Business software case studies focused on process automation, data visibility, and scalable architecture for growing teams.",
     highlights: ["Workflow automation", "Role-based dashboards", "Secure backend systems"],
   },
-  application: {
+  applications: {
     intro:
       "Mobile application case studies designed for real-world usage with smooth interactions, robust APIs, and long-term maintainability.",
     highlights: ["Cross-platform delivery", "Performance-first UX", "Scalable app backend"],

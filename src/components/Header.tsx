@@ -1,9 +1,10 @@
 
 import { useState, useEffect } from "react";
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
@@ -81,7 +82,19 @@ const Header = () => {
                 <Menu />
               </Button>
             </SheetTrigger>
-            <SheetContent className="bg-brand-black/95 backdrop-blur-xl border-brand-yellow/60">
+            <SheetContent className="bg-brand-black/95 backdrop-blur-xl border-brand-yellow/60 [&>button]:hidden">
+              <div className="flex justify-end">
+                <SheetClose asChild>
+                  <Button
+                    variant="glass"
+                    size="icon"
+                    aria-label="Close mobile menu"
+                    className="rounded-full border-brand-yellow/70 text-white hover:text-brand-yellow"
+                  >
+                    <X size={20} />
+                  </Button>
+                </SheetClose>
+              </div>
               <nav className="flex flex-col space-y-6 pt-10">
                 {menuItems.map((item) => (
                   <a

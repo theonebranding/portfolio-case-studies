@@ -83,7 +83,7 @@ const ProjectPage = () => {
     );
   }
 
-  const isApplicationProject = project.category === "application";
+  const isApplicationProject = project.category === "applications";
   const heroImage = project.thumbnail || project.desktopImages?.[0] || project.mobileImages?.[0];
 
   return (
@@ -239,15 +239,7 @@ const ProjectPage = () => {
             Let's collaborate to bring your vision to life with our expertise and creative approach.
           </p>
           <Button asChild variant="primary" className="font-secondary px-8 py-6 text-lg">
-            <a
-              href="/"
-              onClick={(e) => {
-                e.preventDefault();
-                window.location.href = "/#contact";
-              }}
-            >
-              Get in Touch
-            </a>
+            <a href="/#contact">Get in Touch</a>
           </Button>
         </div>
       </div>

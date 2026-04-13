@@ -6,26 +6,26 @@ import TechnologySlider from "@/components/TechnologySlider";
 import { getProjectSlug } from "@/lib/seo";
 import { Button } from "@/components/ui/button";
 
-type ProjectCategory = "website" | "software" | "application";
+type ProjectCategory = "website" | "software" | "applications";
 
 const getTopProjects = (category: ProjectCategory) =>
   projects.filter((project) => project.category === category).slice(0, 3);
 
 const SectionHeader = ({
   title,
-  category,
 }: {
   title: string;
-  category: ProjectCategory;
 }) => (
-  <div className="mb-6 flex items-center justify-between gap-4">
-    <h2 className="text-3xl md:text-4xl font-bold text-brand-yellow font-primary">{title}</h2>
-    <Button asChild variant="secondary" className="group px-4 py-2 text-sm font-semibold text-brand-yellow">
-      <Link to={`/project/${category}`}>
-        View All
-        <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-      </Link>
-    </Button>
+  <div className="mb-6 flex justify-center">
+    <div className="inline-flex items-center justify-center px-6 py-4">
+      <AnimatedText
+        text={title}
+        className="!gap-0"
+        textClassName="text-4xl sm:text-4xl md:text-6xl font-extrabold text-brand-yellow"
+        underlineClassName="text-white -bottom-4"
+        underlineDuration={1.2}
+      />
+    </div>
   </div>
 );
 
@@ -116,13 +116,24 @@ const ProjectGrid = ({ category }: { category: ProjectCategory }) => {
   );
 };
 
+const SectionViewAll = ({ category }: { category: ProjectCategory }) => (
+  <div className="mt-6 flex justify-center md:justify-end">
+    <Button asChild variant="secondary" className="group px-4 py-2 text-sm font-semibold text-brand-yellow">
+      <Link to={`/project/${category}`}>
+        View All
+        <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+      </Link>
+    </Button>
+  </div>
+);
+
 const Portfolio = () => {
   return (
     <section id="portfolio" className="pb-24 pt-12 bg-brand-black/90">
       <div className="container mx-auto px-6">
         <AnimatedText
           text="Technologies We Use"
-          textClassName="text-6xl font-bold mb-2 text-brand-yellow"
+          textClassName="text-5xl  md:text-6xl font-bold mb-2 text-brand-yellow"
           underlinePath="M 0,10 Q 50,20 300,10 Q 250,0 400,10"
           underlineHoverPath="M 0,10 Q 150,20 300,10 Q 250,0 450,10"
           underlineDuration={2}
@@ -136,7 +147,7 @@ const Portfolio = () => {
 
         <AnimatedText
           text="Our Portfolio"
-          textClassName="text-7xl font-bold mb-2 text-brand-yellow"
+          textClassName="text-5xl  md:text-6xl font-bold mb-2 text-brand-yellow"
           underlinePath="M 0,10 Q 75,0 150,10 Q 225,20 300,10"
           underlineHoverPath="M 0,10 Q 75,20 150,10 Q 225,0 300,10"
           underlineDuration={2}
@@ -148,18 +159,21 @@ const Portfolio = () => {
 
         <div className="space-y-16">
           <div>
-            <SectionHeader title="Website" category="website" />
+            <SectionHeader title="Website" />
             <ProjectGrid category="website" />
+            <SectionViewAll category="website" />
           </div>
 
           <div>
-            <SectionHeader title="Software" category="software" />
+            <SectionHeader title="Software" />
             <ProjectGrid category="software" />
+            <SectionViewAll category="software" />
           </div>
 
           <div>
-            <SectionHeader title="Application" category="application" />
-            <ProjectGrid category="application" />
+            <SectionHeader title="Application" />
+            <ProjectGrid category="applications" />
+            <SectionViewAll category="applications" />
           </div>
         </div>
       </div>

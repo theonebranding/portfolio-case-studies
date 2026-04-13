@@ -44,22 +44,27 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-radial from-black to-black animate-gradient-flow"></div>
   
       <div className="container mx-auto px-4 sm:px-6 z-10 text-center">
-        <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-6xl font-bold text-brand-white font-primary">          
-          <span className="inline-block min-w-[9ch] text-right">{headingRotatingTexts[activeHeadingTextIndex]}</span> Case Studies
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold text-brand-white font-primary text-center">
+          <span className="inline-flex flex-col md:flex-row items-center justify-center gap-0 md:gap-2 leading-tight">
+            <span className="inline-flex min-w-[9ch] justify-center text-center">
+              {headingRotatingTexts[activeHeadingTextIndex]}
+            </span>
+            <span className="block">Case Studies</span>
+          </span>
         </h1>
 
-        <div className="rotating-text mt-6 sm:mt-8 h-16 sm:h-20 md:h-32 mb-8 sm:mb-12 overflow-hidden relative">
+        <h1 className="rotating-text mt-6 sm:mt-8 h-16 sm:h-20 md:h-32 mb-8 sm:mb-12 overflow-hidden relative text-center">
           {/* Rotating Text */}
           <div className="absolute inset-0 flex items-center justify-center space-y-6">
             {rotatingTexts.map((text, index) => (
-              <div
+              <span
                 key={index}
                 className={`rotating-text-item text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-primary font-bold gradient-text z-20 ${
                   index === activeTextIndex ? 'active' : ''
                 }`}
               >
                 {text}
-              </div>
+              </span>
             ))}
           </div>
           <div>
@@ -84,7 +89,7 @@ const Hero = () => {
               <div className="absolute inset-0 w-full h-full bg-brand-black [mask-image:radial-gradient(500px_200px_at_top,transparent_30%,white)] sm:[mask-image:radial-gradient(700px_250px_at_top,transparent_30%,white)]"></div>
             </div>
           </div>
-        </div>
+        </h1>
         
         {/* <p className="max-w-3xl sm:max-w-5xl mx-auto mb-6 sm:mb-8 -mt-2 sm:-mt-4 text-sm sm:text-base md:text-lg">
           <TypewriterEffectSmooth words={words} className='text-brand-white text-sm sm:text-base md:text-lg' />

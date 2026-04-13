@@ -15,7 +15,7 @@ export interface Project {
   id: number;
   title: string;
   thumbnail: string;
-  category: 'website' | 'software' | 'application';
+  category: 'website' | 'software' | 'applications';
   desktopImages?: string[];
   mobileImages?: string[];
   imagesAlt?: string[];
@@ -1169,7 +1169,7 @@ export const projects: Project[] = [
     "id": 12,
     "title": "Talktime Shop Management Application",
     "thumbnail": "/assets/projects/talktime/thumbnail.png",
-    "category": "application",
+    "category": "applications",
     "desktopImages": [],
     "mobileImages": [
       "/assets/projects/talktime/mobile/01.png",
