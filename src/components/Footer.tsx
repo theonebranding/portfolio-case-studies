@@ -57,26 +57,15 @@ const Footer = () => {
             <h4 className="text-lg font-semibold font-primary text-brand-white mb-4">Contact</h4>
             <ul className="space-y-3">
               <li>
-                <a href="tel:+918160921279" className="flex items-start gap-2 text-gray-400 hover:text-brand-yellow transition-colors font-secondary hover:underline underline-offset-4 decoration-transparent hover:decoration-current">
+                <a href="tel:+91 98796 62889" className="flex items-start gap-2 text-gray-400 hover:text-brand-yellow transition-colors font-secondary hover:underline underline-offset-4 decoration-transparent hover:decoration-current">
                   <Phone className="h-4 w-4 mt-1 text-brand-yellow" />
-                  <span>+91 81609 21279</span>
+                  <span>+91 98796 62889</span>
                 </a>
               </li>
               <li>
-                <a href="mailto:info@theonebranding.com" className="flex items-start gap-2 text-gray-400 hover:text-brand-yellow transition-colors font-secondary hover:underline underline-offset-4 decoration-transparent hover:decoration-current">
+                <a href="mailto:info@digoltech.com" className="flex items-start gap-2 text-gray-400 hover:text-brand-yellow transition-colors font-secondary hover:underline underline-offset-4 decoration-transparent hover:decoration-current">
                   <Mail className="h-4 w-4 mt-1 text-brand-yellow" />
-                  <span>info@theonebranding.com</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://maps.app.goo.gl/sZTQwNXrwRfwtt959"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-start gap-2 text-gray-400 hover:text-brand-yellow transition-colors font-secondary hover:underline underline-offset-4 decoration-transparent hover:decoration-current"
-                >
-                  <MapPin className="h-4 w-4 mt-1 text-brand-yellow shrink-0" />
-                  <span>T-3, Central hub, Indira Gandhi Marg, 100 Feet Rd, Near Jio Petrol Pump, Anand, Gujarat - 388001</span>
+                  <span>info@digoltech.com</span>
                 </a>
               </li>
               
