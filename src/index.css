@@ -7,7 +7,7 @@
 
 body {
   font-family: var(--font-body);
-  scrollbar-color: #FFC700 #F0F0F0; /* thumb track */
+  scrollbar-color: #1E88E5 #0A1628; /* thumb track */
   scrollbar-width: auto;
 }
 
@@ -50,31 +50,31 @@ h1, h2, h3, h4, h5, h6 {
 
   @property --color-1 {
     syntax: '<color>';
-    initial-value: #000;
+    initial-value: #0A1628;
     inherits: false;
   }
 
   @property --color-2 {
     syntax: '<color>';
-    initial-value: #08012c;
+    initial-value: #0D47A1;
     inherits: false;
   }
 
   @property --color-3 {
     syntax: '<color>';
-    initial-value: #4e1e40;
+    initial-value: #1565C0;
     inherits: false;
   }
 
   @property --color-4 {
     syntax: '<color>';
-    initial-value: #70464e;
+    initial-value: #1E88E5;
     inherits: false;
   }
 
   @property --color-5 {
     syntax: '<color>';
-    initial-value: #88394c;
+    initial-value: #42A5F5;
     inherits: false;
   }
 
@@ -86,13 +86,13 @@ h1, h2, h3, h4, h5, h6 {
 
   @property --border-color-1 {
     syntax: '<color>';
-    initial-value: hsla(340, 75%, 60%, 0.2);
+    initial-value: hsla(207, 75%, 60%, 0.2);
     inherits: true;
   }
 
   @property --border-color-2 {
     syntax: '<color>';
-    initial-value: hsla(340, 75%, 40%, 0.75);
+    initial-value: hsla(207, 75%, 40%, 0.75);
     inherits: true;
   }
 
@@ -132,24 +132,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #FFC700; /* Yellow Scrollbar Thumb */
+  background-color: #1E88E5; /* Blue Scrollbar Thumb */
   border-radius: 10px;
-  border: 2px solid #FFDD33; /* Optional border */
+  border: 2px solid #42A5F5; /* Optional border */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #FFDD33; /* Slightly Lighter Yellow on Hover */
+  background-color: #42A5F5; /* Slightly Lighter Blue on Hover */
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #28282B; /* Track background color */
+  background-color: #0A1628; /* Track background color */
   border-radius: 10px;
 }
 
 /* Firefox */
 * {
   scrollbar-width: auto; 
-  scrollbar-color: #FFC700 #28282B; 
+  scrollbar-color: #1E88E5 #0A1628; 
 }
 
 
@@ -270,14 +270,14 @@ h1, h2, h3, h4, h5, h6 {
     --pos-y: 91.51%;
     --spread-x: 120.24%;
     --spread-y: 103.18%;
-    --color-1: #c96287;
-    --color-2: #c66c64;
-    --color-3: #cc7d23;
-    --color-4: #37140a;
-    --color-5: #000;
+    --color-1: #42A5F5;
+    --color-2: #1E88E5;
+    --color-3: #1565C0;
+    --color-4: #0D47A1;
+    --color-5: #0A1628;
     --border-angle: 190deg;
-    --border-color-1: hsla(340, 78%, 90%, 0.1);
-    --border-color-2: hsla(340, 75%, 90%, 0.6);
+    --border-color-1: hsla(207, 78%, 90%, 0.1);
+    --border-color-2: hsla(207, 75%, 90%, 0.6);
     --stop-1: 0%;
     --stop-2: 8.8%;
     --stop-3: 21.44%;
@@ -286,13 +286,13 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .gradient-button-variant {
-    --color-1: #000022;
-    --color-2: #1f3f6d;
-    --color-3: #469396;
-    --color-4: #f1ffa5;
+    --color-1: #0A1628;
+    --color-2: #0D47A1;
+    --color-3: #1E88E5;
+    --color-4: #E3F2FD;
     --border-angle: 200deg;
-    --border-color-1: hsla(320, 75%, 90%, 0.6);
-    --border-color-2: hsla(320, 50%, 90%, 0.15);
+    --border-color-1: hsla(207, 75%, 90%, 0.6);
+    --border-color-2: hsla(207, 50%, 90%, 0.15);
   }
 
   .gradient-button-variant:hover {
@@ -300,19 +300,19 @@ h1, h2, h3, h4, h5, h6 {
     --pos-y: 95.51%;
     --spread-x: 110.24%;
     --spread-y: 110.2%;
-    --color-1: #000020;
-    --color-2: #f1ffa5;
-    --color-3: #469396;
-    --color-4: #1f3f6d;
-    --color-5: #000;
+    --color-1: #0A1628;
+    --color-2: #E3F2FD;
+    --color-3: #42A5F5;
+    --color-4: #1565C0;
+    --color-5: #0A1628;
     --stop-1: 0%;
     --stop-2: 10%;
     --stop-3: 35.44%;
     --stop-4: 71.34%;
     --stop-5: 90.76%;
     --border-angle: 210deg;
-    --border-color-1: hsla(320, 75%, 90%, 0.2);
-    --border-color-2: hsla(320, 50%, 90%, 0.75);
+    --border-color-1: hsla(207, 75%, 90%, 0.2);
+    --border-color-2: hsla(207, 50%, 90%, 0.75);
   }
 }
 
@@ -328,7 +328,7 @@ h1, h2, h3, h4, h5, h6 {
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 45 100% 50%;
+    --primary: 207 79% 51%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -360,7 +360,7 @@ h1, h2, h3, h4, h5, h6 {
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 45 100% 50%;
+    --primary: 207 79% 51%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -393,13 +393,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .gradient-background {
-  background: linear-gradient(45deg, #000000, #111111, #222222, #111111, #000000);
+  background: linear-gradient(45deg, #0A1628, #0D2647, #0D47A1, #0D2647, #0A1628);
   background-size: 400% 400%;
   animation: gradient-animation 15s ease infinite;
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, #FFC700, #FFDD33, #FFC700);
+  background: linear-gradient(90deg, #1E88E5, #42A5F5, #1E88E5);
   background-size: 200% auto;
   background-clip: text;
   -webkit-background-clip: text;
@@ -450,7 +450,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .hover-card-effect:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(255, 199, 0, 0.15);
+  box-shadow: 0 15px 30px rgba(30, 136, 229, 0.15);
 }
 
 .menu-item {
@@ -464,7 +464,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #FFC700;
+  background-color: #1E88E5;
   transition: width 0.3s ease;
 }
 
@@ -479,7 +479,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .service-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 25px -5px rgba(255, 199, 0, 0.1), 0 10px 10px -5px rgba(255, 199, 0, 0.04);
+  box-shadow: 0 20px 25px -5px rgba(30, 136, 229, 0.1), 0 10px 10px -5px rgba(30, 136, 229, 0.04);
 }
 
 
@@ -490,5 +490,50 @@ h1, h2, h3, h4, h5, h6 {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Light / Dark theme tokens                                          */
+/* brand-bg / brand-fg drive the primary surface + text colors,        */
+/* and the gray scale is inverted in light mode so dark-first surfaces  */
+/* (cards, borders, secondary text) read correctly on a light page.    */
+/* ------------------------------------------------------------------ */
+@layer base {
+  :root {
+    /* Light mode — tinted with the Digol blue palette */
+    --brand-bg: 232 241 252;   /* soft brand-blue page background (#E8F1FC) */
+    --brand-fg: 10 22 40;      /* deep navy text (#0A1628) */
+
+    /* Inverted + cool-tinted ramp: dark-first surfaces read correctly on a blue-tinted light page */
+    --gray-50: 10 22 40;       /* darkest -> navy (strong text) */
+    --gray-100: 13 35 71;      /* deep blue (#0D2347) */
+    --gray-200: 21 45 80;
+    --gray-300: 51 65 85;      /* slate-700 (secondary text) */
+    --gray-400: 71 85 105;     /* slate-600 */
+    --gray-500: 100 116 139;   /* slate-500 */
+    --gray-600: 148 163 184;   /* slate-400 */
+    --gray-700: 200 216 238;   /* light blue border */
+    --gray-800: 219 230 245;   /* light blue border / subtle surface */
+    --gray-900: 251 253 255;   /* near-white card surface */
+    --gray-950: 248 251 255;
+  }
+
+  .dark {
+    /* Dark mode (default) */
+    --brand-bg: 10 22 40;      /* #0A1628 navy */
+    --brand-fg: 255 255 255;   /* white text */
+
+    --gray-50: 249 250 251;
+    --gray-100: 243 244 246;
+    --gray-200: 229 231 235;
+    --gray-300: 209 213 219;
+    --gray-400: 156 163 175;
+    --gray-500: 107 114 128;
+    --gray-600: 75 85 99;
+    --gray-700: 55 65 81;
+    --gray-800: 31 41 55;
+    --gray-900: 17 24 39;
+    --gray-950: 3 7 18;
   }
 }

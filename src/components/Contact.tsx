@@ -115,18 +115,18 @@ const Contact = () => {
                     cardholderName="Faizal Vahora"
                     className=""
                     theme={{
-                      primaryColor: "#FFD700",
-                      secondaryColor: "#000",
-                      glowColor: "rgba(255, 215, 0, 0.8)",
+                      primaryColor: "#42A5F5",
+                      secondaryColor: "#0A1628",
+                      glowColor: "rgba(30, 136, 229, 0.8)",
                     }}
-                    logoText={{ topText: "The One Branding", bottomText: "Lets Make Your Business A Brand" }}
+                    logoText={{ topText: "Digol", bottomText: "Lets Make Your Business A Brand" }}
                     height="310px"
                     width="480px"
                     phoneNumber="+91 81609 21279"
                     email="info@theonebranding.com"
                     address="T-3, Central hub, Indira Gandhi Marg, 100 Feet Rd, Near Jio Petrol Pump, Anand, Gujarat - 388001"
                     website="https://theonebranding.com"
-                    logoSrc="/assets/blacklogo.png"
+                    logoSrc="/assets/digol-logo-light.svg"
                   />
                 </div>
               </div> */}
@@ -135,14 +135,14 @@ const Contact = () => {
                 <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-brand-yellow to-transparent" />
 
                 <div className="mb-6 justify-center flex-col items-center text-center">
-                  <p className="mt-3 text-brand-yellow text-2xl font-primary">The One Branding</p>
+                  <p className="mt-3 text-brand-yellow text-2xl font-primary">Digol</p>
                   <p className="text-gray-300 text-sm font-secondary">Lets Make Your Business A Brand</p>
                 </div>
 
                 <div className="space-y-3">
                   <a
                     href="tel:+918160921279"
-                    className="group flex items-center justify-between rounded-xl border border-gray-800 bg-black/30 px-4 py-3 transition-all hover:border-brand-yellow/50 hover:bg-brand-yellow/10"
+                    className="group flex items-center justify-between rounded-xl border border-gray-800 bg-gray-800/40 px-4 py-3 transition-all hover:border-brand-yellow/50 hover:bg-brand-yellow/10"
                   >
                     <div className="flex items-center gap-3">
                       <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-yellow/15 text-brand-yellow">
@@ -158,7 +158,7 @@ const Contact = () => {
 
                   <a
                     href="mailto:info@theonebranding.com"
-                    className="group flex items-center justify-between rounded-xl border border-gray-800 bg-black/30 px-4 py-3 transition-all hover:border-brand-yellow/50 hover:bg-brand-yellow/10"
+                    className="group flex items-center justify-between rounded-xl border border-gray-800 bg-gray-800/40 px-4 py-3 transition-all hover:border-brand-yellow/50 hover:bg-brand-yellow/10"
                   >
                     <div className="flex items-center gap-3">
                       <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-yellow/15 text-brand-yellow">
@@ -176,7 +176,7 @@ const Contact = () => {
                     href="https://maps.google.com/?q=T-3,+Central+hub,+Indira+Gandhi+Marg,+100+Feet+Rd,+Near+Jio+Petrol+Pump,+Anand,+Gujarat+388001"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-start justify-between rounded-xl border border-gray-800 bg-black/30 px-4 py-3 transition-all hover:border-brand-yellow/50 hover:bg-brand-yellow/10"
+                    className="group flex items-start justify-between rounded-xl border border-gray-800 bg-gray-800/40 px-4 py-3 transition-all hover:border-brand-yellow/50 hover:bg-brand-yellow/10"
                   >
                     <div className="flex items-start gap-3">
                       <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-yellow/15 text-brand-yellow">

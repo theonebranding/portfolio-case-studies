@@ -73,7 +73,7 @@ const ProjectPage = () => {
 
   if (!project) {
     return (
-      <div className="min-h-screen bg-brand-black text-white flex flex-col items-center justify-center">
+      <div className="min-h-screen bg-brand-black text-brand-white flex flex-col items-center justify-center">
         <h1 className="text-4xl font-bold text-brand-yellow mb-4">Project Not Found</h1>
         <p className="text-gray-300 mb-8">The project you're looking for doesn't exist or has been moved.</p>
         <Button variant="primary" onClick={handleGoBack}>

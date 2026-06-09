@@ -1,5 +1,5 @@
 import { services } from "@/lib/data";
-import { ArrowRight, Cloud, FileText, Globe, MonitorCog, Server, ShoppingCart, Smartphone, Sparkles } from "lucide-react";
+import { ArrowRight, Cloud, FileText, Globe, MonitorCog, Server, ShoppingCart, Smartphone, Sparkles, TrendingUp } from "lucide-react";
 import { AnimatedText } from "./ui/animated-underline-text-one";
 import ListOfServices from "./ListOfServices";
 import { useEffect, useRef, useState } from "react";
@@ -24,6 +24,8 @@ const ServiceIcon = ({ icon }: { icon: string }) => {
       return <Cloud className="h-8 w-8 text-brand-yellow" />;
     case "smartphone":
       return <Smartphone className="h-8 w-8 text-brand-yellow" />;
+    case "trending-up":
+      return <TrendingUp className="h-8 w-8 text-brand-yellow" />;
     default:
       return <MonitorCog className="h-8 w-8 text-brand-yellow" />;
   }
@@ -89,7 +91,7 @@ const Services = () => {
               {/* <div className="mb-4"> */}
                 <Link
                   to={`/services/${getServiceSlug(service.title)}`}
-                  className="inline-flex items-between gap-2 rounded-full border border-brand-yellow/40 bg-brand-yellow/10 px-4 py-2 text-sm text-brand-yellow hover:text-white transition-colors font-secondary"
+                  className="inline-flex items-between gap-2 rounded-full border border-brand-yellow/40 bg-brand-yellow/10 px-4 py-2 text-sm text-brand-yellow hover:text-brand-white transition-colors font-secondary"
                 >
                   <span className="hover:underline underline-offset-4">Explore Service</span>
                   <ArrowRight size={16} />

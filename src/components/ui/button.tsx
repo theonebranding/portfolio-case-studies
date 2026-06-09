@@ -12,11 +12,11 @@ const buttonVariants = cva(
         default:
           "border border-brand-yellow/30 bg-gradient-to-b from-brand-black to-gray-900 text-brand-white font-semibold shadow-[0_10px_30px_rgba(0,0,0,0.35)] hover:border-brand-yellow/70 hover:text-brand-yellow",
         primary:
-          "bg-brand-yellow text-brand-black font-semibold shadow-[0_12px_30px_rgba(234,179,8,0.35)] hover:bg-brand-white hover:shadow-[0_16px_40px_rgba(234,179,8,0.45)]",
+          "bg-brand-yellow text-white font-semibold shadow-[0_12px_30px_rgba(30,136,229,0.35)] hover:bg-[#1565C0] hover:shadow-[0_16px_40px_rgba(30,136,229,0.45)]",
         secondary:
           "border border-gray-700 bg-gray-900 text-gray-100 font-medium shadow-[0_10px_24px_rgba(0,0,0,0.35)] hover:border-gray-500 hover:bg-gray-800",
         glass:
-          "border border-white/25 bg-white/10 text-white backdrop-blur-md font-medium shadow-[0_10px_30px_rgba(0,0,0,0.25)] hover:border-brand-yellow/60 hover:bg-white/20 hover:text-brand-yellow",
+          "border border-white/25 bg-white/10 text-brand-white backdrop-blur-md font-medium shadow-[0_10px_30px_rgba(0,0,0,0.25)] hover:border-brand-yellow/60 hover:bg-white/20 hover:text-brand-yellow",
         destructive:
           "bg-destructive text-destructive-foreground font-semibold hover:bg-destructive/90",
         outline:

@@ -78,12 +78,12 @@ const ServicePage = () => {
 
   if (!service) {
     return (
-      <div className="min-h-screen bg-brand-black text-white">
+      <div className="min-h-screen bg-brand-black text-brand-white">
         <Header />
         <main className="container mx-auto px-6 pt-40 pb-24 text-center">
           <h1 className="text-4xl font-primary text-brand-yellow mb-4">Service Not Found</h1>
           <p className="text-gray-300 font-secondary mb-8">The service page you requested does not exist.</p>
-          <Link to="/#services" className="inline-flex items-center gap-2 text-brand-yellow hover:text-white transition-colors">
+          <Link to="/#services" className="inline-flex items-center gap-2 text-brand-yellow hover:text-brand-white transition-colors">
             <ArrowLeft size={16} /> Back to Services
           </Link>
         </main>
@@ -95,7 +95,7 @@ const ServicePage = () => {
   const categories = getServiceProjectCategories(service.title);
 
   return (
-    <div className="min-h-screen bg-brand-black text-white overflow-hidden">
+    <div className="min-h-screen bg-brand-black text-brand-white overflow-hidden">
       <Header />
 
       <main className="pt-32 pb-20">
@@ -107,13 +107,13 @@ const ServicePage = () => {
               breathingRange={1}
               animationSpeed={0.08}
               gradientColors={[
-                "#000000",
-                "#121212",
-                "#1C1C1C",
-                "#6B5600",
-                "#A27F00",
-                "#FFC700",
-                "#FFC700",
+                "#0A1628",
+                "#0D2647",
+                "#0D47A1",
+                "#1565C0",
+                "#1E88E5",
+                "#42A5F5",
+                "#42A5F5",
               ]}
               gradientStops={[30, 45, 58, 70, 82, 92, 100]}
               containerClassName="opacity-85"
@@ -121,14 +121,14 @@ const ServicePage = () => {
             <div className="absolute inset-0 bg-black/45" />
 
             <div className="relative z-10">
-            <Link to="/#services" className="inline-flex items-center gap-2 text-sm font-secondary text-gray-300 hover:text-brand-yellow transition-colors mb-6">
+            <Link to="/#services" className="inline-flex items-center gap-2 text-sm font-secondary text-blue-100 hover:text-white transition-colors mb-6">
               <ArrowLeft size={14} /> Back to Services
             </Link>
 
             <div className="flex flex-col gap-6">
               <div className="text-center">
-                <h1 className="text-4xl md:text-6xl font-primary font-bold text-brand-yellow leading-tight">{service.title}</h1>
-                <p className="text-gray-200 text-base md:text-lg max-w-3xl mx-auto mt-4 font-secondary leading-relaxed">
+                <h1 className="text-4xl md:text-6xl font-primary font-bold text-white leading-tight">{service.title}</h1>
+                <p className="text-blue-50 text-base md:text-lg max-w-3xl mx-auto mt-4 font-secondary leading-relaxed">
                   {service.description}
                 </p>
               </div>
@@ -209,7 +209,7 @@ const ServicePage = () => {
         </section>
 
         <section className="container mx-auto px-6 mt-16">
-          <div className="relative overflow-hidden rounded-2xl border border-brand-yellow/40 bg-black px-6 py-10 md:px-10 md:py-12 text-center">
+          <div className="relative overflow-hidden rounded-2xl border border-brand-yellow/40 bg-brand-black px-6 py-10 md:px-10 md:py-12 text-center">
             <div className="absolute inset-x-10 sm:inset-x-20 top-0 bg-gradient-to-r from-transparent via-brand-yellow to-transparent h-[2px] w-full blur-sm" />
             <div className="absolute inset-x-10 sm:inset-x-20 top-0 bg-gradient-to-r from-transparent via-brand-yellow to-transparent h-px w-full" />
             <div className="absolute inset-0">
@@ -219,7 +219,7 @@ const ServicePage = () => {
                 maxSize={2.8}
                 particleDensity={260}
                 className="w-full h-full"
-                particleColor="#FFC700"
+                particleColor="#42A5F5"
               />
             </div>
             <div className="absolute inset-0 bg-brand-black/65" />

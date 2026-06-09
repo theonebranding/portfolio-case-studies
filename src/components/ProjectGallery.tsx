@@ -234,8 +234,8 @@ const ProjectGallery = ({ images = [], mobileImages = [], imagesAlt = [], onImag
   };
 
   return (
-    <div className="w-full max-w-full text-white">
-      <h3 className="text-3xl font-semibold md-12 text-yellow-400 border-b border-yellow-400/30 pb-4">
+    <div className="w-full max-w-full text-brand-white">
+      <h3 className="text-3xl font-semibold md-12 text-blue-400 border-b border-blue-400/30 pb-4">
         Project Gallery
       </h3>
 
@@ -330,7 +330,7 @@ const ProjectGallery = ({ images = [], mobileImages = [], imagesAlt = [], onImag
                     />
                     {isHovered && (
                       <div className="absolute inset-0 bg-black bg-opacity-40 rounded-lg flex items-center justify-center">
-                        <span className="text-yellow-400 text-xs font-bold">
+                        <span className="text-blue-400 text-xs font-bold">
                           {imagesAlt[index]}
                         </span>
                       </div>
@@ -368,7 +368,7 @@ const ProjectGallery = ({ images = [], mobileImages = [], imagesAlt = [], onImag
             {/* Screen Title */}
             <div className={`flex flex-row items-center justify-center mb-16 md:mb-4 py-12 md:py-0 transition-opacity duration-100 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}>
             <p>
-              <span className="font-bold text-xl md:text-3xl lg:text-4xl -top-4 md:top-0 font-primary text-yellow-400">
+              <span className="font-bold text-xl md:text-3xl lg:text-4xl -top-4 md:top-0 font-primary text-blue-400">
                 {screenTitle}
               </span>
             </p>

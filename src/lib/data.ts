@@ -104,25 +104,27 @@ export interface Service {
 export const services: Service[] = [
   {
     id: 1,
-    title: "Custom Software Solutions",
-    description: "Custom software applications built with modern frameworks to streamline processes and solve complex challenges.",
-    icon: "monitor-cog",
-    technologies: ["MERN (MongoDB, Express.js, React, Node.js)", "Electron", "SQL", "Tauri", "TypeScript", "PostgreSQL", "Docker"],
+    title: "Custom Web Development",
+    description: "Modern, responsive websites and web apps engineered for speed, SEO, and seamless user experiences.",
+    icon: "globe",
+    technologies: ["JavaScript", "TypeScript", "React", "Next.js", "Angular", "Vue", "Tailwind CSS"],
     features: [
-      "Scalable architecture",
-      "Secure authentication",
-      "Database optimization",
-      "API integration",
-      "Real-time data processing",
-      "User-friendly interfaces",
-      "Cross-platform desktop apps",
-      "Containerized deployment"
+      "SEO-optimized structure",
+      "Responsive and adaptive design",
+      "Interactive user interfaces",
+      "Fast load times with lazy loading",
+      "Cross-browser compatibility",
+      "Accessibility (WCAG) compliance",
+      "CMS integration",
+      "SSR and static site generation (SSG)",
+      "Progressive web app (PWA) capabilities",
+      "Custom animations and transitions"
     ]
   },  
   {
     id: 2,
-    title: "Custom Application Development",
-    description: "Full-stack mobile applications using React Native and Expo with robust backend integration for iOS and Android.",
+    title: "Mobile App Development",
+    description: "Full-stack mobile apps built with React Native and Expo, with robust backend integration for iOS and Android.",
     icon: "smartphone",
     technologies: ["React Native", "Expo", "JavaScript", "TypeScript", "Firebase", "Node.js", "Express.js", "MongoDB", "SQL", "GraphQL"],
     features: [
@@ -167,21 +169,53 @@ export const services: Service[] = [
   // },
   {
     id: 3,
-    title: "Custom Website Development",
-    description: "Modern, responsive frontend websites designed to engage users with stunning visuals and seamless interactions.",
-    icon: "globe",
-    technologies: ["JavaScript", "TypeScript", "React", "Next.js", "Angular", "Vue", "Tailwind CSS"],
+    title: "Custom Software Development Solution",
+    description: "Custom software built with modern frameworks to streamline processes, automate workflows, and solve complex challenges.",
+    icon: "monitor-cog",
+    technologies: ["MERN (MongoDB, Express.js, React, Node.js)", "Electron", "SQL", "Tauri", "TypeScript", "PostgreSQL", "Docker"],
     features: [
-      "SEO-optimized structure",
-      "Responsive and adaptive design",
-      "Interactive user interfaces",
-      "Fast load times with lazy loading",
-      "Cross-browser compatibility",
-      "Accessibility (WCAG) compliance",
-      "Content management system (CMS) integration",
-      "Server side rendering (SSR) and static site generation (SSG)",
-      "Progressive web app (PWA) capabilities",
-      "Custom animations and transitions"
+      "Scalable architecture",
+      "Secure authentication",
+      "Database optimization",
+      "API integration",
+      "Real-time data processing",
+      "User-friendly interfaces",
+      "Cross-platform desktop apps",
+      "Containerized deployment"
+    ]
+  },
+  {
+    id: 4,
+    title: "Performance & Growth Marketing",
+    description: "Data-driven marketing that grows traffic, leads, and revenue through SEO, paid ads, and conversion optimization.",
+    icon: "trending-up",
+    technologies: ["Google Analytics", "Google Ads", "Meta Ads", "SEO", "Google Tag Manager", "Search Console", "HubSpot"],
+    features: [
+      "Search engine optimization (SEO)",
+      "Paid advertising (Google & Meta Ads)",
+      "Conversion rate optimization (CRO)",
+      "Performance tracking and analytics",
+      "Landing page optimization",
+      "Email and funnel marketing",
+      "Social media growth strategy",
+      "Detailed reporting and insights"
+    ]
+  },
+  {
+    id: 5,
+    title: "Ai | Machine learning Solution",
+    description: "Intelligent software powered by AI and machine learning to automate workflows, improve decisions, and drive growth.",
+    icon: "sparkles",
+    technologies: ["Python", "TypeScript", "Node.js", "FastAPI", "OpenAI API", "LangChain", "Vector Databases", "PostgreSQL", "Docker"],
+    features: [
+      "AI assistants and copilots for teams",
+      "Workflow automation with smart decision engines",
+      "Document and knowledge-base chat systems",
+      "Predictive analytics and recommendation models",
+      "Custom AI dashboards with real-time insights",
+      "Secure role-based access and audit trails",
+      "API-first architecture for easy integrations",
+      "Scalable deployment with monitoring"
     ]
   },
   // {

@@ -11,11 +11,11 @@ import { applySeo } from "@/lib/seo";
 const Index = () => {
   useEffect(() => {
     applySeo({
-      title: "The One Branding | Portfolio",
+      title: "Digol | Portfolio",
       description:
-        "Explore The One Branding case studies for websites, software, and mobile applications.",
+        "Explore Digol case studies for websites, software, and mobile applications.",
       keywords:
-        "The One Branding, portfolio, case studies, website development, software development, mobile app development, branding, digital marketing, Anand Gujarat",
+        "Digol, portfolio, case studies, website development, software development, mobile app development, branding, digital marketing, Anand Gujarat",
       path: "/",
       type: "website",
     });
@@ -26,8 +26,8 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
+        <Services />
         <Portfolio />
-        <Services />        
         <Contact />
       </main>
       <Footer />

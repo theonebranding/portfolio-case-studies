@@ -167,7 +167,7 @@ const ProjectCategoryPage = ({ category }: ProjectCategoryPageProps) => {
   }, [category, categoryProjects.length]);
 
   return (
-    <div className="min-h-screen bg-brand-black/95 text-white">
+    <div className="min-h-screen bg-brand-black/95 text-brand-white">
       <Header />
       <section className="container mx-auto px-6 pt-32 pb-20">
         <Button

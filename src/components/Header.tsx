@@ -8,7 +8,8 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import logo from "/assets/logo.png";
+import Logo from "@/components/Logo";
+import ModeToggle from "@/components/ModeToggle";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -45,17 +46,13 @@ const Header = () => {
             px-4 md:px-6
             ${isScrolled ? "py-1.5" : "py-1"}
             ${isScrolled
-              ? "w-[75%] translate-y-0 scale-[0.985] bg-slate-900/35 border-yellow-300/35 backdrop-blur-2xl shadow-[0_16px_44px_rgba(8,12,25,0.5),0_0_34px_rgba(225,220,0,0.24)]"
+              ? "w-[75%] translate-y-0 scale-[0.985] bg-brand-black/40 border-blue-300/35 backdrop-blur-2xl shadow-[0_16px_44px_rgba(8,12,25,0.5),0_0_34px_rgba(30,136,229,0.28)]"
               : "w-[90%] -translate-y-[2px] scale-[0.95] bg-white/10 border-white/25 backdrop-blur-xl shadow-[0_10px_30px_rgba(4,8,20,0.35)]"
             }
           `}
         >
           <a href="/#home" aria-label="Go to home section">
-            <img
-              src={logo}
-              alt="The One Branding logo"
-              className={`w-auto transition-all duration-500 ease-out ${isScrolled ? "h-16 md:h-16" : "h-16 md:h-16"}`}
-            />
+            <Logo className="w-auto h-16 md:h-16 transition-all duration-500 ease-out" />
           </a>
 
           {/* Desktop Navigation */}
@@ -69,46 +66,50 @@ const Header = () => {
                 {item.name}
               </a>
             ))}
+            <ModeToggle />
           </nav>
 
           {/* Mobile Navigation */}
-          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
-            <SheetTrigger asChild className="md:hidden block">
-              <Button
-                variant="glass"
-                aria-label="Open mobile menu"
-                className="rounded-full"
-              >
-                <Menu />
-              </Button>
-            </SheetTrigger>
-            <SheetContent className="bg-brand-black/95 backdrop-blur-xl border-brand-yellow/60 [&>button]:hidden">
-              <div className="flex justify-end">
-                <SheetClose asChild>
-                  <Button
-                    variant="glass"
-                    size="icon"
-                    aria-label="Close mobile menu"
-                    className="rounded-full border-brand-yellow/70 text-white hover:text-brand-yellow"
-                  >
-                    <X size={20} />
-                  </Button>
-                </SheetClose>
-              </div>
-              <nav className="flex flex-col space-y-6 pt-10">
-                {menuItems.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="font-secondary text-brand-white hover:text-brand-yellow transition-colors duration-300 text-xl py-2"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {item.name}
-                  </a>
-                ))}
-              </nav>
-            </SheetContent>
-          </Sheet>
+          <div className="md:hidden flex items-center gap-2">
+            <ModeToggle />
+            <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <Button
+                  variant="glass"
+                  aria-label="Open mobile menu"
+                  className="rounded-full"
+                >
+                  <Menu />
+                </Button>
+              </SheetTrigger>
+              <SheetContent className="bg-brand-black/95 backdrop-blur-xl border-brand-yellow/60 [&>button]:hidden">
+                <div className="flex justify-end">
+                  <SheetClose asChild>
+                    <Button
+                      variant="glass"
+                      size="icon"
+                      aria-label="Close mobile menu"
+                      className="rounded-full border-brand-yellow/70 text-brand-white hover:text-brand-yellow"
+                    >
+                      <X size={20} />
+                    </Button>
+                  </SheetClose>
+                </div>
+                <nav className="flex flex-col space-y-6 pt-10">
+                  {menuItems.map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className="font-secondary text-brand-white hover:text-brand-yellow transition-colors duration-300 text-xl py-2"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {item.name}
+                    </a>
+                  ))}
+                </nav>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </div>
     </header>

@@ -1,15 +1,15 @@
 
 import { Facebook, Twitter, Instagram, Linkedin, Phone, Mail, MapPin } from "lucide-react";
-import logo from "/assets/logo.png";
+import Logo from "@/components/Logo";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-black pt-16 pb-8">
+    <footer className="bg-brand-black pt-16 pb-8">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           <div>
-            <img src={logo} alt="The One Branding Logo" className="h-20 scale-125 mb-4" />
+            <Logo className="h-20 w-auto mb-4" />
             <p className="text-gray-400 mb-6 font-secondary">
               We create stunning digital experiences that elevate brands and drive results.
             </p>
@@ -30,7 +30,7 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold font-primary text-white mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold font-primary text-brand-white mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li><a href="/#home" className="text-gray-400 hover:text-brand-yellow font-secondary transition-colors hover:underline underline-offset-4 decoration-transparent hover:decoration-current">Home</a></li>
               <li><a href="/#portfolio" className="text-gray-400 hover:text-brand-yellow font-secondary transition-colors hover:underline underline-offset-4 decoration-transparent hover:decoration-current">Portfolio</a></li>
@@ -40,7 +40,7 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold font-primary text-white mb-4">Services</h4>
+            <h4 className="text-lg font-semibold font-primary text-brand-white mb-4">Services</h4>
             <ul className="space-y-2">
               <li><a href="/services/software-solutions" className="text-gray-400 hover:text-brand-yellow  font-secondary transition-colors hover:underline underline-offset-4 decoration-transparent hover:decoration-current">Software Solutions</a></li>
               <li><a href="/services/application-development" className="text-gray-400 hover:text-brand-yellow font-secondary transition-colors hover:underline underline-offset-4 decoration-transparent hover:decoration-current">Application Development</a></li>
@@ -54,7 +54,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold font-primary text-white mb-4">Contact</h4>
+            <h4 className="text-lg font-semibold font-primary text-brand-white mb-4">Contact</h4>
             <ul className="space-y-3">
               <li>
                 <a href="tel:+918160921279" className="flex items-start gap-2 text-gray-400 hover:text-brand-yellow transition-colors font-secondary hover:underline underline-offset-4 decoration-transparent hover:decoration-current">
@@ -87,7 +87,7 @@ const Footer = () => {
         
         <div className="border-t border-gray-800 pt-8 mt-8 text-center">
           <p className="text-gray-400 text-sm font-secondary">
-            &copy; {currentYear} The One Branding. All rights reserved.
+            &copy; {currentYear} Digol. All rights reserved.
           </p>
         </div>
       </div>

@@ -28,18 +28,18 @@ const CosmicNebulaMastercard: React.FC<CosmicNebulaMastercardProps> = ({
   cardholderName = "Faizal Vahora",
   className = "",
   theme = {
-    primaryColor: "#FFD700", // Bright gold/yellow
-    secondaryColor: "#000", // Dark black
-    glowColor: "rgba(255, 215, 0, 0.8)", // Gold/yellow glow
+    primaryColor: "#42A5F5", // Bright sky blue
+    secondaryColor: "#0A1628", // Dark navy
+    glowColor: "rgba(30, 136, 229, 0.8)", // Blue glow
   },
-  logoText = { topText: "The One Branding", bottomText: "Lets Make Your Business A Brand" },
+  logoText = { topText: "Digol", bottomText: "Lets Make Your Business A Brand" },
   height = "310px",
   width = "480px",
   phoneNumber = "+91 81609 21279",
   email = "info@theonebranding.com",
   address = "T-3, Central hub, Indira Gandhi Marg, 100 Feet Rd, Near Jio Petrol Pump, Anand, Gujarat - 388001",
   website = "https://theonebranding.com",
-  logoSrc = "/assets/blacklogo.png",
+  logoSrc = "/assets/digol-logo-light.svg",
 
 }) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
@@ -177,21 +177,21 @@ const CosmicNebulaMastercard: React.FC<CosmicNebulaMastercardProps> = ({
             style={{
               background: `
                 radial-gradient(circle at ${50 + Math.sin(time * 0.5) * 30}% ${50 + Math.cos(time * 0.7) * 30}%, ${theme.glowColor} 0%, transparent 70%),
-                radial-gradient(circle at ${50 + Math.cos(time * 0.3) * 40}% ${50 + Math.sin(time * 0.4) * 40}%, rgba(255, 215, 0, 0.5) 0%, transparent 60%),
-                radial-gradient(circle at ${50 + Math.sin(time * 0.6) * 35}% ${50 + Math.cos(time * 0.5) * 35}%, rgba(255, 235, 59, 0.5) 0%, transparent 55%)
+                radial-gradient(circle at ${50 + Math.cos(time * 0.3) * 40}% ${50 + Math.sin(time * 0.4) * 40}%, rgba(30, 136, 229, 0.5) 0%, transparent 60%),
+                radial-gradient(circle at ${50 + Math.sin(time * 0.6) * 35}% ${50 + Math.cos(time * 0.5) * 35}%, rgba(66, 165, 245, 0.5) 0%, transparent 55%)
               `,
               opacity: 0.9,
             }}
           />
 
-          {/* Enhanced dynamic aurora effect with gold/yellow tones */}
+          {/* Enhanced dynamic aurora effect with blue tones */}
           <div
             className="absolute inset-0"
             style={{
               background: `
-                radial-gradient(ellipse at ${80 + Math.sin(time * 0.4) * 20}% ${20 + Math.cos(time * 0.3) * 20}%, rgba(255, 255, 0, 0.3) 0%, transparent 90%),
-                radial-gradient(ellipse at ${20 + Math.cos(time * 0.5) * 20}% ${70 + Math.sin(time * 0.6) * 20}%, rgba(255, 255, 59, 0.4) 0%, transparent 90%),
-                radial-gradient(ellipse at ${60 + Math.sin(time * 0.7) * 30}% ${40 + Math.cos(time * 0.8) * 30}%, rgba(255, 253, 7, 0.5) 0%, transparent 90%)
+                radial-gradient(ellipse at ${80 + Math.sin(time * 0.4) * 20}% ${20 + Math.cos(time * 0.3) * 20}%, rgba(21, 101, 192, 0.3) 0%, transparent 90%),
+                radial-gradient(ellipse at ${20 + Math.cos(time * 0.5) * 20}% ${70 + Math.sin(time * 0.6) * 20}%, rgba(66, 165, 245, 0.4) 0%, transparent 90%),
+                radial-gradient(ellipse at ${60 + Math.sin(time * 0.7) * 30}% ${40 + Math.cos(time * 0.8) * 30}%, rgba(30, 136, 229, 0.5) 0%, transparent 90%)
               `,
               mixBlendMode: "screen",
             }}
@@ -202,12 +202,12 @@ const CosmicNebulaMastercard: React.FC<CosmicNebulaMastercardProps> = ({
             <div className="particles-container"></div>
           </div>
 
-          {/* Enhanced card holographic effect with gold */}
+          {/* Enhanced card holographic effect with blue */}
           <div
             className="absolute inset-0 animate-holographicShift"
             style={{
               background:
-                "linear-gradient(105deg, transparent 0%, rgba(255, 255, 0, 0.2)  0%, rgba(255, 215, 0, 0.5) 100%, rgba(255, 215, 0, 0.5) 100%, transparent 100%)",
+                "linear-gradient(105deg, transparent 0%, rgba(21, 101, 192, 0.2)  0%, rgba(30, 136, 229, 0.5) 100%, rgba(30, 136, 229, 0.5) 100%, transparent 100%)",
               backgroundSize: "200% 200%",
             }}
           />
@@ -240,7 +240,7 @@ const CosmicNebulaMastercard: React.FC<CosmicNebulaMastercardProps> = ({
           <div className="absolute left-24 md:left-24 top-6 md:-top-6">
               {!imageError ? (
                   <img
-                    src={logoSrc || "/assets/blacklogo.png"}
+                    src={logoSrc || "/assets/digol-logo-light.svg"}
                     alt="Logo"
                     className="w-36 h-36 md:h-80 md:w-80 rounded-full"
                     onError={handleImageError}
@@ -248,8 +248,8 @@ const CosmicNebulaMastercard: React.FC<CosmicNebulaMastercardProps> = ({
                     height={40}
                   />
                 ) : (
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center bg-yellow-600 text-black font-bold">
-                    TOB
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center bg-blue-600 text-white font-bold">
+                    DG
                   </div>
                 )}
           </div>
@@ -299,38 +299,38 @@ const CosmicNebulaMastercard: React.FC<CosmicNebulaMastercardProps> = ({
         }
         
         .stars-small {
-          background-image: radial-gradient(1px 1px at 20px 30px, #FFD700, rgba(0,0,0,0)),
-                          radial-gradient(1px 1px at 40px 70px, #FFD700, rgba(0,0,0,0)),
-                          radial-gradient(1px 1px at 50px 160px, #FFD700, rgba(0,0,0,0)),
-                          radial-gradient(1px 1px at 90px 40px, #FFD700, rgba(0,0,0,0)),
-                          radial-gradient(1px 1px at 130px 80px, #FFD700, rgba(0,0,0,0)),
-                          radial-gradient(1px 1px at 160px 120px, #FFD700, rgba(0,0,0,0));
+          background-image: radial-gradient(1px 1px at 20px 30px, #42A5F5, rgba(0,0,0,0)),
+                          radial-gradient(1px 1px at 40px 70px, #42A5F5, rgba(0,0,0,0)),
+                          radial-gradient(1px 1px at 50px 160px, #42A5F5, rgba(0,0,0,0)),
+                          radial-gradient(1px 1px at 90px 40px, #42A5F5, rgba(0,0,0,0)),
+                          radial-gradient(1px 1px at 130px 80px, #42A5F5, rgba(0,0,0,0)),
+                          radial-gradient(1px 1px at 160px 120px, #42A5F5, rgba(0,0,0,0));
           background-size: 200px 200px;
           opacity: 0.4;
         }
         
         .stars-medium {
-          background-image: radial-gradient(1.5px 1.5px at 150px 150px, #FFD700, rgba(0,0,0,0)),
-                          radial-gradient(1.5px 1.5px at 220px 220px, #FFD700, rgba(0,0,0,0)),
-                          radial-gradient(1.5px 1.5px at 80px 250px, #FFD700, rgba(0,0,0,0)),
-                          radial-gradient(1.5px 1.5px at 180px 80px, #FFD700, rgba(0,0,0,0));
+          background-image: radial-gradient(1.5px 1.5px at 150px 150px, #42A5F5, rgba(0,0,0,0)),
+                          radial-gradient(1.5px 1.5px at 220px 220px, #42A5F5, rgba(0,0,0,0)),
+                          radial-gradient(1.5px 1.5px at 80px 250px, #42A5F5, rgba(0,0,0,0)),
+                          radial-gradient(1.5px 1.5px at 180px 80px, #42A5F5, rgba(0,0,0,0));
           background-size: 300px 300px;
           opacity: 0.4;
         }
         
         .stars-large {
-          background-image: radial-gradient(2px 2px at 100px 100px, #FFD700, rgba(0,0,0,0)),
-                          radial-gradient(2px 2px at 200px 200px, #FFD700, rgba(0,0,0,0)),
-                          radial-gradient(2px 2px at 300px 300px, #FFD700, rgba(0,0,0,0));
+          background-image: radial-gradient(2px 2px at 100px 100px, #42A5F5, rgba(0,0,0,0)),
+                          radial-gradient(2px 2px at 200px 200px, #42A5F5, rgba(0,0,0,0)),
+                          radial-gradient(2px 2px at 300px 300px, #42A5F5, rgba(0,0,0,0));
           background-size: 400px 400px;
           opacity: 0.5;
           animation: stars-move 100s linear infinite;
         }
 
         .stars-twinkle {
-          background-image: radial-gradient(2px 2px at 50px 50px, rgba(255,215,0,0.8), rgba(0,0,0,0)),
-                          radial-gradient(2px 2px at 150px 150px, rgba(255,215,0,0.8), rgba(0,0,0,0)),
-                          radial-gradient(2px 2px at 250px 250px, rgba(255,215,0,0.8), rgba(0,0,0,0));
+          background-image: radial-gradient(2px 2px at 50px 50px, rgba(30,136,229,0.8), rgba(0,0,0,0)),
+                          radial-gradient(2px 2px at 150px 150px, rgba(30,136,229,0.8), rgba(0,0,0,0)),
+                          radial-gradient(2px 2px at 250px 250px, rgba(30,136,229,0.8), rgba(0,0,0,0));
           background-size: 300px 300px;
           opacity: 0;
           animation: twinkle 4s ease-in-out infinite alternate;
@@ -341,24 +341,24 @@ const CosmicNebulaMastercard: React.FC<CosmicNebulaMastercardProps> = ({
           width: 100%;
           height: 100%;
           background-image: 
-            radial-gradient(1px 1px at 10% 10%, rgba(255,215,0,0.8), rgba(0,0,0,0)),
-            radial-gradient(1px 1px at 15% 15%, rgba(255,215,0,0.8), rgba(0,0,0,0)),
-            radial-gradient(1px 1px at 20% 20%, rgba(255,235,59,0.8), rgba(0,0,0,0)),
-            radial-gradient(1px 1px at 25% 25%, rgba(255,215,0,0.8), rgba(0,0,0,0)),
-            radial-gradient(1px 1px at 30% 30%, rgba(255,235,59,0.8), rgba(0,0,0,0)),
-            radial-gradient(1px 1px at 35% 35%, rgba(255,215,0,0.8), rgba(0,0,0,0)),
-            radial-gradient(1px 1px at 40% 40%, rgba(255,235,59,0.8), rgba(0,0,0,0)),
-            radial-gradient(1px 1px at 45% 45%, rgba(255,215,0,0.8), rgba(0,0,0,0)),
-            radial-gradient(1px 1px at 50% 50%, rgba(255,235,59,0.8), rgba(0,0,0,0)),
-            radial-gradient(1px 1px at 55% 55%, rgba(255,215,0,0.8), rgba(0,0,0,0)),
-            radial-gradient(1px 1px at 60% 60%, rgba(255,235,59,0.8), rgba(0,0,0,0)),
-            radial-gradient(1px 1px at 65% 65%, rgba(255,215,0,0.8), rgba(0,0,0,0)),
-            radial-gradient(1px 1px at 70% 70%, rgba(255,235,59,0.8), rgba(0,0,0,0)),
-            radial-gradient(1px 1px at 75% 75%, rgba(255,215,0,0.8), rgba(0,0,0,0)),
-            radial-gradient(1px 1px at 80% 80%, rgba(255,235,59,0.8), rgba(0,0,0,0)),
-            radial-gradient(1px 1px at 85% 85%, rgba(255,215,0,0.8), rgba(0,0,0,0)),
-            radial-gradient(1px 1px at 90% 90%, rgba(255,235,59,0.8), rgba(0,0,0,0)),
-            radial-gradient(1px 1px at 95% 95%, rgba(255,215,0,0.8), rgba(0,0,0,0));
+            radial-gradient(1px 1px at 10% 10%, rgba(30,136,229,0.8), rgba(0,0,0,0)),
+            radial-gradient(1px 1px at 15% 15%, rgba(30,136,229,0.8), rgba(0,0,0,0)),
+            radial-gradient(1px 1px at 20% 20%, rgba(66,165,245,0.8), rgba(0,0,0,0)),
+            radial-gradient(1px 1px at 25% 25%, rgba(30,136,229,0.8), rgba(0,0,0,0)),
+            radial-gradient(1px 1px at 30% 30%, rgba(66,165,245,0.8), rgba(0,0,0,0)),
+            radial-gradient(1px 1px at 35% 35%, rgba(30,136,229,0.8), rgba(0,0,0,0)),
+            radial-gradient(1px 1px at 40% 40%, rgba(66,165,245,0.8), rgba(0,0,0,0)),
+            radial-gradient(1px 1px at 45% 45%, rgba(30,136,229,0.8), rgba(0,0,0,0)),
+            radial-gradient(1px 1px at 50% 50%, rgba(66,165,245,0.8), rgba(0,0,0,0)),
+            radial-gradient(1px 1px at 55% 55%, rgba(30,136,229,0.8), rgba(0,0,0,0)),
+            radial-gradient(1px 1px at 60% 60%, rgba(66,165,245,0.8), rgba(0,0,0,0)),
+            radial-gradient(1px 1px at 65% 65%, rgba(30,136,229,0.8), rgba(0,0,0,0)),
+            radial-gradient(1px 1px at 70% 70%, rgba(66,165,245,0.8), rgba(0,0,0,0)),
+            radial-gradient(1px 1px at 75% 75%, rgba(30,136,229,0.8), rgba(0,0,0,0)),
+            radial-gradient(1px 1px at 80% 80%, rgba(66,165,245,0.8), rgba(0,0,0,0)),
+            radial-gradient(1px 1px at 85% 85%, rgba(30,136,229,0.8), rgba(0,0,0,0)),
+            radial-gradient(1px 1px at 90% 90%, rgba(66,165,245,0.8), rgba(0,0,0,0)),
+            radial-gradient(1px 1px at 95% 95%, rgba(30,136,229,0.8), rgba(0,0,0,0));
           background-size: 150% 150%;
           animation: particles-float 20s ease infinite;
           opacity: 0.6;

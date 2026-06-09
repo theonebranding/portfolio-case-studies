@@ -6,7 +6,7 @@ import TechnologySlider from "@/components/TechnologySlider";
 import { getProjectSlug } from "@/lib/seo";
 import { Button } from "@/components/ui/button";
 
-type ProjectCategory = "website" | "software" | "applications";
+type ProjectCategory = "website" //| "software" | "applications";
 
 const getTopProjects = (category: ProjectCategory) =>
   projects.filter((project) => project.category === category).slice(0, 3);
@@ -22,7 +22,7 @@ const SectionHeader = ({
         text={title}
         className="!gap-0"
         textClassName="text-4xl sm:text-4xl md:text-6xl font-extrabold text-brand-yellow"
-        underlineClassName="text-white -bottom-4"
+        underlineClassName="text-brand-yellow -bottom-4"
         underlineDuration={1.2}
       />
     </div>
@@ -164,17 +164,18 @@ const Portfolio = () => {
             <SectionViewAll category="website" />
           </div>
 
-          <div>
+          {/*
+            <div>
             <SectionHeader title="Software" />
             <ProjectGrid category="software" />
             <SectionViewAll category="software" />
           </div>
-
+        
           <div>
             <SectionHeader title="Application" />
             <ProjectGrid category="applications" />
             <SectionViewAll category="applications" />
-          </div>
+          </div>*/}
         </div>
       </div>
     </section>

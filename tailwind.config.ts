@@ -30,9 +30,9 @@ export default {
     			ring: 'hsl(var(--ring))',
     			background: 'hsl(var(--background))',
     			foreground: 'hsl(var(--foreground))',
-				sliderYellow: '#FFC700',
-				sliderLightYellow: '#FFDD33',
-				sliderTrack: '#FFE066',
+				sliderYellow: '#1E88E5',
+				sliderLightYellow: '#42A5F5',
+				sliderTrack: '#1565C0',
     			primary: {
     				DEFAULT: 'hsl(var(--primary))',
     				foreground: 'hsl(var(--primary-foreground))'
@@ -61,10 +61,33 @@ export default {
     				DEFAULT: 'hsl(var(--card))',
     				foreground: 'hsl(var(--card-foreground))'
     			},
+    			/* Structural grays are variable-driven so they invert in light mode */
+    			gray: {
+    				50: 'rgb(var(--gray-50) / <alpha-value>)',
+    				100: 'rgb(var(--gray-100) / <alpha-value>)',
+    				200: 'rgb(var(--gray-200) / <alpha-value>)',
+    				300: 'rgb(var(--gray-300) / <alpha-value>)',
+    				400: 'rgb(var(--gray-400) / <alpha-value>)',
+    				500: 'rgb(var(--gray-500) / <alpha-value>)',
+    				600: 'rgb(var(--gray-600) / <alpha-value>)',
+    				700: 'rgb(var(--gray-700) / <alpha-value>)',
+    				800: 'rgb(var(--gray-800) / <alpha-value>)',
+    				900: 'rgb(var(--gray-900) / <alpha-value>)',
+    				950: 'rgb(var(--gray-950) / <alpha-value>)'
+    			},
     			brand: {
-    				yellow: '#FFC700',
-    				black: '#000000',
-    				white: '#FFFFFF'
+    				/* Primary accent (kept key name "yellow" for backward compatibility) */
+    				yellow: '#1E88E5',
+    				/* Surface + foreground flip between light/dark via CSS variables */
+    				black: 'rgb(var(--brand-bg) / <alpha-value>)',
+    				white: 'rgb(var(--brand-fg) / <alpha-value>)',
+    				/* Digol brand palette */
+    				deepBlue: '#0D47A1',
+    				coreBlue: '#1565C0',
+    				arcBlue: '#1E88E5',
+    				skyBlue: '#42A5F5',
+    				lightBlue: '#E3F2FD',
+    				darkBg: '#0A1628'
     			},
     			sidebar: {
     				DEFAULT: 'hsl(var(--sidebar-background))',
