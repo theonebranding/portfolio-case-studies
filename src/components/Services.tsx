@@ -1,8 +1,6 @@
 import { services } from "@/lib/data";
 import { ArrowRight, Cloud, FileText, Globe, MonitorCog, Server, ShoppingCart, Smartphone, Sparkles, TrendingUp } from "lucide-react";
 import { AnimatedText } from "./ui/animated-underline-text-one";
-import ListOfServices from "./ListOfServices";
-import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { getServiceSlug } from "@/lib/service-utils";
 
@@ -32,31 +30,6 @@ const ServiceIcon = ({ icon }: { icon: string }) => {
 };
 
 const Services = () => {
-  const [isInView, setIsInView] = useState(false);
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsInView(true);
-          observer.disconnect(); // Trigger only once
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
   return (
     <section id="services" className="pt-12 pb-0 bg-brand-black overflow-hidden">
       <div className="container mx-auto px-6">
@@ -132,9 +105,6 @@ const Services = () => {
             </div>
           )})}
         </div>
-      </div>
-      <div ref={sectionRef} className="md:block hidden">
-        {isInView ? <ListOfServices /> : <div className="h-[350px] w-full" />}
       </div>
     </section>
   );

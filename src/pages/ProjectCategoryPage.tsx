@@ -21,9 +21,9 @@ const categoryTitleMap: Record<ProjectCategory, string> = {
 };
 
 const categoryDescriptionMap: Record<ProjectCategory, string> = {
-  website: "Explore all website case studies delivered by The One Branding across industries.",
-  software: "Explore all software case studies built by The One Branding for business operations.",
-  applications: "Explore all mobile application case studies created by The One Branding.",
+  website: "Explore all website case studies delivered by Digol across industries.",
+  software: "Explore all software case studies built by Digol for business operations.",
+  applications: "Explore all mobile application case studies created by Digol.",
 };
 
 const categoryHeroCopy: Record<ProjectCategory, { intro: string; highlights: string[] }> = {
@@ -128,13 +128,13 @@ const ProjectCategoryPage = ({ category }: ProjectCategoryPageProps) => {
   const categoryProjects = projects.filter((project) => project.category === category);
 
   useEffect(() => {
-    const title = `${categoryTitleMap[category]} | The One Branding`;
+    const title = `${categoryTitleMap[category]} | Digol`;
     const description = categoryDescriptionMap[category];
     const keywords = [
       `${category} projects`,
       `${category} case studies`,
       `${category} portfolio`,
-      "The One Branding",
+      "Digol",
       "Anand Gujarat",
       "website development",
       "software development",
@@ -154,11 +154,11 @@ const ProjectCategoryPage = ({ category }: ProjectCategoryPageProps) => {
       "@type": "CollectionPage",
       name: title,
       description,
-      url: `https://theonebranding.com/project/${category}`,
+      url: `https://digoltech.com/project/${category}`,
       isPartOf: {
         "@type": "WebSite",
-        name: "The One Branding",
-        url: "https://theonebranding.com",
+        name: "Digol",
+        url: "https://digoltech.com",
       },
       about: categoryTitleMap[category],
       keywords,

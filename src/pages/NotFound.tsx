@@ -12,7 +12,7 @@ const NotFound = () => {
     );
 
     applySeo({
-      title: "Page Not Found | The One Branding",
+      title: "Page Not Found | Digol",
       description: "The page you are looking for does not exist.",
       path: location.pathname,
       noindex: true,

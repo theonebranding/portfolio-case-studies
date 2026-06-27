@@ -29,7 +29,7 @@ const Header = () => {
 
   const menuItems = [
     { name: "Home", href: "/#home" },
-    { name: "Portfolio", href: "/#portfolio" },
+    { name: "Our Work", href: "/#portfolio" },
     { name: "Services", href: "/#services" },
     { name: "Contact", href: "/#contact" },
   ];
@@ -71,7 +71,6 @@ const Header = () => {
 
           {/* Mobile Navigation */}
           <div className="md:hidden flex items-center gap-2">
-            <ModeToggle />
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button
@@ -83,7 +82,8 @@ const Header = () => {
                 </Button>
               </SheetTrigger>
               <SheetContent className="bg-brand-black/95 backdrop-blur-xl border-brand-yellow/60 [&>button]:hidden">
-                <div className="flex justify-end">
+                <div className="flex items-center justify-between">
+                  <ModeToggle />
                   <SheetClose asChild>
                     <Button
                       variant="glass"

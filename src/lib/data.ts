@@ -11,6 +11,98 @@ export interface Service {
   features: string[];
 }
 
+export interface Solution {
+  id: number;
+  title: string;
+  description: string;
+  icon: string;
+  technologies: string[];
+  features: string[];
+}
+
+export const solutions: Solution[] = [
+  {
+    id: 1,
+    title: "Health Care Solution",
+    description: "End-to-end digital platform for clinics, hospitals, and health services — from patient management to telemedicine.",
+    icon: "activity",
+    technologies: ["React", "Node.js", "PostgreSQL", "HL7 / FHIR", "TypeScript", "Docker"],
+    features: [
+      "Patient registration & appointment booking",
+      "Doctor & staff management portal",
+      "Electronic health records (EHR)",
+      "Telemedicine & video consultation",
+      "Prescription & billing management",
+      "Real-time analytics & reporting dashboard",
+      "Role-based access for staff & admins",
+      "HIPAA-compliant data security",
+    ],
+  },
+  {
+    id: 2,
+    title: "Enterprise Solution",
+    description: "Scalable ERP and operations platform built for mid-to-large businesses to unify teams, data, and workflows.",
+    icon: "building2",
+    technologies: ["React", "Node.js", "MongoDB", "PostgreSQL", "Redis", "Docker", "AWS"],
+    features: [
+      "Multi-department role-based access",
+      "Inventory, HR & finance modules",
+      "Real-time analytics dashboard",
+      "Third-party API integrations",
+      "Custom workflow automation",
+      "Audit trail & compliance reporting",
+      "Multi-branch / multi-tenant support",
+      "Scalable microservices architecture",
+    ],
+  },
+  {
+    id: 3,
+    title: "Employee Management System",
+    description: "An all-in-one HR platform for attendance, payroll, leave, and performance management.",
+    icon: "users",
+    technologies: ["React", "Node.js", "PostgreSQL", "TypeScript", "Docker", "AWS", "Redis"],
+    features: [
+      "Employee onboarding & profile management",
+      "Attendance tracking with biometric/QR support",
+      "Leave & holiday management",
+      "Payroll processing & payslip generation",
+      "Performance reviews & KPI tracking",
+      "Department & role-based access control",
+      "Document storage & e-signature",
+      "HR analytics & workforce reporting",
+    ],
+  },
+];
+
+export interface SaasProduct {
+  id: number;
+  title: string;
+  description: string;
+  icon: string;
+  technologies: string[];
+  features: string[];
+}
+
+export const saasProducts: SaasProduct[] = [
+  {
+    id: 1,
+    title: "CRM with WhatsApp API & Automation",
+    description: "A smart CRM that automates lead follow-ups, client communication, and sales pipelines via WhatsApp.",
+    icon: "message-circle",
+    technologies: ["React", "Node.js", "MongoDB", "WhatsApp Business API", "Twilio", "TypeScript", "Redis"],
+    features: [
+      "Lead capture & pipeline management",
+      "Automated WhatsApp messages & follow-ups",
+      "Bulk WhatsApp campaigns with templates",
+      "Contact segmentation & tagging",
+      "Team inbox & conversation assignment",
+      "Sales funnel tracking & reporting",
+      "Third-party integrations (Zapier, webhooks)",
+      "Custom workflow automation builder",
+    ],
+  },
+];
+
 export interface Project {
   id: number;
   title: string;
@@ -1077,7 +1169,7 @@ export const projects: Project[] = [
       "Employee Dashboard : Holiday Screen",
       "Employee Dashboard : Settings Screen"
     ],
-    "description": "This system streamlines HR operations with robust features for efficient employee and payroll management.",
+    "description": "An enterprise-grade full-stack platform designed to streamline corporate HR operations and policy compliance. Features role-based portal separation, interactive analytics, automated payroll deduction engines, and location-verified shift check-ins.",
     "technologies": ["JavaScript", "Electron.js", "React", "Node.js", "Express", "MongoDB", "Cloudinary", "TailwindCSS", "D3.js", "excel.js"],
     "client": {
       "name": "In House Project",

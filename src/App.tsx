@@ -7,8 +7,10 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ProjectPage from "./pages/ProjectPage";
 import ServicePage from "./pages/ServicePage";
+import SolutionPage from "./pages/SolutionPage";
+import ProductPage from "./pages/ProductPage";
+import AllProjectsPage from "./pages/AllProjectsPage";
 import ProjectCategoryPage from "./pages/ProjectCategoryPage";
-import {SplashCursor} from "@/components/ui/splash-cursor";
 import ScrollToHash from "@/components/ScrollToHash";
 import { ThemeProvider } from "@/components/theme-provider";
 // import TubesCursor from "@/components/tubes-curor";
@@ -22,7 +24,6 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <SplashCursor />
         <BrowserRouter>
           <ScrollToHash />
           <Routes>
@@ -32,6 +33,9 @@ const App = () => (
             <Route path="/project/applications" element={<ProjectCategoryPage category="applications" />} />
             <Route path="/project/:projectSlug" element={<ProjectPage />} />
             <Route path="/services/:serviceSlug" element={<ServicePage />} />
+            <Route path="/solutions/:solutionSlug" element={<SolutionPage />} />
+            <Route path="/products/:productSlug" element={<ProductPage />} />
+            <Route path="/projects" element={<AllProjectsPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <BackToTop />

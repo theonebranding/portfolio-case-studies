@@ -1,5 +1,5 @@
-const SITE_URL = "https://theonebranding.com";
-const DEFAULT_IMAGE = "/assets/favicon/android-chrome-512x512.png";
+const SITE_URL = "https://digoltech.com";
+const DEFAULT_IMAGE = "/assets/digol-logo.svg";
 
 type SeoConfig = {
   title: string;

@@ -30,7 +30,7 @@ const ServicePage = () => {
   useEffect(() => {
     if (!service) {
       applySeo({
-        title: "Service Not Found | The One Branding",
+        title: "Service Not Found | Digol",
         description: "The requested service page does not exist.",
         path: `/services/${serviceSlug ?? ""}`,
         noindex: true,
@@ -46,13 +46,13 @@ const ServicePage = () => {
       "custom software development",
       "web and app development",
       "digital solutions",
-      "The One Branding",
+      "Digol",
       "Anand Gujarat",
       ...service.technologies,
     ].join(", ");
 
     applySeo({
-      title: `${service.title} | The One Branding`,
+      title: `${service.title} | Digol`,
       description: service.description,
       keywords,
       path: `/services/${slug}`,
@@ -66,11 +66,11 @@ const ServicePage = () => {
       description: service.description,
       provider: {
         "@type": "Organization",
-        name: "The One Branding",
-        url: "https://theonebranding.com",
+        name: "Digol",
+        url: "https://digoltech.com",
       },
       areaServed: "IN",
-      url: `https://theonebranding.com/services/${slug}`,
+      url: `https://digoltech.com/services/${slug}`,
       serviceType: service.title,
       keywords,
     });
@@ -101,34 +101,31 @@ const ServicePage = () => {
       <main className="pt-32 pb-20">
         <section className="container mx-auto px-6">
           <div className="relative overflow-hidden rounded-3xl border border-brand-yellow/30 p-8 md:p-12 shadow-[0_24px_80px_rgba(0,0,0,0.55)]">
-            <AnimatedGradientBackground
-              Breathing={true}
-              startingGap={120}
-              breathingRange={1}
-              animationSpeed={0.08}
-              gradientColors={[
-                "#0A1628",
-                "#0D2647",
-                "#0D47A1",
-                "#1565C0",
-                "#1E88E5",
-                "#42A5F5",
-                "#42A5F5",
-              ]}
-              gradientStops={[30, 45, 58, 70, 82, 92, 100]}
-              containerClassName="opacity-85"
-            />
-            <div className="absolute inset-0 bg-black/45" />
+            {/* Dark mode — animated blue gradient */}
+            <div className="hidden dark:block absolute inset-0">
+              <AnimatedGradientBackground
+                Breathing={true}
+                startingGap={120}
+                breathingRange={1}
+                animationSpeed={0.08}
+                gradientColors={["#0A1628","#0D2647","#0D47A1","#1565C0","#1E88E5","#42A5F5","#42A5F5"]}
+                gradientStops={[30, 45, 58, 70, 82, 92, 100]}
+                containerClassName="opacity-85"
+              />
+              <div className="absolute inset-0 bg-black/45" />
+            </div>
+            {/* Light mode — frosted glass surface */}
+            <div className="block dark:hidden absolute inset-0 bg-white/70 backdrop-blur-md border border-brand-yellow/20 rounded-3xl" />
 
             <div className="relative z-10">
-            <Link to="/#services" className="inline-flex items-center gap-2 text-sm font-secondary text-blue-100 hover:text-white transition-colors mb-6">
+            <Link to="/#services" className="inline-flex items-center gap-2 text-sm font-secondary text-brand-coreBlue dark:text-blue-100 hover:text-brand-deepBlue dark:hover:text-white transition-colors mb-6">
               <ArrowLeft size={14} /> Back to Services
             </Link>
 
             <div className="flex flex-col gap-6">
               <div className="text-center">
-                <h1 className="text-4xl md:text-6xl font-primary font-bold text-white leading-tight">{service.title}</h1>
-                <p className="text-blue-50 text-base md:text-lg max-w-3xl mx-auto mt-4 font-secondary leading-relaxed">
+                <h1 className="text-4xl md:text-6xl font-primary font-bold text-brand-coreBlue dark:text-white leading-tight">{service.title}</h1>
+                <p className="text-brand-arcBlue dark:text-blue-50 text-base md:text-lg max-w-3xl mx-auto mt-4 font-secondary leading-relaxed">
                   {service.description}
                 </p>
               </div>
