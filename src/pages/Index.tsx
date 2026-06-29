@@ -14,7 +14,7 @@ import { applySeo } from "@/lib/seo";
 const Index = () => {
   useEffect(() => {
     applySeo({
-      title: "Digol",
+      title: "DIGOL | Custom Software Development, SaaS Solutions & AI Engineering",
       description:
         "Explore Digol case studies for websites, software, and mobile applications.",
       keywords:
